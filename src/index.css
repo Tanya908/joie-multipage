@@ -47,16 +47,17 @@
     --text-h4-size-desktop: 25px;
     --text-h4-line-height-mobile: 1.2;
     --text-h4-line-height-desktop: 1.3;
-    --text-h4-weight:500;
+    --text-h4-weight:400;
     --text-h4-weight-decorative:400;
     --text-h4-margin-bottom:15px;
 
-    --text-p1-size: 19px;
+    --text-p1-size: 21px;
+    --text-p1-size-decorative: 19px;
     --text-p1-weight: 500;
     --text-p1-weight-caps: 700;
     --text-p1-weight-decorative: 400;
     --text-p1-line-height: 1.3;
-    --text-p1-line-height-alt:1.2;
+    --text-p1-line-height-alt: 1.2;
     --text-p1-transform: uppercase;
 
     --text-p2-size: 16px;
@@ -145,37 +146,35 @@
     }
 }
 
-@utility text-p1-base {
+@utility text-p1 {
     font-size: var(--text-p1-size);
     line-height: var(--text-p1-line-height);
-}
-
-@utility text-p1 {
-    @apply text-p1-base;
     font-weight: var(--text-p1-weight);
 }
 
 @utility text-p1-caps {
-    @apply text-p1-base;
+    @apply text-p1;
     font-weight: var(--text-p1-weight-caps);
     line-height: var(--text-p1-line-height-alt);
     text-transform: var(--text-p1-transform);
 }
 
 @utility text-p1-decorative {
-    @apply text-p1-base;
+    @apply text-p1;
     font-weight: var(--text-p1-weight-decorative);
     line-height: var(--text-p1-line-height-alt);
+    font-size: var(--text-p1-size-decorative);
+    font-family:var(--font-dynapuff);
 }
 
-@utility text-p2-base {
+@utility text-p2 {
     font-size: var(--text-p2-size) ;
     font-weight: var(--text-p2-weight) ;
     line-height: var(--text-p2-line-height) ;
 }
 
 @utility text-p2-caps {
-    @apply text-p2-base;
+    @apply text-p2;
     text-transform: var(--text-p2-transform);
 }
 
