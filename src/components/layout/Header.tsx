@@ -1,23 +1,9 @@
 import { NavLink} from "react-router-dom";
 import mainLogo from "../../assets/mainLogoPink.svg"
 import dot from "../../assets/dot.svg"
-import BurgerButton from "./BurgerButton";
+import BurgerButton from "../BurgerButton.tsx";
 import {useEffect, useState} from "react";
-
-type NavLinkItem = {
-    name: string;
-    path: string;
-};
-
-const navLinks: NavLinkItem[] = [
-    { name: "About Us", path: "/about" },
-    { name: "First Visit", path: "/first-visit" },
-    { name: "Our Services", path: "/services" },
-    { name: "For Professionals", path: "/professionals" },
-    { name: "For Parents", path: "/parents" },
-    { name: "Gallery", path: "/gallery" },
-    { name: "Contact us", path: "/contact" },
-];
+import {navLinks} from "../../shared/navigation.ts";
 
 const Header = () => {
 
@@ -48,7 +34,7 @@ const Header = () => {
                                    to={link.path}
                                    className={({ isActive }) =>
                                        `flex items-center justify-center gap-1 text-p2 text-center whitespace-nowrap
-                                        group hover:text-[var(--color-red)] active:text-[var(--color-red)] min-w-0
+                                        group text-hover min-w-0
                                         ${isActive ? "text-[var(--color-red)]" : ""}`
                                    }
                                >
@@ -81,7 +67,7 @@ const Header = () => {
             </header>
 
             <div
-                className={`fixed inset-0 bg-white z-40  transition-all duration-300 lg:hidden
+                className={`fixed inset-0 bg-white z-40 transition-all duration-300 lg:hidden
                             ${isOpen ? "opacity-100" : "opacity-0 pointer-events-none"}
                           `}
             >
@@ -91,13 +77,13 @@ const Header = () => {
                             key={link.name}
                             to={link.path}
                             onClick={() => setIsOpen(false)}
-                            className="text-p1 group flex items-center gap-3"
+                            className="text-p1 text-hover group flex items-center gap-3"
                         >
                             {link.name}
                         </NavLink>
                     ))}
 
-                    <a href="" className="py-2 px-1.5 md:py-4 md:px-10 border border-[var(--color-red)] rounded-4xl
+                    <a href="" className="py-2 md:py-4 px-1.5 md:px-10 border border-[var(--color-red)] rounded-4xl
                                           text-btn text-[var(--color-red)] text-center whitespace-nowrap"
                     >
                         Schedule now

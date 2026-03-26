@@ -193,5 +193,19 @@
     text-decoration: var(--btn-tertiary-text-decoration);
 }
 
+@layer utilities {
+    .text-hover {
+        @apply hover:text-[var(--color-red)] active:text-[var(--color-red)] focus:text-[var(--color-red)] transition-colors duration-200;
+    }
+}
 
+@layer components {
+    .footer-box {
+        @apply border border-[var(--color-light-gray)] rounded-4xl p-8;
+    }
+
+    .footer-dots {
+        @apply inline-block mx-2 w-2 h-2 bg-[var(--color-light-black)] rounded-full -translate-y-[2px]
+    }
+}
 
