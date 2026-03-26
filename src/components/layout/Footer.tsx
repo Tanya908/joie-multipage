@@ -3,6 +3,7 @@ import mainLogoDark from "../../assets/mainLogoDark.svg"
 import decorativeOval from "../../assets/decorativeOval.svg"
 import decorativeWaves from "../../assets/decorativeWaves.svg"
 import {navLinks} from "../../shared/navigation.ts";
+import {Button} from "../Button.tsx";
 
 type SocialLink = {
     name: string;
@@ -105,15 +106,23 @@ const Footer = () => {
                 <div className="flex flex-col h-full lg:col-span-4 text-center">
                     <div className="flex flex-col items-center mb-10">
                         <h4 className="text-h4 mb-6">Contact Joie Pediatric Dentistry</h4>
-                        <div className="flex flex-col items-center gap-4 lg:flex-row lg:gap-8 mb-4 w-full lg:w-[40%]">
-                            <button className="text-btn text-[var(--color-white)] bg-[var(--color-red)] rounded-4xl
-                                                w-full py-[18px] px-10 whitespace-nowrap"
+                        <div className="flex flex-col items-center gap-4 lg:flex-row lg:gap-8 mb-4 w-full lg:max-w-3xl">
+                            <Button
+                                primary
+                                href="https://joiepediatric.meetkasper.com/schedule-appointment"
+                                external
+                                className="whitespace-nowrap w-full"
                             >
-                                Schedule Now
-                            </button>
-                            <button className="text-btn text-[var(--color-red)] border rounded-4xl w-full py-[18px] px-10">
+                                Schedule now
+                            </Button>
+
+                            <Button
+                                variant="secondary"
+                                href="tel:+12015006314"
+                                className="whitespace-nowrap w-full"
+                            >
                                 Call/Text Us
-                            </button>
+                            </Button>
                         </div>
                     </div>
 

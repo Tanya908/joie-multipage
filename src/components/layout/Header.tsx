@@ -4,6 +4,7 @@ import dot from "../../assets/dot.svg"
 import BurgerButton from "../BurgerButton.tsx";
 import {useEffect, useState} from "react";
 import {navLinks} from "../../shared/navigation.ts";
+import {Button} from "../Button.tsx";
 
 const Header = () => {
 
@@ -51,11 +52,14 @@ const Header = () => {
                    </div>
 
                     <div className="flex gap-4 md:gap-8">
-                        <a href="" className="hidden md:flex py-2 px-1.5 md:py-4 md:px-10 border border-[var(--color-red)]
-                                              rounded-4xl text-btn text-[var(--color-red)] text-center whitespace-nowrap"
+                        <Button
+                            variant="secondary"
+                            href="https://joiepediatric.meetkasper.com/schedule-appointment"
+                            external
+                            className="hidden md:flex whitespace-nowrap"
                         >
                             Schedule now
-                        </a>
+                        </Button>
 
                         <BurgerButton
                             isOpen={isOpen}
@@ -67,7 +71,7 @@ const Header = () => {
             </header>
 
             <div
-                className={`fixed inset-0 bg-white z-40 transition-all duration-300 lg:hidden
+                className={`fixed px-4 inset-0 bg-white z-40 transition-all duration-300 lg:hidden
                             ${isOpen ? "opacity-100" : "opacity-0 pointer-events-none"}
                           `}
             >
@@ -83,11 +87,14 @@ const Header = () => {
                         </NavLink>
                     ))}
 
-                    <a href="" className="py-2 md:py-4 px-1.5 md:px-10 border border-[var(--color-red)] rounded-4xl
-                                          text-btn text-[var(--color-red)] text-center whitespace-nowrap"
+                    <Button
+                        variant="secondary"
+                        href="https://joiepediatric.meetkasper.com/schedule-appointment"
+                        external
+                        className="w-full whitespace-nowrap mt-4"
                     >
                         Schedule now
-                    </a>
+                    </Button>
                 </nav>
             </div>
         </>

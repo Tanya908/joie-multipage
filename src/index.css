@@ -65,7 +65,7 @@
     --text-p2-line-height: 1.3;
     --text-p2-transform: uppercase;
 
-    --btn-font-size: 12px;
+    --btn-font-size: 16px;
     --btn-font-weight: 800;
     --btn-line-height: 1.5;
     --btn-text-transform: uppercase;
@@ -74,7 +74,6 @@
     --btn-tertiary-font-weight: 600;
     --btn-tertiary-line-height: 1.5;
     --btn-tertiary-text-transform: uppercase;
-    --btn-tertiary-text-decoration: underline;
 }
 
 @layer base {
@@ -190,7 +189,6 @@
     font-weight: var(--btn-tertiary-font-weight) ;
     line-height: var(--btn-tertiary-line-height) ;
     text-transform: var(--btn-tertiary-text-transform);
-    text-decoration: var(--btn-tertiary-text-decoration);
 }
 
 @layer utilities {
@@ -205,7 +203,41 @@
     }
 
     .footer-dots {
-        @apply inline-block mx-2 w-2 h-2 bg-[var(--color-light-black)] rounded-full -translate-y-[2px]
+        @apply inline-block mx-2 w-2 h-2 bg-[var(--color-light-black)] rounded-full -translate-y-[2px];
+    }
+
+    .btn-primary {
+        @apply pt-[18px] pb-4 px-10 text-btn text-center rounded-[35px] bg-[var(--color-red)] text-[var(--color-white)]
+               hover:bg-[var(--color-black)]
+               focus:bg-[var(--color-black)]
+               active:bg-[var(--color-red)]
+               disabled:bg-[var(--color-gray)] disabled:pointer-events-none
+    }
+
+    .btn-secondary {
+        @apply pt-[18px] pb-4 px-10 text-btn text-center rounded-[35px]
+               border border-[var(--color-red)] text-[var(--color-red)]
+               hover:border-[var(--color-black)] hover:text-[var(--color-black)]
+               focus:border-[var(--color-black)] focus:text-[var(--color-black)]
+               active:border-[var(--color-red)] active:text-[var(--color-red)]
+               disabled:border-[var(--color-gray)] disabled:text-[var(--color-gray)] disabled:pointer-events-none
+    }
+
+    .btn-secondary-mobile {
+        @apply pt-[9px] pb-2 px-4 text-btn-tertiary text-center rounded-[35px]
+               border border-[var(--color-red)] text-[var(--color-red)]
+               hover:border-[var(--color-black)] hover:text-[var(--color-black)]
+               focus:border-[var(--color-black)] focus:text-[var(--color-black)]
+               active:border-[var(--color-red)]
+               disabled:text-[var(--color-gray)] disabled:pointer-events-none disabled:border-[var(--color-gray)]
+    }
+
+    .btn-tertiary {
+        @apply text-[var(--color-red)] text-center text-btn-tertiary underline
+               hover:text-[var(--color-black)]
+               focus:text-[var(--color-black)]
+               active:text-[var(--color-red)]
+               disabled:text-[var(--color-gray)] disabled:pointer-events-none
     }
 }
 
