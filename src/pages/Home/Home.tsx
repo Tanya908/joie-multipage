@@ -1,7 +1,106 @@
+import decorativeWaves from "../../assets/decorativeWaves.svg";
+import yellowCircle from "../../assets/home-page/yellowCircle.svg";
+import blueCircle from "../../assets/home-page/blueCircle.svg";
+import pinkCircle from "../../assets/home-page/pinkCircle.svg";
+import rocket from "../../assets/home-page/rocket.svg";
+import butterfly from "../../assets/home-page/butterfly.svg";
+import flower from "../../assets/home-page/flower.svg";
+import homePage from "../../assets/home-page/homePage.webp";
+import {Button} from "../../components/Button.tsx";
+
+type Feature = {
+    background: string;
+    icon: string;
+    description: string;
+    id: number;
+};
+
+const features:Feature[] = [
+    {   background:yellowCircle,
+        icon:rocket,
+        description:"Board-certified pediatric dentist",
+        id:1
+    },
+    {   background:blueCircle,
+        icon:flower,
+        description:"Kid-first comforts",
+        id:2
+    },
+    {   background:pinkCircle,
+        icon:butterfly,
+        description:"Online forms",
+        id:3
+    },
+]
 
 const Home = () => {
     return (
-        <div className="mt-28">Home</div>
+        <section className="mt-36 md:mt-40 px-4 md:px-8">
+            <div className="bg-[var(--color-light-yellow)] rounded-3xl px-3 py-12 md:px-12">
+                <div className="grid grid-cols-1 lg:grid-cols-2">
+                    <div className="flex flex-col h-full">
+                        <div className="relative inline-block">
+                            <h1 className="text-title z-10 pb-3 max-w-xl">
+                                Your Pediatric Dentist in Ramsey, NJ
+                            </h1>
+                            <img src={decorativeWaves}
+                                     alt=""
+                                     aria-hidden="true"
+                                     className="absolute left-4 bottom-0 pointer-events-none scale-125"
+                            />
+                        </div>
+
+                        <p className="hidden md:flex text-p1 max-w-sm text-[var(--color-light-black)] mt-4">
+                            Discover the joy of healthy smiles at Joie Pediatric Dentistry — kid-first care, with a calm, joyful experience for parents.
+                        </p>
+
+                        <Button
+                            primary
+                            href="#"
+                            external
+                            className="whitespace-nowrap w-full md:w-auto self-start my-10"
+                        >
+                            Sign up for the VIP list!
+                        </Button>
+
+                        <div className="relative grid grid-cols-1 md:grid-cols-3 lg:grid-cols-2
+                                        xl:grid-cols-[240px_1fr_1fr] gap-3 mt-auto"
+                        >
+                            {features.map((item) => (
+                                <div key={item.id} className="flex gap-3 items-center">
+                                    <div className="relative inline-block shrink-0 ">
+                                        <img
+                                            src={item.background}
+                                            className="w-16 h-16 z-10 object-contain"
+                                            alt=""
+                                            aria-hidden="true"
+                                        />
+                                        <img
+                                            src={item.icon}
+                                            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
+                                                       pointer-events-none w-10 h-10"
+                                            alt=""
+                                            aria-hidden="true"
+                                        />
+                                    </div>
+
+                                    <p className="text-p1 text-[var(--color-light-black)] flex-1
+                                                  min-w-0 text-balance">
+                                        {item.description}
+                                    </p>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+
+                    <img
+                        className="hidden lg:block w-[640px] h-[560px] object-center"
+                        src={homePage}
+                        alt="Two happy children smiling together"
+                    />
+                </div>
+            </div>
+        </section>
     )
 }
 export default Home
