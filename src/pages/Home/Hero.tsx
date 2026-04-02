@@ -5,8 +5,11 @@ import pinkCircle from "../../assets/home-page/pinkCircle.svg";
 import rocket from "../../assets/home-page/rocket.svg";
 import butterfly from "../../assets/home-page/butterfly.svg";
 import flower from "../../assets/home-page/flower.svg";
-import homePage from "../../assets/home-page/homePage.webp";
+import home from "../../assets/home-page/homePage.webp";
 import {Button} from "../../components/Button.tsx";
+import ShapeImg from "../../components/ShapeImg.tsx";
+import maskImg from "../../assets/home-page/flowerBackground.svg";
+import homeVector from "../../assets/home-page/homeVector.svg";
 
 type Feature = {
     background: string;
@@ -37,10 +40,10 @@ const Home = () => {
     return (
         <section className="mt-36 md:mt-40 px-4 md:px-8">
             <div className="bg-[var(--color-light-yellow)] rounded-3xl px-3 py-12 md:px-12">
-                <div className="grid grid-cols-1 lg:grid-cols-2">
-                    <div className="flex flex-col h-full">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
+                    <div className="flex flex-col h-full lg:pt-20">
                         <div className="relative inline-block">
-                            <h1 className="text-title z-10 pb-3 max-w-xl">
+                            <h1 className="text-title z-10 pb-3 lg:max-w-lg xl:max-w-3xl">
                                 Your Pediatric Dentist in Ramsey, NJ
                             </h1>
                             <img src={decorativeWaves}
@@ -63,8 +66,8 @@ const Home = () => {
                             Sign up for the VIP list!
                         </Button>
 
-                        <div className="relative grid grid-cols-1 md:grid-cols-3 lg:grid-cols-2
-                                        xl:grid-cols-[240px_1fr_1fr] gap-3 mt-auto"
+                        <div className="relative grid grid-cols-1 md:grid-cols-3 lg:grid-cols-2 xl:grid-cols-[repeat(3,minmax(280px,max-content))]
+                                        gap-3 md:gap-10 xl:gap-0 lg:mt-20"
                         >
                             {features.map((item) => (
                                 <div key={item.id} className="flex gap-3 items-center">
@@ -84,20 +87,30 @@ const Home = () => {
                                         />
                                     </div>
 
-                                    <p className="text-p1 text-[var(--color-light-black)] flex-1
-                                                  min-w-0 text-balance">
+                                    <p className="text-p1 text-[var(--color-light-black)] flex-1 text-balance min-w-[240px]">
                                         {item.description}
                                     </p>
                                 </div>
                             ))}
                         </div>
                     </div>
-
-                    <img
-                        className="hidden lg:block w-[640px] h-[560px] object-center"
-                        src={homePage}
-                        alt="Two happy children smiling together"
-                    />
+                    <div className="hidden lg:block lg:max-w-[560px] xl:max-w-[600px] aspect-[600/560] self-center
+                                    xl:justify-self-end relative w-full mr-12"
+                    >
+                        <img
+                            src={homeVector}
+                            alt=""
+                            aria-hidden="true"
+                            className="absolute inset-0 left-5 w-full h-full object-contain scale-105 z-0"
+                        />
+                        <ShapeImg
+                            src={home}
+                            alt="Two smiling children"
+                            mask={maskImg}
+                            wrapperClassName="absolute inset-0 z-10"
+                            imgClassName="w-full h-full"
+                        />
+                    </div>
                 </div>
             </div>
         </section>
