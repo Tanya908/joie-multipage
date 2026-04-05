@@ -1,6 +1,6 @@
 import { Routes, Route } from "react-router-dom";
 import Layout from "../components/layout/Layout.tsx";
-import Home from "../pages/Home/Hero.tsx";
+import Home from "../pages/Home/Home.tsx";
 
 
 export const AppRoutes = () => {

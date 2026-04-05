@@ -38,7 +38,7 @@ const features:Feature[] = [
 
 const Home = () => {
     return (
-        <section className="mt-36 md:mt-40 px-4 md:px-8">
+        <section className="mt-36 mb-20 lg:mb-28 md:mt-40 px-4 md:px-8">
             <div className="bg-[var(--color-light-yellow)] rounded-3xl px-3 py-12 md:px-12">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
                     <div className="flex flex-col h-full lg:pt-20">
