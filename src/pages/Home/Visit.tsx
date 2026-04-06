@@ -1,12 +1,10 @@
 import Background from "../../assets/home-page/background.svg"
 import textLine from "../../assets/home-page/textLine.svg";
 import ShapeImg from "../../components/ShapeImg.tsx";
+import {ButtonArrow} from "../../components/ButtonArrow.tsx";
 
 import visit from "../../assets/home-page/visit.webp";
 import blob from "../../assets/home-page/blob.svg";
-
-import buttonLeft from "../../assets/home-page/visit-cards/buttonLeft.svg";
-import buttonRight from "../../assets/home-page/visit-cards/buttonRight.svg";
 
 import blobFirst from "../../assets/home-page/visit-cards/blobFirst.svg";
 import blobSecond from "../../assets/home-page/visit-cards/blobSecond.svg";
@@ -146,8 +144,17 @@ const Visit = () => {
             </div>
 
             <div className="flex md:hidden gap-4 justify-center items-center mt-8">
-                <button onClick={prev} aria-label="Previous slide" ><img src={buttonLeft} alt=""/></button>
-                <button onClick={next} aria-label="Next slide" ><img src={buttonRight} alt=""/></button>
+                <ButtonArrow
+                    direction="left"
+                    onClick={prev}
+                    disabled={active === 0}
+                />
+
+                <ButtonArrow
+                    direction="right"
+                    onClick={next}
+                    disabled={active === visits.length - 1}
+                />
             </div>
 
         </section>

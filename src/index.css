@@ -239,5 +239,19 @@
                active:text-[var(--color-red)]
                disabled:text-[var(--color-gray)] disabled:pointer-events-none
     }
+
+    .arrow-btn-primary {
+        @apply w-12 h-12 bg-[var(--color-white)] text-[var(--color-red)] rounded-full p-4
+               hover:bg-[var(--color-red)] hover:text-[var(--color-white)]
+               active:bg-[var(--color-red)]  active:text-[var(--color-white)]
+               disabled:text-[var(--color-light-gray)]
+    }
+
+    .arrow-btn-secondary {
+        @apply w-12 h-12 bg-[var(--color-light-red)] text-[var(--color-red)] rounded-full p-4
+               hover:bg-[var(--color-red)]  hover:text-[var(--color-white)]
+               active:bg-[var(--color-red)] active:text-[var(--color-white)]
+               disabled:text-[var(--color-light-gray)]
+    }
 }
 
