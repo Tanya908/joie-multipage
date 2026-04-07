@@ -101,7 +101,7 @@ const Visit = () => {
                     imgClassName="w-full h-full"
                 />
 
-                <div className=" w-full mx-auto px-4">
+                <div className="w-full mx-auto px-4 overflow-hidden">
                     <div
                         className="flex md:grid md:grid-rows-2 md:grid-cols-2 md:gap-y-6 gap-0 lg:gap-6 justify-items-center
                                    transition-transform md:transform-none duration-500 ease-out"
