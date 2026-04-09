@@ -135,7 +135,6 @@
 @utility text-h4 {
     font-size: var(--text-h4-size-mobile);
     font-weight:var(--text-h4-weight);
-    font-family:var(--font-dynapuff);
     margin-bottom:var(--text-h4-margin-bottom);
     line-height:var(--text-h4-line-height-mobile);
 
