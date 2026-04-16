@@ -4,6 +4,7 @@ import Meet from "./Meet.tsx";
 import WhyUs from "./WhyUs.tsx";
 import Reviews from "./Reviews.tsx";
 import Services from "./Services.tsx";
+import Insurance from "./Insurance.tsx";
 
 const Home = () => {
     return (
@@ -14,6 +15,7 @@ const Home = () => {
             <WhyUs/>
             <Reviews/>
             <Services/>
+            <Insurance/>
         </>
     )
 }

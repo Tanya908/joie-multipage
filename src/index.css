@@ -144,6 +144,12 @@
     }
 }
 
+@utility text-h4-dec {
+    @apply text-h4;
+    font-family:var(--font-dynapuff);
+
+}
+
 @utility text-p1 {
     font-size: var(--text-p1-size);
     line-height: var(--text-p1-line-height);
