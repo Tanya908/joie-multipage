@@ -84,7 +84,7 @@ const Visit = () => {
                    </h2>
                </div>
 
-               <p className="text-p1 mt-5 md:mt-8 text-center text-[var(--color-light-black)] w-full md:w-lg mx-auto">
+               <p className="text-p1 mt-5 md:mt-8 text-center w-full md:w-lg mx-auto">
                    In the heart of Ramsey, NJ—compassionate dentistry that looks deeper than routine checkups.
                </p>
            </div>
@@ -132,7 +132,7 @@ const Visit = () => {
                                         <h4 className="text-h4 mb-2 w-[240px]">
                                             {visit.heading}
                                         </h4>
-                                        <p className="text-p2 text-[var(--color-light-black)] w-[240px]">
+                                        <p className="text-p2 w-[240px]">
                                             {visit.description}
                                         </p>
                                     </div>

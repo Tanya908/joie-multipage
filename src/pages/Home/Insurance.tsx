@@ -12,10 +12,10 @@ const Insurance = () => {
                 <h2 className="text-h2 mb-4 md:mb-6 w-48 md:w-full">
                     Insurance & Finance
                 </h2>
-                <p className="text-p1 text-[var(--color-light-black)] mb-2">
+                <p className="text-p1 mb-2">
                     Navigating insurance shouldn’t be stressful. At Joie Pediatric Dentistry, we accept most major plans and are proudly in-network with several popular providers.
                 </p>
-                <p className="text-p1 text-[var(--color-light-black)]">
+                <p className="text-p1">
                     Not sure what’s covered? No problem. Our experienced team is happy to walk you through it. Just fill out our quick insurance verification form, and we’ll handle the rest, making sure you get the most out of your benefits.
                 </p>
 

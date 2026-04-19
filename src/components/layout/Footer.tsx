@@ -30,7 +30,7 @@ const Footer = () => {
 
                 <div className="w-full text-center footer-box">
                    <div className="relative inline-block px-8 py-3">
-                       <h4 className="text-h4 z-10" >Socials</h4>
+                       <h4 className="text-h4-dec z-10" >Socials</h4>
                        <img src={decorativeOval}
                             alt=""
                             aria-hidden="true"
@@ -53,7 +53,7 @@ const Footer = () => {
                 </div>
 
                 <div className="w-full flex flex-col items-center gap-4 footer-box">
-                    <h4 className="text-h4">Company</h4>
+                    <h4 className="text-h4-dec">Company</h4>
                     {navLinks.map((link) => (
                         <NavLink
                             key={link.name}
@@ -67,7 +67,7 @@ const Footer = () => {
 
                 <div className="w-full lg:col-span-2 flex flex-col justify-center items-center text-center footer-box px-3">
                     <div className="relative inline-block px-8 py-3">
-                        <h4 className="relative text-h4 z-10 whitespace-nowrap" >Showtimes (Hours)</h4>
+                        <h4 className="relative text-h4-dec z-10 whitespace-nowrap" >Showtimes (Hours)</h4>
                         <img src={decorativeWaves}
                              alt=""
                              aria-hidden="true"
@@ -75,28 +75,28 @@ const Footer = () => {
                         />
                     </div>
                     <p className="text-p1 text-[var(--color-light-black)] w-full lg:max-w-md text-center mx-auto">
-                        Mon–Thu 8:00–5:00 <span className="footer-dots"></span>
-                        Fri 8:00–2:00 <span className="footer-dots"></span>
-                        Sat (select dates) 9:00–1:00 <span className="footer-dots"></span>
+                        Mon–Thu 8:00–5:00 <span className="text-dots"></span>
+                        Fri 8:00–2:00 <span className="text-dots"></span>
+                        Sat (select dates) 9:00–1:00 <span className="text-dots"></span>
                         Sun Closed
                     </p>
 
                     <div className="h-px w-full bg-[var(--color-light-gray)] my-6"></div>
 
                     <div className="mb-6">
-                        <p className="text-p1-decorative mb-4">Phone/SMS</p>
+                        <p className="text-p1-decorative text-[var(--color-black)] mb-4">Phone/SMS</p>
                         <a
                             href="tel:+12015006314"
-                            className="text-p2 text-[var(--color-light-black)] text-hover"
+                            className="text-p2 text-hover"
                         >(201) 500-6314</a>
                     </div>
 
                     <div>
-                        <p className="text-p1-decorative mb-4">Address</p>
+                        <p className="text-p1-decorative text-[var(--color-black)] mb-4">Address</p>
                         <a href="https://maps.app.goo.gl/FJxF5gCnrWSCYuXg7"
                            target="_blank"
                            rel="noopener noreferrer"
-                           className="text-p2 text-[var(--color-light-black)] text-hover"
+                           className="text-p2 text-hover"
                         >
                             125 E. Main St. Ramsey, NJ 07446
                         </a>
@@ -105,7 +105,7 @@ const Footer = () => {
 
                 <div className="flex flex-col h-full lg:col-span-4 text-center">
                     <div className="flex flex-col items-center mb-10">
-                        <h4 className="text-h4 mb-6">Contact Joie Pediatric Dentistry</h4>
+                        <h4 className="text-h4-dec mb-6">Contact Joie Pediatric Dentistry</h4>
                         <div className="flex flex-col items-center gap-4 lg:flex-row lg:gap-8 mb-4 w-full lg:max-w-3xl">
                             <Button
                                 primary

@@ -78,7 +78,7 @@ const Services = () => {
                 <h2 className="text-h1 text-center mb-4">
                     Our Pediatric Dental Services
                 </h2>
-                <p className="text-p1 text-[var(--color-light-black)] text-center mb-10 w-full md:w-lg mx-auto">
+                <p className="text-p1 text-center mb-10 w-full md:w-lg mx-auto">
                     We care for the whole child—not just teeth. Visits are personalized, evidence-based, and calm.
                 </p>
             </div>
@@ -121,11 +121,11 @@ const Services = () => {
                                 </div>
                             </div>
 
-                                <p className="text-p1-caps mb-2 md:mb-4">
+                                <p className="text-p1-caps text-[var(--color-black)] mb-2 md:mb-4">
                                     {service.heading}
                                 </p>
 
-                                <p className="text-p1 text-[var(--color-light-black)]">
+                                <p className="text-p1">
                                     {service.description}
                                 </p>
                         </div>

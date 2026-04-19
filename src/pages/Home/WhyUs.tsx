@@ -113,7 +113,7 @@ const WhyUs = () => {
 
                             <h3 className="text-h3 mt-3 mb-4">{item.title}</h3>
 
-                            <p className="text-p1 text-[var(--color-light-black)]">
+                            <p className="text-p1">
                                 {item.description}
                             </p>
 
@@ -121,7 +121,7 @@ const WhyUs = () => {
                                 {item.benefits.map((benefit, index) => (
                                     <div key={index} className="flex gap-3 items-center">
                                         <img src={smallCircle} alt="" className="shrink-0" />
-                                        <p className="text-p1-caps text-[var(--color-light-black)]">
+                                        <p className="text-p1-caps">
                                             {benefit}
                                         </p>
                                     </div>

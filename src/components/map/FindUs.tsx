@@ -28,18 +28,18 @@ const FindUs = () => {
                     </span>
                     </h2>
 
-                    <p className="text-p1 text-[var(--color-light-black)] mb-4">
+                    <p className="text-p1 mb-4">
                         Whether you’re from Ramsey, Mahwah, Allendale, or anywhere in Bergen County, we’d love to welcome your family to ours.
                     </p>
 
-                    <p className="text-p2-caps text-[var(--color-light-black)] mb-2">
+                    <p className="text-p2-caps mb-2">
                         Showtimes (Hours)
                     </p>
 
-                    <p className="text-p2 text-[var(--color-light-black)]">
-                        Mon–Thu 8:00–5:00 <span className="footer-dots"></span>
-                        Fri 8:00–2:00 <span className="footer-dots"></span>
-                        Sat (select dates) 9:00–1:00 <span className="footer-dots"></span>
+                    <p className="text-p2">
+                        Mon–Thu 8:00–5:00 <span className="text-dots"></span>
+                        Fri 8:00–2:00 <span className="text-dots"></span>
+                        Sat (select dates) 9:00–1:00 <span className="text-dots"></span>
                         Sun Closed
                     </p>
 

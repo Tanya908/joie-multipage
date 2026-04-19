@@ -149,13 +149,13 @@
 @utility text-h4-dec {
     @apply text-h4;
     font-family:var(--font-dynapuff);
-
 }
 
 @utility text-p1 {
     font-size: var(--text-p1-size);
     line-height: var(--text-p1-line-height);
     font-weight: var(--text-p1-weight);
+    color: var(--color-light-black);
 }
 
 @utility text-p1-caps {
@@ -177,6 +177,7 @@
     font-size: var(--text-p2-size) ;
     font-weight: var(--text-p2-weight) ;
     line-height: var(--text-p2-line-height) ;
+    color: var(--color-light-black);
 }
 
 @utility text-p2-caps {
@@ -210,7 +211,7 @@
         @apply border border-[var(--color-light-gray)] rounded-4xl p-8;
     }
 
-    .footer-dots {
+    .text-dots {
         @apply inline-block mx-2 w-2 h-2 bg-[var(--color-light-black)] rounded-full -translate-y-[2px];
     }
 

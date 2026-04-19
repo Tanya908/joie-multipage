@@ -129,7 +129,7 @@ const Reviews = () => {
                                 aria-hidden="true"
                                 className="absolute -top-3 left-4 w-8 h-8 md:w-10 md:h-10"
                             />
-                            <h4 className="text-p1">
+                            <h4 className="text-p1 text-[var(--color-black)]">
                                 {review.text}
                             </h4>
 
@@ -143,8 +143,8 @@ const Reviews = () => {
                                 />
 
                                 <div>
-                                    <p className="text-p1-decorative">{review.name}</p>
-                                    <p className="text-p2 text-[var(--color-light-black)]">
+                                    <p className="text-p1-decorative text-[var(--color-black)]">{review.name}</p>
+                                    <p className="text-p2">
                                         {review.lastName}
                                     </p>
                                 </div>

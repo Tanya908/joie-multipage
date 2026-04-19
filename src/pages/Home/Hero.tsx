@@ -53,7 +53,7 @@ const Home = () => {
                             />
                         </div>
 
-                        <p className="hidden md:flex text-p1 max-w-sm text-[var(--color-light-black)] mt-4">
+                        <p className="hidden md:flex text-p1 max-w-sm mt-4">
                             Discover the joy of healthy smiles at Joie Pediatric Dentistry — kid-first care, with a calm, joyful experience for parents.
                         </p>
 
@@ -87,7 +87,7 @@ const Home = () => {
                                         />
                                     </div>
 
-                                    <p className="text-p1 text-[var(--color-light-black)] flex-1 text-balance min-w-[240px]">
+                                    <p className="text-p1 flex-1 text-balance min-w-[240px]">
                                         {item.description}
                                     </p>
                                 </div>

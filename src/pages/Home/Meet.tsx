@@ -13,7 +13,7 @@ import {Button} from "../../components/Button.tsx";
 
 const Meet = () => {
     return (
-        <section className="relative mt-20 pt-24 pb-32">
+        <section className="relative mt-20 pt-24 pb-20">
             <img
                 src={background}
                 alt=""
@@ -39,7 +39,7 @@ const Meet = () => {
                                     aria-hidden="true"
                                 />
                             </div>
-                            <p className="text-p2-caps text-[var(--color-light-black)] max-w-64 lg:max-w-md">
+                            <p className="text-p2-caps max-w-64 lg:max-w-md">
                                 Board Certified Pediatric Dentist in Ramsey, NJ
                             </p>
                         </div>
@@ -58,7 +58,7 @@ const Meet = () => {
                                 {" "} Obbad{" "}
                             </h2>
 
-                            <p className="text-p1 text-[var(--color-light-black)] mt-6 lg:mt-8 w-full lg:w-xl">
+                            <p className="text-p1 mt-6 lg:mt-8 w-full lg:w-xl">
                                 Known for her calming approach and minimally invasive philosophy, Dr. Sabrine is dedicated to creating positive, empowering dental experiences for kids of all ages.
                             </p>
 
@@ -86,7 +86,7 @@ const Meet = () => {
                         <h3 className="text-h2 mb-4 w-full md:w-2xl">
                             Board Certified pediatric Dentist Proud to be a Diplomate
                         </h3>
-                        <p className="text-p1 text-[var(--color-light-black)]">
+                        <p className="text-p1">
                             Credential Verification Available at ABPD.org
                         </p>
                     </div>
