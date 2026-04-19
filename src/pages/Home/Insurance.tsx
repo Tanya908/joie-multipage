@@ -33,7 +33,7 @@ const Insurance = () => {
 
                     <Button
                         variant="secondary"
-                        href="#"
+                        href="mailto:joiepediatricdentistry.com"
                         className="whitespace-nowrap w-full"
                     >
                         Verify My Insurance

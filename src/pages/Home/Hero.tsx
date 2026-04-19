@@ -87,7 +87,7 @@ const Home = () => {
                                         />
                                     </div>
 
-                                    <p className="text-p1 flex-1 text-balance min-w-[240px]">
+                                    <p className="text-p1 flex-1 text-balance max-w-[280px]">
                                         {item.description}
                                     </p>
                                 </div>

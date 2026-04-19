@@ -129,7 +129,7 @@ const Visit = () => {
                                             aria-hidden="true"
                                             className="w-14 h-24 mb-3"
                                         />
-                                        <h4 className="text-h4 mb-2 w-[240px]">
+                                        <h4 className="text-h4-dec mb-2 w-[240px]">
                                             {visit.heading}
                                         </h4>
                                         <p className="text-p2 w-[240px]">

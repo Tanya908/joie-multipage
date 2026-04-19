@@ -4,6 +4,7 @@ import heart from "../../assets/home-page/services/heart.svg"
 import circle from "../../assets/home-page/services/circle.svg"
 import {ButtonArrow} from "../../components/ButtonArrow.tsx";
 import {useEffect, useState} from "react";
+import {Button} from "../../components/Button.tsx";
 
 type ServiceProps = {
     backgroundColor: string;
@@ -147,6 +148,17 @@ const Services = () => {
                     onClick={next}
                     disabled={active === services.length - 1}
                 />
+            </div>
+
+            <div className="flex justify-center items-center mt-10 px-4 md:px-8">
+                <Button
+                    primary
+                    href="#"
+                    external
+                    className="whitespace-nowrap w-full md:w-auto "
+                >
+                    View All Services
+                </Button>
             </div>
         </section>
     )

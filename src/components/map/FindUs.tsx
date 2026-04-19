@@ -48,7 +48,7 @@ const FindUs = () => {
                     >
                         <Button
                             primary
-                            href="#"
+                            href="https://joiepediatric.meetkasper.com/schedule-appointment"
                             external
                             className="whitespace-nowrap w-full"
                         >
@@ -57,7 +57,7 @@ const FindUs = () => {
 
                         <Button
                             variant="secondary"
-                            href="#"
+                            href="mailto:joiepediatricdentistry.com"
                             className="whitespace-nowrap w-full"
                         >
                             Call or text us
