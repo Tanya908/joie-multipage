@@ -5,6 +5,7 @@ import WhyUs from "./WhyUs.tsx";
 import Reviews from "./Reviews.tsx";
 import Services from "./Services.tsx";
 import Insurance from "./Insurance.tsx";
+import FindUs from "../../components/map/FindUs.tsx";
 
 const Home = () => {
     return (
@@ -16,6 +17,7 @@ const Home = () => {
             <Reviews/>
             <Services/>
             <Insurance/>
+            <FindUs/>
         </>
     )
 }
