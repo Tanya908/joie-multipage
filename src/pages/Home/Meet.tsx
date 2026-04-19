@@ -18,7 +18,8 @@ const Meet = () => {
                 src={background}
                 alt=""
                 aria-hidden="true"
-                className="absolute top-0 left-0 h-full -z-10 object-cover min-w-80 md:w-full"
+                className="absolute top-0 left-0 h-full -z-10 w-full"
+                style={{objectFit: "fill"}}
             />
 
             <div className="relative px-4 md:px-8 lg:px-10 z-10">

@@ -11,7 +11,8 @@ const FindUs = () => {
                 src={mapBackground}
                 alt=""
                 aria-hidden="true"
-                className="absolute top-0 left-0 h-full -z-10 object-cover min-w-[360px] md:w-full"
+                className="absolute top-0 left-0 h-full -z-10 w-full"
+                style={{objectFit: "fill"}}
             />
 
             <div className="pt-28 pb-24 grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-10 px-4 md:px-8">

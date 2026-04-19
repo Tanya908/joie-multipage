@@ -71,12 +71,13 @@ const Reviews = () => {
                                     screenWidth >= 768 ? 420 : 280;
 
     return (
-        <section className="relative mt-20 pt-14 pb-16">
+        <section className="relative mt-20 pt-20 pb-16">
             <img
                 src={background}
                 alt=""
                 aria-hidden="true"
-                className="absolute top-0 left-0 h-full -z-10 object-cover min-w-[360px] md:w-full"
+                className="absolute top-0 left-0 h-full -z-10 w-full"
+                style={{objectFit: "fill"}}
             />
 
             <div className="flex flex-col md:flex-row md:justify-between gap-8 items-center justify-center
