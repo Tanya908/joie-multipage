@@ -1,15 +1,15 @@
 import decorativeWaves from "../../assets/decorativeWaves.svg";
-import yellowCircle from "../../assets/home-page/yellowCircle.svg";
-import blueCircle from "../../assets/home-page/blueCircle.svg";
-import pinkCircle from "../../assets/home-page/pinkCircle.svg";
-import rocket from "../../assets/home-page/rocket.svg";
-import butterfly from "../../assets/home-page/butterfly.svg";
-import flower from "../../assets/home-page/flower.svg";
-import home from "../../assets/home-page/homePage.webp";
+import yellowCircle from "../../assets/home-page/hero/yellowCircle.svg";
+import blueCircle from "../../assets/home-page/hero/blueCircle.svg";
+import pinkCircle from "../../assets/home-page/hero/pinkCircle.svg";
+import rocket from "../../assets/home-page/hero/rocket.svg";
+import butterfly from "../../assets/home-page/hero/butterfly.svg";
+import flower from "../../assets/home-page/hero/flower.svg";
+import home from "../../assets/home-page/hero/homePage.webp";
 import {Button} from "../../components/Button.tsx";
 import ShapeImg from "../../components/ShapeImg.tsx";
-import maskImg from "../../assets/home-page/flowerBackground.svg";
-import homeVector from "../../assets/home-page/homeVector.svg";
+import maskImg from "../../assets/home-page/hero/flowerBackground.svg";
+import heroVector from "../../assets/home-page/hero/heroVector.svg";
 
 type Feature = {
     background: string;
@@ -98,7 +98,7 @@ const Home = () => {
                                     xl:justify-self-end relative w-full mr-12"
                     >
                         <img
-                            src={homeVector}
+                            src={heroVector}
                             alt=""
                             aria-hidden="true"
                             className="absolute inset-0 left-5 w-full h-full object-contain scale-105 z-0"

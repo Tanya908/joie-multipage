@@ -1,19 +1,19 @@
-import Background from "../../assets/home-page/background.svg"
-import textLine from "../../assets/home-page/textLine.svg";
+import background from "../../assets/home-page/visit/background.svg"
+import textLine from "../../assets/home-page/visit/textLine.svg";
 import ShapeImg from "../../components/ShapeImg.tsx";
 import {ButtonArrow} from "../../components/ButtonArrow.tsx";
 
-import visit from "../../assets/home-page/visit.webp";
-import blob from "../../assets/home-page/blob.svg";
+import visit from "../../assets/home-page/visit/visit.webp";
+import blob from "../../assets/home-page/visit/blob.svg";
 
-import blobFirst from "../../assets/home-page/visit-cards/blobFirst.svg";
-import blobSecond from "../../assets/home-page/visit-cards/blobSecond.svg";
-import blobThird from "../../assets/home-page/visit-cards/blobThird.svg";
-import blobFourth from "../../assets/home-page/visit-cards/blobFourth.svg";
-import ballon from "../../assets/home-page/visit-cards/ballon.svg";
-import child from "../../assets/home-page/visit-cards/child.svg";
-import airBallon from "../../assets/home-page/visit-cards/airBallon.svg";
-import sun from "../../assets/home-page/visit-cards/Sun.svg";
+import blobFirst from "../../assets/home-page/visit/visit-cards/blobFirst.svg";
+import blobSecond from "../../assets/home-page/visit/visit-cards/blobSecond.svg";
+import blobThird from "../../assets/home-page/visit/visit-cards/blobThird.svg";
+import blobFourth from "../../assets/home-page/visit/visit-cards/blobFourth.svg";
+import ballon from "../../assets/home-page/visit/visit-cards/ballon.svg";
+import child from "../../assets/home-page/visit/visit-cards/child.svg";
+import airBallon from "../../assets/home-page/visit/visit-cards/airBallon.svg";
+import sun from "../../assets/home-page/visit/visit-cards/Sun.svg";
 
 import {useState} from "react";
 
@@ -61,7 +61,7 @@ const Visit = () => {
     return (
         <section className="relative py-32 md:py-40">
             <img
-                src={Background}
+                src={background}
                 alt=""
                 aria-hidden="true"
                 className="absolute top-0 left-0 h-full -z-10 object-cover min-w-[360px] md:w-full"

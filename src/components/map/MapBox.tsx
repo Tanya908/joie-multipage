@@ -1,5 +1,5 @@
 import Map, { Marker } from "react-map-gl/mapbox";
-import mapMarker from "../../assets/mapMarker.svg"
+import mapMarker from "../../assets/map/mapMarker.svg"
 
 const MAPBOX_TOKEN = import.meta.env.VITE_MAPBOX_TOKEN as string;
 

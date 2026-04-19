@@ -1,6 +1,6 @@
-import mapLine from "../../assets/mapLine.svg";
+import mapLine from "../../assets/decorativeWaves.svg";
 import {Button} from "../Button.tsx";
-import mapBackground from "../../assets/mapBackground.svg";
+import mapBackground from "../../assets/map/mapBackground.svg";
 import MapBox from "./MapBox.tsx";
 
 
@@ -23,7 +23,7 @@ const FindUs = () => {
                         <img src={mapLine}
                              alt=""
                              aria-hidden="true"
-                             className="absolute top-7 md:top-10 pointer-events-none scale-75"
+                             className="absolute left-10 top-8 md:top-10 pointer-events-none scale-125"
                         />
                     </span>
                     </h2>
