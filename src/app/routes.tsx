@@ -1,6 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 import Layout from "../components/layout/Layout.tsx";
 import Home from "../pages/Home/Home.tsx";
+import AboutUs from "../pages/AboutUs/AboutUS.tsx";
 
 
 export const AppRoutes = () => {
@@ -8,6 +9,7 @@ export const AppRoutes = () => {
         <Routes>
             <Route element={<Layout />}>
                 <Route path="/" element={<Home />} />
+                <Route path="/about" element={<AboutUs />} />
             </Route>
         </Routes>
     );
