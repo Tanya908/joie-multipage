@@ -1,10 +1,10 @@
 import apple from "../../assets/home-page/services/apple.svg"
 import birdie from "../../assets/home-page/services/birdie.svg"
-import heart from "../../assets/home-page/services/heart.svg"
-import circle from "../../assets/home-page/services/circle.svg"
+import heart from "../../assets/heart.svg"
 import {ButtonArrow} from "../../components/ButtonArrow.tsx";
 import {useEffect, useState} from "react";
 import {Button} from "../../components/Button.tsx";
+import BlobIcon from "../../components/BlobIcon.tsx";
 
 type ServiceProps = {
     backgroundColor: string;
@@ -106,18 +106,10 @@ const Services = () => {
 
                             <div className="flex flex-1 items-center justify-center my-6 xl:my-0">
                                 <div className="relative inline-block shrink-0">
-                                    <img
-                                        src={circle}
-                                        className="w-20 h-20 xl:w-24 xl:h-24 z-10 object-contain"
-                                        alt=""
-                                        aria-hidden="true"
-                                    />
-                                    <img
-                                        src={service.icon}
-                                        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
-                                                   pointer-events-none w-12 h-12 xl:w-14 xl:h-14"
-                                        alt=""
-                                        aria-hidden="true"
+                                    <BlobIcon
+                                        blobClassName="w-20 h-20 xl:w-24 xl:h-24"
+                                        iconClassName="w-12 h-12 xl:w-14 xl:h-14"
+                                        icon={service.icon}
                                     />
                                 </div>
                             </div>

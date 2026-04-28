@@ -1,11 +1,11 @@
-import iconBg from "../../assets/about-us/hero/iconBg.svg"
-import heart from "../../assets/about-us/hero/heart.svg"
+import heart from "../../assets/heart.svg"
 import bgWave from "../../assets/about-us/hero/bgWave.svg"
 import decorativeWaves from "../../assets/decorativeWaves.svg";
 import doctor from "../../assets/about-us/hero/doctor.webp";
 import maskImg from "../../assets/about-us/hero/maskImg.svg";
 import textBg from "../../assets/about-us/hero/textBg.svg";
 import ShapeImg from "../../components/ShapeImg.tsx";
+import BlobIcon from "../../components/BlobIcon.tsx";
 
 const Hero = () => {
     return (
@@ -22,22 +22,13 @@ const Hero = () => {
                     />
                 </div>
                 <div className="relative z-10 flex flex-col items-start justify-center">
-                    <div className="relative inline-block self-start lg:self-center text-center shrink-0">
-                        <img
-                            src={iconBg}
-                            className="w-20 h-20 z-10 object-contain"
-                            alt=""
-                            aria-hidden="true"
-                        />
-                        <img
-                            src={heart}
-                            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
-                                       pointer-events-none w-12 h-12"
-                            alt=""
-                            aria-hidden="true"
-                        />
-                    </div>
-
+                    <BlobIcon
+                        wrapperClassName="self-start lg:self-center"
+                        background={"text-[var(--color-light-blue)]"}
+                        blobClassName="w-20 h-20"
+                        iconClassName="w-12 h-12"
+                        icon={heart}
+                    />
                     <div className="relative mt-4 lg:mt-6 mb-6 lg:mb-10">
                         <h1 className="text-h1 z-10 pb-3 w-64 lg:w-lg lg:text-center">
                             Meet <br className="hidden lg:block"/>

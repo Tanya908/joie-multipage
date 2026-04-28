@@ -6,8 +6,7 @@ import childSecond from "../../assets/home-page/why-us/childSecond.webp";
 import children from "../../assets/home-page/why-us/children.webp";
 import maskBg from "../../assets/home-page/why-us/maskBg.svg";
 import maskBgRect from "../../assets/home-page/why-us/maskBgRectangular.svg";
-import circle from "../../assets/home-page/why-us/circle.svg";
-import smallCircle from "../../assets/home-page/why-us/smallCircle.svg";
+import Blob from "../../components/Blob.tsx";
 
 type WhyProps = {
     id:number;
@@ -99,12 +98,7 @@ const WhyUs = () => {
                             imgClassName="w-full h-full"
                         />
                             <div className="relative inline-block w-12 h-12 shrink-0 mt-10">
-                                <img
-                                    src={circle}
-                                    className="w-12 h-12 object-contain"
-                                    alt=""
-                                    aria-hidden="true"
-                                />
+                                <Blob className="text-[var(--color-light-black)] object-contain w-12 h-12 ]"/>
                                 <span className="z-10 text-h3 text-[var(--color-light-blue)] absolute inset-0
                                                  flex items-center justify-center pointer-events-none"
                                 >
@@ -121,7 +115,7 @@ const WhyUs = () => {
                             <div className="mt-6 flex flex-col gap-3">
                                 {item.benefits.map((benefit, index) => (
                                     <div key={index} className="flex gap-3 items-center">
-                                        <img src={smallCircle} alt="" className="shrink-0" />
+                                        <Blob className="text-[var(--color-light-black)] shrink-0 w-3 h-3 ]"/>
                                         <p className="text-p1-caps">
                                             {benefit}
                                         </p>

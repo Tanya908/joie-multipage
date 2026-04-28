@@ -1,7 +1,4 @@
 import decorativeWaves from "../../assets/decorativeWaves.svg";
-import yellowCircle from "../../assets/home-page/hero/yellowCircle.svg";
-import blueCircle from "../../assets/home-page/hero/blueCircle.svg";
-import pinkCircle from "../../assets/home-page/hero/pinkCircle.svg";
 import rocket from "../../assets/home-page/hero/rocket.svg";
 import butterfly from "../../assets/home-page/hero/butterfly.svg";
 import flower from "../../assets/home-page/hero/flower.svg";
@@ -10,6 +7,7 @@ import {Button} from "../../components/Button.tsx";
 import ShapeImg from "../../components/ShapeImg.tsx";
 import maskImg from "../../assets/home-page/hero/flowerBackground.svg";
 import heroVector from "../../assets/home-page/hero/heroVector.svg";
+import BlobIcon from "../../components/BlobIcon.tsx";
 
 type Feature = {
     background: string;
@@ -19,17 +17,17 @@ type Feature = {
 };
 
 const features:Feature[] = [
-    {   background:yellowCircle,
+    {   background:"text-[var(--color-medium-yellow)]",
         icon:rocket,
         description:"Board-certified pediatric dentist",
         id:1
     },
-    {   background:blueCircle,
+    {   background:"text-[var(--color-light-blue)]",
         icon:flower,
         description:"Kid-first comforts",
         id:2
     },
-    {   background:pinkCircle,
+    {   background:"text-[var(--color-light-red)]",
         icon:butterfly,
         description:"Online forms",
         id:3
@@ -71,21 +69,10 @@ const Home = () => {
                         >
                             {features.map((item) => (
                                 <div key={item.id} className="flex gap-3 items-center">
-                                    <div className="relative inline-block shrink-0 ">
-                                        <img
-                                            src={item.background}
-                                            className="w-16 h-16 z-10 object-contain"
-                                            alt=""
-                                            aria-hidden="true"
-                                        />
-                                        <img
-                                            src={item.icon}
-                                            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
-                                                       pointer-events-none w-10 h-10"
-                                            alt=""
-                                            aria-hidden="true"
-                                        />
-                                    </div>
+                                    <BlobIcon
+                                        background={item.background}
+                                        icon={item.icon}
+                                    />
 
                                     <p className="text-p1 flex-1 text-balance max-w-[280px]">
                                         {item.description}

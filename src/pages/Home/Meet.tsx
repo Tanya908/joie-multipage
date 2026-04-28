@@ -1,7 +1,6 @@
 import background from "../../assets/home-page/meet/background.svg";
 import doctor from "../../assets/home-page/meet/doctor.webp";
 import maskImg from "../../assets/home-page/meet/maskImg.svg"
-import circle from "../../assets/home-page/meet/circle.svg"
 import sun from "../../assets/home-page/meet/sun.svg"
 import ShapeImg from "../../components/ShapeImg.tsx";
 import certifiedIcon from "../../assets/home-page/meet/certifiedIcon.svg"
@@ -9,6 +8,7 @@ import line from "../../assets/home-page/meet/line.svg";
 import lineLeft from "../../assets/home-page/meet/lineLeft.svg";
 import lineRight from "../../assets/home-page/meet/lineRight.svg";
 import {Button} from "../../components/Button.tsx";
+import BlobIcon from "../../components/BlobIcon.tsx";
 
 
 const Meet = () => {
@@ -26,20 +26,9 @@ const Meet = () => {
                 <div className="grid grid-cols-1 md:grid-cols-[50%_1fr] auto-rows-min justify-items-stretch items-start gap-0 lg:gap-10">
                     <div>
                         <div className="flex gap-3 items-center">
-                            <div className="relative inline-block shrink-0">
-                                <img
-                                    src={circle}
-                                    className="w-16 h-16 z-10 object-contain"
-                                    alt=""
-                                    aria-hidden="true"
-                                />
-                                <img
-                                    src={sun}
-                                    className="absolute w-10 h-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none"
-                                    alt=""
-                                    aria-hidden="true"
-                                />
-                            </div>
+                            <BlobIcon
+                                icon={sun}
+                            />
                             <p className="text-p2-caps max-w-64 lg:max-w-md">
                                 Board Certified Pediatric Dentist in Ramsey, NJ
                             </p>

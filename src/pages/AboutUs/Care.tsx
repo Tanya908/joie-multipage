@@ -3,10 +3,10 @@ import childFirst from "../../assets/about-us/care/childFirst.webp";
 import childSecond from "../../assets/about-us/care/childSecond.webp";
 import childThird from "../../assets/about-us/care/childThird.webp";
 import {ButtonArrow} from "../../components/ButtonArrow.tsx";
-import iconBg from "../../assets/about-us/care/iconBg.svg";
 import sun from "../../assets/about-us/care/sun.svg";
 import {Button} from "../../components/Button.tsx";
 import {useEffect, useState} from "react";
+import BlobIcon from "../../components/BlobIcon.tsx";
 
 type CareImg = {
     img: string;
@@ -140,21 +140,11 @@ const Care = () => {
                 <div className="bg-[var(--color-light-red)] rounded-4xl px-3 py-8 md:px-12 md:py-20
                                 flex flex-col items-center justify-center h-full"
                 >
-                    <div className="relative inline-block text-center shrink-0">
-                        <img
-                            src={iconBg}
-                            className="w-20 h-20 z-10 object-contain"
-                            alt=""
-                            aria-hidden="true"
-                        />
-                        <img
-                            src={sun}
-                            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
-                                       pointer-events-none w-12 h-12"
-                            alt=""
-                            aria-hidden="true"
-                        />
-                    </div>
+                    <BlobIcon
+                        blobClassName="w-20 h-20"
+                        iconClassName="w-12 h-12"
+                        icon={sun}
+                    />
 
                     <h4 className="text-h4-dec text-[var(--color-light-black)] mt-8 max-w-xl text-center">
                         Come meet Dr. Sabrine and discover what makes Joie Pediatric Dentistry a place where smiles grow with confidence.
