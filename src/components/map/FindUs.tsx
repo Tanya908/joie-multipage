@@ -1,14 +1,20 @@
 import mapLine from "../../assets/decorativeWaves.svg";
 import {Button} from "../Button.tsx";
-import mapBackground from "../../assets/map/mapBackground.svg";
+import mapBackgroundPink from "../../assets/map/mapBackgroundPink.svg";
+
 import MapBox from "./MapBox.tsx";
 
+type FindUsProps = {
+    background?: string;
+};
 
-const FindUs = () => {
+const FindUs = ({
+                    background= mapBackgroundPink,
+                }: FindUsProps) => {
     return (
         <section className="relative mt-20 mb-32">
             <img
-                src={mapBackground}
+                src={background}
                 alt=""
                 aria-hidden="true"
                 className="absolute top-0 left-0 h-full -z-10 w-full"
