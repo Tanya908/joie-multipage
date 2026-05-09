@@ -1,6 +1,6 @@
 import heart from "../../assets/heart.svg"
 import bgWave from "../../assets/about-us/hero/bgWave.svg"
-import decorativeWaves from "../../assets/decorativeWaves.svg";
+import lineWaves from "../../assets/text-lines/lineWaves.svg"
 import doctor from "../../assets/about-us/hero/doctor.webp";
 import maskImg from "../../assets/about-us/hero/maskImg.svg";
 import textBg from "../../assets/about-us/hero/textBg.svg";
@@ -32,14 +32,17 @@ const Hero = () => {
                     <div className="relative mt-4 lg:mt-6 mb-6 lg:mb-10">
                         <h1 className="text-h1 z-10 pb-3 w-64 lg:w-lg lg:text-center">
                             Meet <br className="hidden lg:block"/>
-                            Dr. Sabrine Obbad
+                            Dr. {" "}
+                            <span className="relative inline-block">
+                                Sabrine Obbad
+                                 <img src={lineWaves}
+                                      alt=""
+                                      aria-hidden="true"
+                                      className="absolute left-2 md:-left-2 lg:left-10 -bottom-4 pointer-events-none
+                                                 scale-100 md:scale-90 lg:scale-110"
+                                 />
+                            </span>
                         </h1>
-                        <img src={decorativeWaves}
-                             alt=""
-                             aria-hidden="true"
-                             className="absolute left-4 lg:left-1/2 bottom-0 pointer-events-none
-                                        scale-125 lg:scale-200"
-                        />
                     </div>
 
                     <h4 className="text-h4 text-[var(--color-light-black)] max-w-lg lg:text-center">

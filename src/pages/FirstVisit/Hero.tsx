@@ -3,7 +3,7 @@ import rocket from "../../assets/first-visit/hero/rocket.svg";
 import line from "../../assets/first-visit/hero/line.svg";
 import maskImg from "../../assets/first-visit/hero/maskImg.svg";
 import dentist from "../../assets/first-visit/hero/dentist.webp";
-import decorativeWaves from "../../assets/decorativeWaves.svg";
+import lineWaves from "../../assets/text-lines/lineWaves.svg"
 import ShapeImg from "../../components/ShapeImg.tsx";
 
 const Hero = () => {
@@ -35,10 +35,10 @@ const Hero = () => {
                         <h1 className="text-h1 z-10 w-[300px] md:w-[380px] lg:w-[560px]">
                             What to expect at the first visit
                         </h1>
-                        <img src={decorativeWaves}
+                        <img src={lineWaves}
                              alt=""
                              aria-hidden="true"
-                             className="absolute left-16 lg:left-14 -bottom-3 pointer-events-none scale-150 lg:scale-200"
+                             className="absolute left-4 lg:left-14 -bottom-4 pointer-events-none scale-90 lg:scale-100"
                             />
                     </div>
 

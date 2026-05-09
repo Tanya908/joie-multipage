@@ -1,4 +1,4 @@
-import line from "../../assets/first-visit/start/line.svg";
+import lineOval from "../../assets/text-lines/lineOval.svg"
 import childrenFirst from "../../assets/first-visit/start/childrenFirst.webp";
 import childrenSecond from "../../assets/first-visit/start/childrenSecond.webp";
 
@@ -33,7 +33,7 @@ const Start = () => {
                 A gentle {" "}
                 <span className="relative inline-block">
                     start {" "}
-                        <img src={line}
+                        <img src={lineOval}
                              alt=""
                              aria-hidden="true"
                              className="absolute left-0 -bottom-2 pointer-events-none scale-110"

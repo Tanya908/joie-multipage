@@ -1,5 +1,5 @@
 import doctor from "../../assets/first-visit/parent-presence/doctor.webp";
-import textLine from "../../assets/first-visit/parent-presence/textLine.svg";
+import line from "../../assets/text-lines/line.svg";
 import bgLineLg from "../../assets/first-visit/parent-presence/bgLineLg.svg";
 import bgLineSm from "../../assets/first-visit/parent-presence/bgLineSm.svg";
 
@@ -16,7 +16,7 @@ const ParentPresence = () => {
                             You  {" "}
                             <span className="relative inline-block">
                             stay
-                                <img src={textLine}
+                                <img src={line}
                                      alt=""
                                      aria-hidden="true"
                                      className="absolute -left-12 lg:-left-8 -bottom-6 xl:-left-4 xl:-bottom-8

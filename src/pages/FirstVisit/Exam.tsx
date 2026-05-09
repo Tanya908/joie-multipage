@@ -1,4 +1,4 @@
-import textLine from "../../assets/first-visit/exam/textLine.svg";
+import line from "../../assets/text-lines/lineCircle.svg";
 import maskImg from "../../assets/first-visit/exam/maskImg.svg";
 import maskImgSecond from "../../assets/first-visit/exam/maskImgSecond.svg";
 import children from "../../assets/first-visit/exam/children.webp";
@@ -67,10 +67,11 @@ const Exam = () => {
                 The {" "}
                 <span className="relative inline-block">
                     exam: {" "}
-                    <img src={textLine}
+                    <img src={line}
                          alt=""
                          aria-hidden="true"
-                         className="absolute left-0 md:left-5 -bottom-3 pointer-events-none scale-110 md:scale-150"
+                         className="absolute left-0 -bottom-6 md:-bottom-8 pointer-events-none
+                                    scale-125 -scale-y-75 md:-scale-y-90"
                     />
                 </span>
                 {" "} gentle, thorough, and personalized

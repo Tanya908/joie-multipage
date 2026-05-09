@@ -4,7 +4,7 @@ import maskImg from "../../assets/home-page/meet/maskImg.svg"
 import sun from "../../assets/home-page/meet/sun.svg"
 import ShapeImg from "../../components/ShapeImg.tsx";
 import certifiedIcon from "../../assets/home-page/meet/certifiedIcon.svg"
-import line from "../../assets/home-page/meet/line.svg";
+import line from "../../assets/text-lines/line.svg";
 import lineLeft from "../../assets/home-page/meet/lineLeft.svg";
 import lineRight from "../../assets/home-page/meet/lineRight.svg";
 import {Button} from "../../components/Button.tsx";

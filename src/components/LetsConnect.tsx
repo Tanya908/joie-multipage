@@ -1,4 +1,4 @@
-import textLine from "../assets/lets-connect/textLine.svg";
+import lineSecond from "../assets/text-lines/lineSecond.svg"
 import background from "../assets/lets-connect/background.svg";
 import backgroundLg from "../assets/lets-connect/backgroundLg.svg";
 import {Button} from "./Button.tsx";
@@ -30,7 +30,7 @@ const LetsConnect = ({title,description}:ConnectProps) => {
             <h1 className="text-h1 mb-12 w-full max-w-xl relative">
                 {title}
                 <img
-                    src={textLine} alt="" aria-hidden="true"
+                    src={lineSecond} alt="" aria-hidden="true"
                     className="absolute left-1/2 -translate-x-1/2 -bottom-9
                                pointer-events-none w-40 md:w-48"
                 />

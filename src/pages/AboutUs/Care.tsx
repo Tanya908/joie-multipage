@@ -1,4 +1,4 @@
-import line from "../../assets/about-us/care/line.svg";
+import line from "../../assets/text-lines/line.svg";
 import childFirst from "../../assets/about-us/care/childFirst.webp";
 import childSecond from "../../assets/about-us/care/childSecond.webp";
 import childThird from "../../assets/about-us/care/childThird.webp";
@@ -43,7 +43,7 @@ const Care = () => {
                         <img src={line}
                              alt=""
                              aria-hidden="true"
-                             className="absolute top-10 md:top-12 left-1/3 pointer-events-none scale-100 md:scale-150"
+                             className="absolute top-8 md:top-12 left-18 pointer-events-none scale-75 md:scale-125"
                         />
                 </span>
                 </h2>

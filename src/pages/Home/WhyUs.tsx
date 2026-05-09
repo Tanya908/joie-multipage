@@ -1,5 +1,5 @@
 import background from "../../assets/home-page/why-us/background.svg";
-import line from "../../assets/home-page/why-us/line.svg";
+import line from "../../assets/text-lines/lineCircle.svg";
 import ShapeImg from "../../components/ShapeImg.tsx";
 import childFirst from "../../assets/home-page/why-us/childFirst.webp";
 import childSecond from "../../assets/home-page/why-us/childSecond.webp";

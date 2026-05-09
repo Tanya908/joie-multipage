@@ -1,5 +1,5 @@
 import background from "../../assets/home-page/visit/background.svg"
-import textLine from "../../assets/home-page/visit/textLine.svg";
+import lineOval from "../../assets/text-lines/lineOval.svg"
 import ShapeImg from "../../components/ShapeImg.tsx";
 import {ButtonArrow} from "../../components/ButtonArrow.tsx";
 
@@ -74,11 +74,10 @@ const Visit = () => {
                        Gentle Care.{" "}
                        <span className="relative inline-block">
                             Joyful
-                            <img src={textLine}
+                            <img src={lineOval}
                                  alt=""
                                  aria-hidden="true"
-                                 className="absolute left-0 md:left-6 top-0 pointer-events-none
-                                            scale-125 md:scale-150"
+                                 className="absolute left-0 -top-4 md:-top-7 pointer-events-none scale-110"
                             />
                         </span>
                        {" "} Visits.{" "}

@@ -1,4 +1,4 @@
-import mapLine from "../../assets/decorativeWaves.svg";
+import lineWaves from "../../assets/text-lines/lineWaves.svg"
 import {Button} from "../Button.tsx";
 import mapBackgroundPink from "../../assets/map/mapBackgroundPink.svg";
 
@@ -26,13 +26,13 @@ const FindUs = ({
                     <h2 className="text-h2 w-full mb-3">
                         Let’s Make Your {" "}
                         <span className="relative inline-block">
-                        First Visit Easy
-                        <img src={mapLine}
-                             alt=""
-                             aria-hidden="true"
-                             className="absolute left-10 top-8 md:top-10 pointer-events-none scale-125"
-                        />
-                    </span>
+                            First Visit Easy
+                            <img src={lineWaves}
+                                 alt=""
+                                 aria-hidden="true"
+                                 className="absolute left-10 top-8 md:top-10 pointer-events-none scale-75"
+                            />
+                        </span>
                     </h2>
 
                     <p className="text-p1 mb-4">

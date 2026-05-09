@@ -1,7 +1,7 @@
 import {Link, NavLink} from "react-router-dom";
 import mainLogoDark from "../../assets/mainLogoDark.svg"
-import decorativeOval from "../../assets/decorativeOval.svg"
-import decorativeWaves from "../../assets/decorativeWaves.svg"
+import lineOval from "../../assets/text-lines/lineOval.svg"
+import lineWaves from "../../assets/text-lines/lineWaves.svg"
 import {navLinks} from "../../shared/navigation.ts";
 import {Button} from "../Button.tsx";
 
@@ -31,10 +31,10 @@ const Footer = () => {
                 <div className="w-full text-center footer-box">
                    <div className="relative inline-block px-8 py-3">
                        <h4 className="text-h4-dec z-10" >Socials</h4>
-                       <img src={decorativeOval}
+                       <img src={lineOval}
                             alt=""
                             aria-hidden="true"
-                            className="absolute inset-0 pointer-events-none scale-125"
+                            className="absolute inset-0 -top-4 pointer-events-none scale-75"
                        />
                    </div>
                     <ul className="mt-4 space-y-4">
@@ -68,10 +68,10 @@ const Footer = () => {
                 <div className="w-full lg:col-span-2 flex flex-col justify-center items-center text-center footer-box px-3">
                     <div className="relative inline-block px-8 py-3">
                         <h4 className="relative text-h4-dec z-10 whitespace-nowrap" >Showtimes (Hours)</h4>
-                        <img src={decorativeWaves}
+                        <img src={lineWaves}
                              alt=""
                              aria-hidden="true"
-                             className="absolute left-1/2 -translate-x-1/2 top-[34px] object-contain pointer-events-none"
+                             className="absolute left-1/2 -translate-x-1/2 top-9 object-contain pointer-events-none scale-50 md:scale-75"
                         />
                     </div>
                     <p className="text-p1 text-[var(--color-light-black)] w-full lg:max-w-md text-center mx-auto">

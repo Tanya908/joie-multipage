@@ -1,4 +1,4 @@
-import decorativeWaves from "../../assets/decorativeWaves.svg";
+import lineWaves from "../../assets/text-lines/lineWaves.svg"
 import rocket from "../../assets/home-page/hero/rocket.svg";
 import butterfly from "../../assets/home-page/hero/butterfly.svg";
 import flower from "../../assets/home-page/hero/flower.svg";
@@ -42,13 +42,17 @@ const Home = () => {
                     <div className="flex flex-col h-full lg:pt-20">
                         <div className="relative inline-block">
                             <h1 className="text-title z-10 pb-3 lg:max-w-lg xl:max-w-3xl">
-                                Your Pediatric Dentist in Ramsey, NJ
+                                Your Pediatric Dentist {" "}
+                                <span className="relative inline-block">
+                                    in Ramsey
+                                    <img src={lineWaves}
+                                         alt=""
+                                         aria-hidden="true"
+                                         className="absolute left-2 -bottom-3 xl:-bottom-4 pointer-events-none scale-90 xl:scale-110"
+                                    />
+                                </span>
+                                {" "} , NJ
                             </h1>
-                            <img src={decorativeWaves}
-                                     alt=""
-                                     aria-hidden="true"
-                                     className="absolute left-4 bottom-0 pointer-events-none scale-125"
-                            />
                         </div>
 
                         <p className="hidden md:flex text-p1 max-w-sm mt-4">

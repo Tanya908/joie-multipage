@@ -1,7 +1,7 @@
 import lineLeft from "../../assets/first-visit/welcome/lineLeft.svg";
 import lineRight from "../../assets/first-visit/welcome/lineRight.svg";
 import background from "../../assets/first-visit/welcome/background.svg";
-import textLine from "../../assets/first-visit/welcome/textLine.svg";
+import lineSecond from "../../assets/text-lines/lineSecond.svg"
 
 const Welcome = () => {
     return (
@@ -40,14 +40,14 @@ const Welcome = () => {
                     A warm welcome (for you and {" "}
                     <span className="relative inline-block">
                     your child)
-                        <img src={textLine}
+                        <img src={lineSecond}
                              alt=""
                              aria-hidden="true"
                              className="absolute left-0 -bottom-9 pointer-events-none scale-90"
                         />
                     </span>
                 </h1>
-                <div className="mt-6 md:mt-10 lg:mt-12 max-w-[720px]">
+                <div className="mt-10 lg:mt-12 max-w-[720px]">
                     <p className="text-p1 text-[var(--color-black)]">
                         When you walk into our office in Ramsey, you’ll find a kid-friendly space that’s bright, welcoming, and designed to make little ones feel at ease.
                     </p>
