@@ -5,6 +5,7 @@ import Start from "./Start.tsx";
 import Welcome from "./Welcome.tsx";
 import ParentPresence from "./ParentPresence.tsx";
 import Exam from "./Exam.tsx";
+import LetsConnect from "../../components/LetsConnect.tsx";
 
 const FirstVisit = () => {
     return (
@@ -14,6 +15,10 @@ const FirstVisit = () => {
             <Welcome/>
             <Exam/>
             <ParentPresence/>
+            <LetsConnect
+                title="Ready to schedule?"
+                description="We can’t wait to meet you and your child — whether it's their first visit or a new dental home, we’ll make it easy, transparent, and joyful."
+            />
             <FindUs background={mapBackgroundBlue} />
         </>
     )
