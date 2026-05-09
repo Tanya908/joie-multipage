@@ -15,7 +15,7 @@ import child from "../../assets/home-page/visit/visit-cards/child.svg";
 import airBallon from "../../assets/home-page/visit/visit-cards/airBallon.svg";
 import sun from "../../assets/home-page/visit/visit-cards/Sun.svg";
 
-import {useState} from "react";
+import {useSlider} from "../../shared/hooks/useSlider.ts";
 
 type VisitProps = {
     background: string;
@@ -54,9 +54,10 @@ const visits:VisitProps[] = [
 
 const Visit = () => {
 
-    const [active, setActive] = useState(0);
-    const next = () => setActive((prev) => (prev + 1) % visits.length);
-    const prev = () => setActive((prev) => (prev - 1 + visits.length) % visits.length);
+    const { active, screenWidth, next, prev } = useSlider({
+        blockLength: visits.length,
+        desktopBreakpoint: 768,
+    });
 
     return (
         <section className="relative py-32 md:py-40">
@@ -106,7 +107,7 @@ const Visit = () => {
                         className="flex md:grid md:grid-rows-2 md:grid-cols-2 md:gap-y-6 gap-0 lg:gap-6 justify-items-center
                                    transition-transform md:transform-none duration-500 ease-out"
                         style={
-                            window.innerWidth < 768
+                            screenWidth < 768
                                 ? { transform: `translateX(-${active * 100}%)` }
                                 : undefined
                         }

@@ -2,9 +2,9 @@ import apple from "../../assets/home-page/services/apple.svg"
 import birdie from "../../assets/home-page/services/birdie.svg"
 import heart from "../../assets/heart.svg"
 import {ButtonArrow} from "../../components/ButtonArrow.tsx";
-import {useEffect, useState} from "react";
 import {Button} from "../../components/Button.tsx";
 import BlobIcon from "../../components/BlobIcon.tsx";
+import {useSlider} from "../../shared/hooks/useSlider.ts";
 
 type ServiceProps = {
     backgroundColor: string;
@@ -41,33 +41,10 @@ const services: ServiceProps[] = [
 ]
 
 const Services = () => {
-
-    const [active, setActive] = useState(0);
-    const [screenWidth, setScreenWidth] = useState(window.innerWidth);
-
-    const next = () => {
-        if (screenWidth >= 1024) return;
-
-        if (active < services.length - 1) {
-            setActive(prev => prev + 1);
-        }
-    };
-
-    const prev = () => {
-        if (screenWidth >= 1024) return;
-
-        if (active > 0) {
-            setActive(prev => prev - 1);
-        }
-    };
-
-    useEffect(() => {
-        const handleResize = () => setScreenWidth(window.innerWidth);
-
-        window.addEventListener("resize", handleResize);
-
-        return () => window.removeEventListener("resize", handleResize);
-    }, []);
+    const { active, screenWidth, next, prev } = useSlider({
+        blockLength: services.length,
+        desktopBreakpoint: 1024,
+    });
 
     const gap = screenWidth >= 1024 ? 0 : 12;
     const cardWidth = screenWidth >= 1024 ? 480 :

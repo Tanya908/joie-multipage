@@ -9,7 +9,7 @@ import background from "../../assets/first-visit/exam/background.svg";
 import {ButtonArrow} from "../../components/ButtonArrow.tsx";
 import Blob from "../../components/Blob.tsx";
 import ShapeImg from "../../components/ShapeImg.tsx";
-import {useEffect, useState} from "react";
+import {useSlider} from "../../shared/hooks/useSlider.ts";
 
 type ExamProps = {
     id: number;
@@ -51,33 +51,9 @@ const ExamCards:ExamProps[] = [
 ]
 
 const Exam = () => {
-    const [active, setActive] = useState(0);
-    const [screenWidth, setScreenWidth] = useState(0);
-
-    const next = () => {
-        if (screenWidth >= 1024) return;
-
-        if (active < ExamCards.length - 1) {
-            setActive(prev => prev + 1);
-        }
-    };
-
-    const prev = () => {
-        if (screenWidth >= 1024) return;
-
-        if (active > 0) {
-            setActive(prev => prev - 1);
-        }
-    };
-
-    useEffect(() => {
-        const handleResize = () => setScreenWidth(window.innerWidth);
-
-        handleResize();
-
-        window.addEventListener("resize", handleResize);
-        return () => window.removeEventListener("resize", handleResize);
-    }, []);
+    const { active, screenWidth, next, prev } = useSlider({
+        blockLength: ExamCards.length,
+    });
     return (
         <section className="relative py-32 mt-24">
             <img

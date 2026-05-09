@@ -7,8 +7,8 @@ import brien from "../../assets/home-page/reviews/brien.webp";
 import maskImg from "../../assets/home-page/reviews/maskImg.svg";
 import quotationMark from "../../assets/home-page/reviews/quotationMark.svg";
 import ShapeImg from "../../components/ShapeImg.tsx";
-import {useEffect, useState} from "react";
 import {Button} from "../../components/Button.tsx";
+import {useSlider} from "../../shared/hooks/useSlider.ts";
 
 
 type ReviewProps = {
@@ -44,31 +44,14 @@ const reviews:ReviewProps[] = [
 
 const Reviews = () => {
 
-    const [active, setActive] = useState(0);
-    const next = () => {
-        if (active < reviews.length - 1) {
-            setActive(prev => prev + 1);
-        }
-    };
-
-    const prev = () => {
-        if (active > 0) {
-            setActive(prev => prev - 1);
-        }
-    };
-
-    const [screenWidth, setScreenWidth] = useState(window.innerWidth);
-    useEffect(() => {
-        const handleResize = () => setScreenWidth(window.innerWidth);
-
-        window.addEventListener("resize", handleResize);
-
-        return () => window.removeEventListener("resize", handleResize);
-    }, []);
+    const { active, screenWidth, next, prev } = useSlider({
+        blockLength: reviews.length,
+        desktopBreakpoint: 99999,
+    });
 
     const gap = screenWidth >= 1024 ? 40 : 16;
-    const cardWidth = screenWidth >= 1024 ? 480 :
-                                    screenWidth >= 768 ? 420 : 280;
+    const cardWidth = screenWidth >= 1024 ? 560 :
+                                    screenWidth >= 768 ? 480 : 320;
 
     return (
         <section className="relative mt-20 pt-20 pb-16">
@@ -115,7 +98,7 @@ const Reviews = () => {
                 <div
                     className="flex gap-4 lg:gap-10 transition-transform duration-500 ease-out"
                     style={{
-                        transform: `translateX(-${active * (cardWidth + gap )}px)`
+                        transform: `translateX(-${active * (cardWidth + gap)}px)`
                     }}
                 >
                     {reviews.map((review) => (

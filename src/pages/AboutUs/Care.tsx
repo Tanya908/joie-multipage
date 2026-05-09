@@ -5,8 +5,8 @@ import childThird from "../../assets/about-us/care/childThird.webp";
 import {ButtonArrow} from "../../components/ButtonArrow.tsx";
 import sun from "../../assets/about-us/care/sun.svg";
 import {Button} from "../../components/Button.tsx";
-import {useEffect, useState} from "react";
 import BlobIcon from "../../components/BlobIcon.tsx";
+import {useSlider} from "../../shared/hooks/useSlider.ts";
 
 type CareImg = {
     img: string;
@@ -28,33 +28,10 @@ const careImages:CareImg[] = [
 
 
 const Care = () => {
-    const [active, setActive] = useState(0);
-    const [screenWidth, setScreenWidth] = useState(0);
-
-    const next = () => {
-        if (screenWidth >= 1024) return;
-
-        if (active < careImages.length - 1) {
-            setActive(prev => prev + 1);
-        }
-    };
-
-    const prev = () => {
-        if (screenWidth >= 1024) return;
-
-        if (active > 0) {
-            setActive(prev => prev - 1);
-        }
-    };
-
-    useEffect(() => {
-        const handleResize = () => setScreenWidth(window.innerWidth);
-
-        handleResize();
-
-        window.addEventListener("resize", handleResize);
-        return () => window.removeEventListener("resize", handleResize);
-    }, []);
+    const { active, screenWidth, next, prev } = useSlider({
+        blockLength: careImages.length,
+        desktopBreakpoint: 768,
+    });
 
     return (
         <section className="mt-24 px-4 md:px-8">
@@ -87,7 +64,7 @@ const Care = () => {
                                     <img
                                         src={item.img}
                                         alt={item.alt}
-                                        className={` rounded-4xl  flex-shrink-0  w-full
+                                        className={` rounded-4xl  flex-shrink-0  w-full 
                                                     ${index === 2 ? "rotate-[-4deg]" : "rotate-[4deg]"}
                                                     ${index !== 0 ? "-ml-1 " : ""}
                                                   `}
