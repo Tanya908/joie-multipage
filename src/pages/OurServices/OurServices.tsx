@@ -1,10 +1,10 @@
 import Hero from "./Hero.tsx";
 
-const OurService = () => {
+const OurServices = () => {
     return (
         <>
             <Hero/>
         </>
     )
 }
-export default OurService
+export default OurServices

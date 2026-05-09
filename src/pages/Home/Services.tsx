@@ -122,7 +122,7 @@ const Services = () => {
             <div className="flex justify-center items-center mt-10 px-4 md:px-8">
                 <Button
                     primary
-                    href="#"
+                    href="/services"
                     external
                     className="whitespace-nowrap w-full md:w-auto "
                 >
