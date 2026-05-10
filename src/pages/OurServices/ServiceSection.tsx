@@ -24,8 +24,8 @@ const ServiceSection = ({
                         }: ServiceSectionProps) => {
     return (
         <section className={`py-20 ${bgColor} px-4 md:px-8`}>
-                <div className="md:text-center md:mx-auto">
-                    <h1 className="text-h1">{title}</h1>
+                <div className="w-full md:text-center flex flex-col item-start md:items-center justify-center">
+                    <h1 className="text-h1 w-[14ch] md:max-w-none">{title}</h1>
                     <h4 className="text-h4 mt-4 text-[var(--color-light-black)]">{subtitle}</h4>
                 </div>
 
