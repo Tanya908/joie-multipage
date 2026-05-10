@@ -25,7 +25,7 @@ const ServiceSection = ({
     return (
         <section className={`py-20 ${bgColor} px-4 md:px-8`}>
                 <div className="w-full md:text-center flex flex-col item-start md:items-center justify-center">
-                    <h1 className="text-h1 w-[14ch] md:max-w-none">{title}</h1>
+                    <h1 className="text-h1 w-[14ch] md:w-full">{title}</h1>
                     <h4 className="text-h4 mt-4 text-[var(--color-light-black)]">{subtitle}</h4>
                 </div>
 

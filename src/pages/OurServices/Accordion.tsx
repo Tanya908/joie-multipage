@@ -30,7 +30,7 @@ const Accordion = ({ items }: AccordionProps) => {
                         >
                             <p className="text-p1-decorative text-[var(--color-black)] ">{item.title}</p>
 
-                            <div className="relative inline-block w-10 h-10 md:w-14 md:h-14 shrink-0">
+                            <div className="relative inline-block w-12 h-12 shrink-0">
                                 <Blob className="text-[var(--color-red)] object-contain w-full h-full"/>
                                 <span className="absolute inset-0 flex items-center justify-center">
                                     <img
