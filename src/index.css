@@ -262,5 +262,10 @@
                active:bg-[var(--color-red)] active:text-[var(--color-white)]
                disabled:text-[var(--color-light-gray)]
     }
+
+    .accordion-hover {
+        @apply hover:bg-[var(--color-light-red)] active:bg-[var(--color-light-red)]
+               transition-colors duration-300;
+    }
 }
 
