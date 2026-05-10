@@ -6,6 +6,7 @@ import { invasive } from "./data/invasive.ts";
 import { restorative } from "./data/restorative.ts";
 import { oralHealth } from "./data/oral-health.ts";
 import { special } from "./data/special.ts";
+import Needs from "./Needs.tsx";
 
 const serviceSections = [
     preventiveCare,
@@ -23,6 +24,7 @@ const OurServices = () => {
                 <ServiceSection key={index} {...section} />
             ))}
 
+            <Needs/>
             <ServiceSection {...special} />
         </>
     );
