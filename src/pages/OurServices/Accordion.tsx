@@ -26,7 +26,7 @@ const Accordion = ({ items }: AccordionProps) => {
                     >
                         <button
                             onClick={() => setOpenIndex(isOpen ? null : index) }
-                            className="w-full flex justify-between items-center gap-4 text-left"
+                            className="w-full flex justify-between items-center gap-8 text-left"
                         >
                             <p className="text-p1-decorative text-[var(--color-black)] ">{item.title}</p>
 

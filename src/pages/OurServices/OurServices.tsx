@@ -3,6 +3,7 @@ import ServiceSection from "./ServiceSection.tsx";
 import {preventiveCare} from "./data/preventive-care.ts";
 import {invasive} from "./data/invasive.ts";
 import {restorative} from "./data/restorative.ts";
+import {oralHealth} from "./data/oral-health.ts";
 
 
 const OurServices = () => {
@@ -12,6 +13,7 @@ const OurServices = () => {
             <ServiceSection {...preventiveCare} />
             <ServiceSection {...invasive} />
             <ServiceSection {...restorative} />
+            <ServiceSection {...oralHealth} />
         </>
     )
 }
