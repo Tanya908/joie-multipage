@@ -29,7 +29,7 @@ const ServiceSection = ({
                     <h4 className="text-h4 mt-4 text-[var(--color-light-black)]">{subtitle}</h4>
                 </div>
 
-                <div className="grid md:grid-cols-2 gap-10 lg:gap-20 items-center justify-center mt-20">
+                <div className="grid md:grid-cols-2 gap-10 lg:gap-20 items-center justify-center mt-12">
 
                     <div className="md:self-start">
                         <ShapeImg
