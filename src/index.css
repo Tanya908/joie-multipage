@@ -200,6 +200,12 @@
     text-transform: var(--btn-tertiary-text-transform);
 }
 
+@utility text-menu {
+    font-size: var(--text-menu-size);
+    font-weight: var(--text-menu-weight);
+    line-height: var(--text-menu-line-height);
+}
+
 @layer utilities {
     .text-hover {
         @apply hover:text-[var(--color-red)] active:text-[var(--color-red)] focus:text-[var(--color-red)] transition-colors duration-200;
@@ -266,6 +272,23 @@
     .accordion-hover {
         @apply hover:bg-[var(--color-light-red)] active:bg-[var(--color-light-red)]
                transition-colors duration-300;
+    }
+
+    .form-input {
+        @apply transition-all duration-300;
+    }
+
+    .form-input::placeholder {
+        color: var(--color-gray);
+        transition: color 0.3s ease;
+    }
+
+    .form-input:hover::placeholder {
+        color: var(--color-black);
+    }
+
+    .form-input:focus::placeholder {
+        color: var(--color-black);
     }
 }
 
