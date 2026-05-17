@@ -11,7 +11,7 @@ type ConnectProps = {
 
 const LetsConnect = ({title,description}:ConnectProps) => {
     return (
-        <section className="relative py-20 px-4 md:px-8 text-center
+        <section className="relative py-20 px-4 md:px-8 text-center mt-24
                             flex flex-col justify-center items-center"
         >
 
@@ -27,7 +27,7 @@ const LetsConnect = ({title,description}:ConnectProps) => {
                 style={{ objectFit: "fill" }}
             />
 
-            <h1 className="text-h1 mb-12 w-full max-w-xl relative">
+            <h1 className="text-h1 mb-12 w-full max-w-5xl relative">
                 {title}
                 <img
                     src={lineSecond} alt="" aria-hidden="true"

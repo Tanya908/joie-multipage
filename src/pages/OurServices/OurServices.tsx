@@ -7,6 +7,7 @@ import { restorative } from "./data/restorative.ts";
 import { oralHealth } from "./data/oral-health.ts";
 import { special } from "./data/special.ts";
 import Needs from "./Needs.tsx";
+import LetsConnect from "../../components/LetsConnect.tsx";
 
 const serviceSections = [
     preventiveCare,
@@ -26,6 +27,10 @@ const OurServices = () => {
 
             <Needs/>
             <ServiceSection {...special} />
+            <LetsConnect
+                title="Want to talk through your child’s needs? We’re here to help"
+                description="We can’t wait to meet you and your child—whether it’s a first visit or a new dental home, we’ll make it easy, transparent, and joyful."
+            />
         </>
     );
 };
