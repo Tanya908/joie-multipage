@@ -7,6 +7,7 @@ type MapboxMapProps = {
     latitude?: number
     longitude?: number
     zoom?: number
+    className?: string;
 }
 
 
@@ -14,9 +15,10 @@ export default function MapBox({
                                    latitude = 41.05783688920977,
                                    longitude = -74.13853825909639,
                                    zoom = 16,
+                                   className = "rounded-4xl",
                                }: MapboxMapProps){
     return (
-        <div className="w-full h-full rounded-4xl overflow-hidden">
+        <div className={`w-full h-full overflow-hidden ${className}`}>
             <Map
                 mapboxAccessToken={MAPBOX_TOKEN}
                 initialViewState={{
