@@ -5,6 +5,7 @@ import AboutUs from "../pages/AboutUs/AboutUS.tsx";
 import FirstVisit from "../pages/FirstVisit/FirstVisit.tsx";
 import OurServices from "../pages/OurServices/OurServices.tsx";
 import ForProfessionals from "../pages/ForProfessionals/ForProfessionals.tsx";
+import ContactUs from "../pages/ContactUs/ContactUs.tsx";
 
 
 export const AppRoutes = () => {
@@ -16,6 +17,7 @@ export const AppRoutes = () => {
                 <Route path="/first-visit" element={<FirstVisit />} />
                 <Route path="/services" element={<OurServices />} />
                 <Route path="/professionals" element={<ForProfessionals />} />
+                <Route path="/contact" element={<ContactUs />} />
             </Route>
         </Routes>
     );
