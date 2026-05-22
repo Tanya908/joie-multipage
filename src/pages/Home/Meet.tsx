@@ -84,8 +84,13 @@ const Meet = () => {
             </div>
 
             <div className="absolute inset-0 overflow-hidden">
-                <img src={lineLeft} alt="" className="absolute left-[-20%] w-[100%] md:w-[70%] lg:w-[35%] -bottom-6 lg:-bottom-6 lg:left-[-10%] max-w-none"/>
-                <img src={lineRight} alt="" className="absolute right-[-14%] w-[100%] md:w-[70%] lg:w-[45%] -bottom-12 max-w-none"/>
+                <img src={lineLeft} alt="" className="absolute -left-6 -translate-x-[5%] -bottom-24  scale-[1.2]
+                                                      md:-bottom-40 md:scale-[0.7] md:left-0 md:-translate-x-[26%]"
+                />
+                <img src={lineRight} alt="" className="absolute left-1/2 -translate-x-[35%] -bottom-16 scale-[1.2]
+                                                       md:scale-[0.7] md:-translate-x-[15%] md:-bottom-32
+                                                       lg:-bottom-44 lg:translate-x-[6%] xl:translate-x-[18%] "
+                />
             </div>
         </section>
     )

@@ -1,4 +1,5 @@
 import background from "../../assets/home-page/visit/background.svg"
+import bgSm from "../../assets/home-page/visit/bgSm.svg"
 import lineOval from "../../assets/text-lines/lineOval.svg"
 import ShapeImg from "../../components/ShapeImg.tsx";
 import {ButtonArrow} from "../../components/ButtonArrow.tsx";
@@ -60,12 +61,18 @@ const Visit = () => {
     });
 
     return (
-        <section className="relative py-32 md:py-40">
+        <section className="relative py-32 ">
+            <img
+                src={bgSm}
+                alt=""
+                aria-hidden="true"
+                className="absolute inset-0 w-full h-full -z-10 object-cover lg:hidden"
+            />
             <img
                 src={background}
                 alt=""
                 aria-hidden="true"
-                className="absolute top-0 left-0 h-full -z-10 object-cover min-w-[360px] md:w-full"
+                className="absolute inset-0 w-full h-full -z-10 object-cover hidden lg:block"
             />
 
            <div className="mb-6">
@@ -90,36 +97,42 @@ const Visit = () => {
            </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-[30%_1fr] xl:grid-cols-[40%_1fr]
-                            gap-6 place-items-center px-0 lg:px-8"
+                            gap-4 place-items-center px-0 lg:px-8"
             >
                 <ShapeImg
                     src={visit}
                     alt="Happy child at the dentist"
                     mask={blob}
-                    wrapperClassName="z-10 w-[360px] h-[400px] md:w-[400px] md:h-[480px]
-                                      xl:w-[480px] xl:h-[560px]"
-                    imgClassName="w-full h-full"
+                    wrapperClassName="z-10  "
+                    imgClassName="w-full h-full relative z-10 lg:scale-[1.6] xl:scale-[1.3]"
                 />
 
                 <div className="w-full mx-auto px-4 overflow-hidden">
                     <div
-                        className="flex md:grid md:grid-rows-2 md:grid-cols-2 md:gap-y-6 gap-0 lg:gap-6 justify-items-center
-                                   transition-transform md:transform-none duration-500 ease-out"
+                        className="flex md:grid md:grid-rows-2 md:grid-cols-2 md:gap-6 lg:gap-0 justify-items-center
+                                   transition-transform md:transform-none duration-500 ease-out max-w-3xl mx-auto"
                         style={
                             screenWidth < 768
                                 ? { transform: `translateX(-${active * 100}%)` }
                                 : undefined
                         }
                     >
-                        {visits.map((visit) => (
-                            <div key={visit.id} className="flex-shrink-0 w-full flex justify-center">
-
+                        {visits.map((visit, index) => (
+                            <div key={visit.id}
+                                 className={`
+                                    flex-shrink-0 w-full flex justify-center            
+                                    ${index === 0 ? "lg:-translate-y-6" : ""}
+                                    ${index === 1 ? "lg:translate-y-8" : ""}
+                                    ${index === 2 ? "lg:-translate-y-14" : ""}
+                                    ${index === 3 ? "lg:translate-y-2" : ""}
+                                `}
+                            >
                                 <div className="relative max-w-md mx-auto">
                                     <img
                                         src={visit.background}
                                         alt=""
                                         aria-hidden="true"
-                                        className="absolute inset-0 w-[500px] h-full object-contain z-0"
+                                        className="absolute inset-0 w-[320px] h-full object-contain z-0"
                                     />
 
                                     <div className="relative z-10 flex flex-col items-center text-center px-12 py-12">
@@ -127,12 +140,12 @@ const Visit = () => {
                                             src={visit.icon}
                                             alt=""
                                             aria-hidden="true"
-                                            className="w-14 h-24 mb-3"
+                                            className="w-12 h-20 mb-3"
                                         />
                                         <h4 className="text-h4-dec mb-2 w-[240px]">
                                             {visit.heading}
                                         </h4>
-                                        <p className="text-p2 w-[240px]">
+                                        <p className="text-p2 w-[200px]">
                                             {visit.description}
                                         </p>
                                     </div>

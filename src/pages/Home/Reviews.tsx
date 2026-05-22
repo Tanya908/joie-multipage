@@ -51,7 +51,12 @@ const Reviews = () => {
 
     const gap = screenWidth >= 1024 ? 40 : 16;
     const cardWidth = screenWidth >= 1024 ? 560 :
-                                    screenWidth >= 768 ? 480 : 320;
+                                    screenWidth >= 768 ? 360 : 320;
+
+    const visibleCards =
+        screenWidth >= 1024 ? 2 :
+            screenWidth >= 768 ? 2 : 1;
+    const maxSlides = reviews.length - visibleCards;
 
     return (
         <section className="relative mt-20 pt-20 pb-16">
@@ -73,8 +78,7 @@ const Reviews = () => {
                         <img src={line}
                              alt=""
                              aria-hidden="true"
-                             className="absolute top-7 lg:top-12 pointer-events-none
-                                        scale-50 lg:scale-100"
+                             className="absolute top-7 md:top-12 pointer-events-none scale-50 md:scale-100"
                         />
                     </span>
                 </h2>
@@ -89,14 +93,14 @@ const Reviews = () => {
                     <ButtonArrow
                         direction="right"
                         onClick={next}
-                        disabled={active === reviews.length - 1}
+                        disabled={active >= maxSlides}
                     />
                 </div>
             </div>
 
             <div className="overflow-hidden px-4 md:px-8 mb-16">
                 <div
-                    className="flex gap-4 lg:gap-10 transition-transform duration-500 ease-out"
+                    className="flex gap-4 lg:gap-14  transition-transform duration-500 ease-out"
                     style={{
                         transform: `translateX(-${active * (cardWidth + gap)}px)`
                     }}
@@ -104,8 +108,8 @@ const Reviews = () => {
                     {reviews.map((review) => (
                         <div
                             key={review.id}
-                            className="flex flex-col shrink-0 relative rounded-4xl border border-[var(--color-light-black)] mt-10 py-8 px-6 md:py-10 md:px-10
-                                       w-full max-w-[320px] max-h-[440px] md:max-w-[480px] md:max-h-[370px] lg:max-w-[560px] lg:max-h-[400px]"
+                            className="flex flex-col shrink-0 relative rounded-4xl border border-[var(--color-light-black)] mt-4 py-8 px-6 md:py-10 md:px-10
+                                        w-[clamp(320px,45vw,560px)] h-[420px] md:h-[580px] lg:h-[460px] xl:h-[460px]"
                         >
                             <img
                                 src={quotationMark}
@@ -113,11 +117,11 @@ const Reviews = () => {
                                 aria-hidden="true"
                                 className="absolute -top-3 left-4 w-8 h-8 md:w-10 md:h-10"
                             />
-                            <h4 className="text-p1 text-[var(--color-black)]">
+                            <h4 className="text-h4 text-[var(--color-black)]">
                                 {review.text}
                             </h4>
 
-                            <div className="flex gap-4 pt-6 items-center mt-auto">
+                            <div className="flex gap-4 items-center mt-auto">
                                 <ShapeImg
                                     src={review.src}
                                     alt={review.name}
@@ -128,9 +132,7 @@ const Reviews = () => {
 
                                 <div>
                                     <p className="text-p1-decorative text-[var(--color-black)]">{review.name}</p>
-                                    <p className="text-p2">
-                                        {review.lastName}
-                                    </p>
+                                    <p className="text-p2">{review.lastName}</p>
                                 </div>
                             </div>
                         </div>

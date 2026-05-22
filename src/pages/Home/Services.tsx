@@ -50,6 +50,11 @@ const Services = () => {
     const cardWidth = screenWidth >= 1024 ? 480 :
         screenWidth >= 768 ? 400 : 320;
 
+    const visibleCards =
+        screenWidth >= 1024 ? 2 :
+            screenWidth >= 768 ? 2 : 1;
+    const maxSlides = services.length - visibleCards;
+
     return (
         <section className="mt-40 pb-16">
             <div className="px-4 md:px-8">
@@ -61,9 +66,9 @@ const Services = () => {
                 </p>
             </div>
 
-            <div className="overflow-hidden">
+            <div className="overflow-hidden ">
                 <div
-                    className="flex gap-3 lg:gap-0 mx-4 md:mx-8 transition-transform duration-300"
+                    className="flex lg:flex-row justify-start lg:justify-center gap-3 md:gap-10 lg:gap-0 transition-transform duration-300"
                     style={{
                         transform: screenWidth < 1024
                             ? `translateX(-${active * (cardWidth + gap)}px)` : "none"
@@ -72,17 +77,18 @@ const Services = () => {
                     {services.map((service, index) => (
                         <div
                             key={service.id}
-                            className={`flex flex-col shrink-0 w-[320px] md:w-[400px] h-[520px] lg:w-[clamp(280px,32vw,560px)] lg:h-[clamp(580px,35vw,400px)] 
-                                        rounded-4xl py-8 px-4 md:px-10 relative overflow-hidden ${service.backgroundColor}                         
-                                        ${index === 0 ? "lg:z-10 lg:translate-x-10" : ""}
-                                        ${index === 1 ? "lg:z-20 lg:pr-10" : ""}
-                                        ${index === 2 ? "lg:z-10  lg:-translate-x-6" : ""}
+                            className={`grid grid-rows-[auto_auto_1fr] shrink-0 w-[clamp(320px,30vw,520px)]
+                                        min-h-[420px]  p-8 
+                                        rounded-4xl  ${service.backgroundColor}                         
+                                        ${index === 0 ? "lg:z-10 lg:translate-x-12 ml-4 lg:pr-20 lg:rounded-r-none  " : ""}
+                                        ${index === 1 ? "lg:z-20 " : ""}
+                                        ${index === 2 ? "lg:z-10 lg:-translate-x-12 lg:rounded-l-none lg:pl-18 " : ""}
                                       `}
                         >
-                            <h3 className="text-h3">{service.title}</h3>
+                            <h3 className="text-h3 h-[90px] md:h-[140px] lg:h-[140px] xl:h-[110px]">{service.title}</h3>
 
-                            <div className="flex flex-1 items-center justify-center my-6 xl:my-0">
-                                <div className="relative inline-block shrink-0">
+                            <div className="flex flex-1 items-center justify-center mb-6 xl:mb-0">
+                                <div className="relative inline-block shrink-0 py-6 xl:py-12">
                                     <BlobIcon
                                         blobClassName="w-20 h-20 xl:w-24 xl:h-24"
                                         iconClassName="w-12 h-12 xl:w-14 xl:h-14"
@@ -91,13 +97,14 @@ const Services = () => {
                                 </div>
                             </div>
 
-                                <p className="text-p1-caps text-[var(--color-black)] mb-2 md:mb-4">
+                            <div>
+                                <p className={`text-p1-caps text-[var(--color-black)] mb-2 md:mb-4 ${index === 0 ? "max-w-[320px] " : ""}`}>
                                     {service.heading}
                                 </p>
-
-                                <p className="text-p1">
+                                <p className="text-p1 ">
                                     {service.description}
                                 </p>
+                            </div>
                         </div>
                     ))}
                 </div>
@@ -115,7 +122,7 @@ const Services = () => {
                     variant="secondary"
                     direction="right"
                     onClick={next}
-                    disabled={active === services.length - 1}
+                    disabled={active >= maxSlides}
                 />
             </div>
 

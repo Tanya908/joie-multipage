@@ -85,14 +85,14 @@ const Home = () => {
                             ))}
                         </div>
                     </div>
-                    <div className="hidden lg:block lg:max-w-[560px] xl:max-w-[600px] aspect-[600/560] self-center
-                                    xl:justify-self-end relative w-full mr-12"
+                    <div className="hidden lg:block lg:max-w-[560px] xl:max-w-[680px] aspect-[600/560] self-center
+                                    justify-self-end relative w-full"
                     >
                         <img
                             src={heroVector}
                             alt=""
                             aria-hidden="true"
-                            className="absolute inset-0 left-5 w-full h-full object-contain scale-105 z-0"
+                            className="absolute inset-0 left-0 -top-4 w-full h-full object-contain scale-100 z-0"
                         />
                         <ShapeImg
                             src={home}

@@ -7,6 +7,7 @@ import children from "../../assets/home-page/why-us/children.webp";
 import maskBg from "../../assets/home-page/why-us/maskBg.svg";
 import maskBgRect from "../../assets/home-page/why-us/maskBgRectangular.svg";
 import Blob from "../../components/Blob.tsx";
+import bgSm from "../../assets/home-page/why-us/bgSm.svg";
 
 type WhyProps = {
     id:number;
@@ -62,8 +63,14 @@ const WhyUs = () => {
                 src={background}
                 alt=""
                 aria-hidden="true"
-                className="absolute top-0 left-0 h-full -z-10 w-full"
-                style={{objectFit: "fill"}}
+                className="absolute inset-0 w-full h-full -z-10 object-cover hidden md:block"
+            />
+
+            <img
+                src={bgSm}
+                alt=""
+                aria-hidden="true"
+                className="absolute inset-0 w-full h-full -z-10 object-cover md:hidden"
             />
 
             <div className="text-center mx-auto w-fit">
