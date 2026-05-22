@@ -51,9 +51,11 @@ const ExamCards:ExamProps[] = [
 ]
 
 const Exam = () => {
-    const { active, screenWidth, next, prev } = useSlider({
-        blockLength: ExamCards.length,
-    });
+
+    const screenWidth = window.innerWidth;
+    const visibleCards = 1;
+    const { active,next,prev, maxSlides,} = useSlider({blockLength: ExamCards.length,visibleCards});
+
     return (
         <section className="relative py-32 mt-24">
             <img
@@ -87,7 +89,7 @@ const Exam = () => {
                 <ButtonArrow
                     direction="right"
                     onClick={next}
-                    disabled={active === ExamCards.length - 1}
+                    disabled={active >= maxSlides}
                 />
             </div>
 

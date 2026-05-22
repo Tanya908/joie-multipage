@@ -41,19 +41,12 @@ const services: ServiceProps[] = [
 ]
 
 const Services = () => {
-    const { active, screenWidth, next, prev } = useSlider({
-        blockLength: services.length,
-        desktopBreakpoint: 1024,
-    });
 
-    const gap = screenWidth >= 1024 ? 0 : 12;
-    const cardWidth = screenWidth >= 1024 ? 480 :
-        screenWidth >= 768 ? 400 : 320;
-
-    const visibleCards =
-        screenWidth >= 1024 ? 2 :
-            screenWidth >= 768 ? 2 : 1;
-    const maxSlides = services.length - visibleCards;
+    const screenWidth = window.innerWidth;
+    const visibleCards =screenWidth >= 768 ? 2 : 1;
+    const gap =screenWidth >= 1024 ? 0 : 12;
+    const slideWidth = screenWidth >= 768? window.innerWidth / 2 : window.innerWidth;
+    const {active,next,prev,maxSlides,} = useSlider({blockLength: services.length,visibleCards});
 
     return (
         <section className="mt-40 pb-16">
@@ -69,17 +62,13 @@ const Services = () => {
             <div className="overflow-hidden ">
                 <div
                     className="flex lg:flex-row justify-start lg:justify-center gap-3 md:gap-10 lg:gap-0 transition-transform duration-300"
-                    style={{
-                        transform: screenWidth < 1024
-                            ? `translateX(-${active * (cardWidth + gap)}px)` : "none"
-                    }}
+                    style={{ transform: screenWidth < 1024? `translateX(-${active * (slideWidth + gap)}px)` : "none"}}
                 >
                     {services.map((service, index) => (
                         <div
                             key={service.id}
                             className={`grid grid-rows-[auto_auto_1fr] shrink-0 w-[clamp(320px,30vw,520px)]
-                                        min-h-[420px]  p-8 
-                                        rounded-4xl  ${service.backgroundColor}                         
+                                        min-h-[420px] p-8 rounded-4xl ${service.backgroundColor}                         
                                         ${index === 0 ? "lg:z-10 lg:translate-x-12 ml-4 lg:pr-20 lg:rounded-r-none  " : ""}
                                         ${index === 1 ? "lg:z-20 " : ""}
                                         ${index === 2 ? "lg:z-10 lg:-translate-x-12 lg:rounded-l-none lg:pl-18 " : ""}

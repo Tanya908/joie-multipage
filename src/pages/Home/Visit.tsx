@@ -55,13 +55,12 @@ const visits:VisitProps[] = [
 
 const Visit = () => {
 
-    const { active, screenWidth, next, prev } = useSlider({
-        blockLength: visits.length,
-        desktopBreakpoint: 768,
-    });
+    const screenWidth = window.innerWidth;
+    const visibleCards = screenWidth >= 768 ? 2 : 1;
+    const {active,next,prev,maxSlides} = useSlider({blockLength: visits.length,visibleCards});
 
     return (
-        <section className="relative py-32 ">
+        <section className="relative py-32">
             <img
                 src={bgSm}
                 alt=""
@@ -166,10 +165,9 @@ const Visit = () => {
                 <ButtonArrow
                     direction="right"
                     onClick={next}
-                    disabled={active === visits.length - 1}
+                    disabled={active >= maxSlides}
                 />
             </div>
-
         </section>
     )
 }

@@ -9,6 +9,7 @@ import quotationMark from "../../assets/home-page/reviews/quotationMark.svg";
 import ShapeImg from "../../components/ShapeImg.tsx";
 import {Button} from "../../components/Button.tsx";
 import {useSlider} from "../../shared/hooks/useSlider.ts";
+import {useEffect, useRef, useState} from "react";
 
 
 type ReviewProps = {
@@ -43,20 +44,51 @@ const reviews:ReviewProps[] = [
 
 
 const Reviews = () => {
+    const screenWidth = window.innerWidth;
 
-    const { active, screenWidth, next, prev } = useSlider({
-        blockLength: reviews.length,
-        desktopBreakpoint: 99999,
-    });
+    const [cardWidth, setCardWidth] = useState(0);
+    const cardRef = useRef<HTMLDivElement>(null);
 
-    const gap = screenWidth >= 1024 ? 40 : 16;
-    const cardWidth = screenWidth >= 1024 ? 560 :
-                                    screenWidth >= 768 ? 360 : 320;
+    useEffect(() => {
+        const updateWidth = () => {
+            if (cardRef.current) {
+                setCardWidth(
+                    cardRef.current.offsetWidth
+                );
+            }
+        };
+
+        updateWidth();
+
+        window.addEventListener(
+            "resize",
+            updateWidth
+        );
+
+        return () => {
+            window.removeEventListener(
+                "resize",
+                updateWidth
+            );
+        };
+    }, []);
 
     const visibleCards =
-        screenWidth >= 1024 ? 2 :
-            screenWidth >= 768 ? 2 : 1;
-    const maxSlides = reviews.length - visibleCards;
+        screenWidth >= 768 ? 2 : 1;
+
+    const gap =
+        screenWidth >= 1024 ? 40 : 16;
+
+
+    const {
+        active,
+        next,
+        prev,
+        maxSlides,
+    } = useSlider({
+        blockLength: reviews.length,
+        visibleCards,
+    });
 
     return (
         <section className="relative mt-20 pt-20 pb-16">
@@ -107,6 +139,7 @@ const Reviews = () => {
                 >
                     {reviews.map((review) => (
                         <div
+                            ref={review.id === 1 ? cardRef : null}
                             key={review.id}
                             className="flex flex-col shrink-0 relative rounded-4xl border border-[var(--color-light-black)] mt-4 py-8 px-6 md:py-10 md:px-10
                                         w-[clamp(320px,45vw,560px)] h-[420px] md:h-[580px] lg:h-[460px] xl:h-[460px]"

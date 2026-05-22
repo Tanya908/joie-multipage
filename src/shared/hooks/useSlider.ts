@@ -1,45 +1,30 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 type UseSliderProps = {
     blockLength: number;
-    desktopBreakpoint?: number;
+    visibleCards?: number;
 };
 
-export const useSlider = ({ blockLength, desktopBreakpoint = 1024, }: UseSliderProps) => {
+export const useSlider = ({
+                              blockLength,
+                              visibleCards = 1,
+                          }: UseSliderProps) => {
+
     const [active, setActive] = useState(0);
-    const [screenWidth, setScreenWidth] = useState(0);
+
+    const maxSlides = Math.max(blockLength - visibleCards,0);
 
     const next = () => {
-        if (screenWidth >= desktopBreakpoint) return;
-
-        if (active < blockLength - 1) {
-            setActive((prev) => prev + 1);
-        }
+        setActive(prev => Math.min(prev + 1, maxSlides));
     };
 
     const prev = () => {
-        if (screenWidth >= desktopBreakpoint) return;
-
-        if (active > 0) {
-            setActive((prev) => prev - 1);
-        }
+        setActive(prev =>Math.max(prev - 1, 0));
     };
 
-    useEffect(() => {
-        const handleResize = () => setScreenWidth(window.innerWidth);
-
-        handleResize();
-
-        window.addEventListener("resize", handleResize);
-
-        return () => window.removeEventListener("resize", handleResize);
-    }, []);
-
-    return {
-        active,
-        screenWidth,
-        next,
-        prev,
-        setActive,
+    const goTo = (index: number) => {
+        setActive(Math.max(0,Math.min(index, maxSlides)));
     };
+
+    return {active,next,prev,goTo,maxSlides};
 };

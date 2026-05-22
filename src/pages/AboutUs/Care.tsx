@@ -28,10 +28,10 @@ const careImages:CareImg[] = [
 
 
 const Care = () => {
-    const { active, screenWidth, next, prev } = useSlider({
-        blockLength: careImages.length,
-        desktopBreakpoint: 768,
-    });
+
+    const screenWidth = window.innerWidth;
+    const visibleCards = 1;
+    const {active,next,prev,maxSlides,} = useSlider({blockLength: careImages.length,visibleCards});
 
     return (
         <section className="mt-24 px-4 md:px-8">
@@ -87,7 +87,7 @@ const Care = () => {
                         variant="secondary"
                         direction="right"
                         onClick={next}
-                        disabled={active === careImages.length - 1}
+                        disabled={active >= maxSlides}
                     />
                 </div>
             </div>
