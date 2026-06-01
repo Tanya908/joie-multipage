@@ -10,6 +10,8 @@ import ShapeImg from "../../components/ShapeImg.tsx";
 import {Button} from "../../components/Button.tsx";
 import {useSlider} from "../../shared/hooks/useSlider.ts";
 import {useEffect, useRef, useState} from "react";
+import {useBreakpoint} from "../../shared/hooks/useScreenWidth.ts";
+import {useSwipeSlider} from "../../shared/hooks/useSwipeSlider.ts";
 
 
 type ReviewProps = {
@@ -44,51 +46,31 @@ const reviews:ReviewProps[] = [
 
 
 const Reviews = () => {
-    const screenWidth = window.innerWidth;
 
+    const { isMobile, isDesktop } = useBreakpoint();
     const [cardWidth, setCardWidth] = useState(0);
     const cardRef = useRef<HTMLDivElement>(null);
+    const visibleCards = isMobile ? 1 : 2;
+    const gap = isDesktop ? 40 : 16;
 
     useEffect(() => {
         const updateWidth = () => {
             if (cardRef.current) {
-                setCardWidth(
-                    cardRef.current.offsetWidth
-                );
+                setCardWidth(cardRef.current.offsetWidth);
             }
         };
 
         updateWidth();
 
-        window.addEventListener(
-            "resize",
-            updateWidth
-        );
+        window.addEventListener("resize", updateWidth);
 
         return () => {
-            window.removeEventListener(
-                "resize",
-                updateWidth
-            );
+            window.removeEventListener("resize", updateWidth);
         };
-    }, []);
+    }, [isMobile, isDesktop]);
 
-    const visibleCards =
-        screenWidth >= 768 ? 2 : 1;
-
-    const gap =
-        screenWidth >= 1024 ? 40 : 16;
-
-
-    const {
-        active,
-        next,
-        prev,
-        maxSlides,
-    } = useSlider({
-        blockLength: reviews.length,
-        visibleCards,
-    });
+    const {active,next,prev,maxSlides} = useSlider({blockLength: reviews.length,visibleCards });
+    const {handleTouchStart,handleTouchEnd} = useSwipeSlider({next,prev});
 
     return (
         <section className="relative mt-20 pt-20 pb-16">
@@ -130,9 +112,12 @@ const Reviews = () => {
                 </div>
             </div>
 
-            <div className="overflow-hidden content-padding mb-16">
+            <div className="overflow-hidden content-padding mb-16"
+                 onTouchStart={handleTouchStart}
+                 onTouchEnd={handleTouchEnd}
+            >
                 <div
-                    className="flex gap-4 lg:gap-14  transition-transform duration-500 ease-out"
+                    className="flex gap-4 lg:gap-14 transition-transform duration-300 ease-out"
                     style={{
                         transform: `translateX(-${active * (cardWidth + gap)}px)`
                     }}

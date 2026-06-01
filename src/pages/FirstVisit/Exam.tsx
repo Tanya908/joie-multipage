@@ -10,6 +10,8 @@ import {ButtonArrow} from "../../components/ButtonArrow.tsx";
 import Blob from "../../components/Blob.tsx";
 import ShapeImg from "../../components/ShapeImg.tsx";
 import {useSlider} from "../../shared/hooks/useSlider.ts";
+import {useBreakpoint} from "../../shared/hooks/useScreenWidth.ts";
+import {useSwipeSlider} from "../../shared/hooks/useSwipeSlider.ts";
 
 type ExamProps = {
     id: number;
@@ -52,9 +54,9 @@ const ExamCards:ExamProps[] = [
 
 const Exam = () => {
 
-    const screenWidth = window.innerWidth;
-    const visibleCards = 1;
-    const { active,next,prev, maxSlides,} = useSlider({blockLength: ExamCards.length,visibleCards});
+    const { active,next,prev, maxSlides,} = useSlider({blockLength: ExamCards.length,visibleCards:1,});
+    const { isMobile } = useBreakpoint();
+    const {handleTouchStart,handleTouchEnd} = useSwipeSlider({next,prev});
 
     return (
         <section className="relative py-32 mt-24">
@@ -93,10 +95,13 @@ const Exam = () => {
                 />
             </div>
 
-            <div className="overflow-hidden w-full px-0 md:px-8">
+            <div className="overflow-hidden w-full px-0 md:px-8"
+                 onTouchStart={handleTouchStart}
+                 onTouchEnd={handleTouchEnd}
+            >
                 <div
                     className="flex md:flex-col transition-transform duration-300"
-                    style={{transform:screenWidth < 768 ? `translateX(-${active * 90}%)` : "none",}}
+                    style={{transform: isMobile  ? `translateX(-${active * 90}%)` : "none",}}
                 >
                     {ExamCards.map((item, index) => (
                         <div

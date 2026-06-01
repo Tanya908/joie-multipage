@@ -7,6 +7,8 @@ import sun from "../../assets/about-us/care/sun.svg";
 import {Button} from "../../components/Button.tsx";
 import BlobIcon from "../../components/BlobIcon.tsx";
 import {useSlider} from "../../shared/hooks/useSlider.ts";
+import {useBreakpoint} from "../../shared/hooks/useScreenWidth.ts";
+import {useSwipeSlider} from "../../shared/hooks/useSwipeSlider.ts";
 
 type CareImg = {
     img: string;
@@ -29,9 +31,9 @@ const careImages:CareImg[] = [
 
 const Care = () => {
 
-    const screenWidth = window.innerWidth;
-    const visibleCards = 1;
-    const {active,next,prev,maxSlides,} = useSlider({blockLength: careImages.length,visibleCards});
+    const { isMobile } = useBreakpoint();
+    const {active,next,prev,maxSlides,} = useSlider({blockLength: careImages.length,visibleCards:1,});
+    const {handleTouchStart,handleTouchEnd} = useSwipeSlider({next,prev});
 
     return (
         <section className="mt-24 content-padding">
@@ -54,10 +56,13 @@ const Care = () => {
             </div>
 
             <div className="mb-12 mt-10 -mx-4">
-                <div className="overflow-hidden py-10 pl-4">
+                <div className="overflow-hidden py-10 pl-4"
+                     onTouchStart={handleTouchStart}
+                     onTouchEnd={handleTouchEnd}
+                >
                     <div
                         className="flex md:grid md:grid-cols-3 mx-4 md:mx-8 transition-transform duration-300"
-                        style={{transform: screenWidth < 768 ? `translateX(-${active * 100}%)`: "none"}}
+                        style={{transform: isMobile ? `translateX(-${active * 100}%)`: "none"}}
                     >
                             {careImages.map((item, index) => (
                                 <div key={item.id} className="w-full flex-shrink-0 flex justify-center">

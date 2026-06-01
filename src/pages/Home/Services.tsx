@@ -1,11 +1,13 @@
+import {useSlider} from "../../shared/hooks/useSlider.ts";
+import { useState, useRef, useEffect } from "react";
+import {useBreakpoint} from "../../shared/hooks/useScreenWidth.ts";
 import apple from "../../assets/home-page/services/apple.svg"
 import birdie from "../../assets/home-page/services/birdie.svg"
 import heart from "../../assets/heart.svg"
 import {ButtonArrow} from "../../components/ButtonArrow.tsx";
 import {Button} from "../../components/Button.tsx";
 import BlobIcon from "../../components/BlobIcon.tsx";
-import {useSlider} from "../../shared/hooks/useSlider.ts";
-import { useState, useRef, useEffect } from "react";
+import {useSwipeSlider} from "../../shared/hooks/useSwipeSlider.ts";
 
 type ServiceProps = {
     backgroundColor: string;
@@ -43,17 +45,19 @@ const services: ServiceProps[] = [
 
 const Services = () => {
 
-    const screenWidth = window.innerWidth;
+    const { isMobile, isDesktop } = useBreakpoint();
     const cardRef = useRef<HTMLDivElement>(null);
     const [slideWidth, setSlideWidth] = useState(0);
+    const visibleCards = isMobile ? 1 : 2;
+    const gap = isDesktop ? 0 : 12;
+    const {active,next,prev,maxSlides,} = useSlider({blockLength: services.length,visibleCards});
+    const {handleTouchStart,handleTouchEnd} = useSwipeSlider({next,prev});
+
     useEffect(() => {
         if (cardRef.current) {
             setSlideWidth(cardRef.current.offsetWidth);
         }
-    }, [screenWidth]);
-    const visibleCards =screenWidth >= 768 ? 2 : 1;
-    const gap =screenWidth >= 1024 ? 0 : 12;
-    const {active,next,prev,maxSlides,} = useSlider({blockLength: services.length,visibleCards});
+    }, []);
 
     return (
         <section className="mt-40 pb-16">
@@ -66,10 +70,13 @@ const Services = () => {
                 </p>
             </div>
 
-            <div className="overflow-hidden ">
+            <div className="overflow-hidden"
+                 onTouchStart={handleTouchStart}
+                 onTouchEnd={handleTouchEnd}
+            >
                 <div
                     className="flex lg:flex-row justify-start lg:justify-center gap-3 md:gap-10 lg:gap-0 transition-transform duration-300"
-                    style={{ transform: screenWidth < 1024? `translateX(-${active * (slideWidth + gap)}px)` : "none"}}
+                    style={{ transform: !isDesktop ? `translateX(-${active * (slideWidth + gap)}px)` : "none"}}
                 >
                     {services.map((service, index) => (
                         <div

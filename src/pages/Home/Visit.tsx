@@ -17,6 +17,8 @@ import airBallon from "../../assets/home-page/visit/visit-cards/airBallon.svg";
 import sun from "../../assets/home-page/visit/visit-cards/Sun.svg";
 
 import {useSlider} from "../../shared/hooks/useSlider.ts";
+import {useBreakpoint} from "../../shared/hooks/useScreenWidth.ts";
+import {useSwipeSlider} from "../../shared/hooks/useSwipeSlider.ts";
 
 type VisitProps = {
     background: string;
@@ -55,9 +57,10 @@ const visits:VisitProps[] = [
 
 const Visit = () => {
 
-    const screenWidth = window.innerWidth;
-    const visibleCards = screenWidth >= 768 ? 2 : 1;
+    const { isMobile } = useBreakpoint();
+    const visibleCards = isMobile ? 1 : 2;
     const {active,next,prev,maxSlides} = useSlider({blockLength: visits.length,visibleCards});
+    const {handleTouchStart,handleTouchEnd} = useSwipeSlider({next,prev});
 
     return (
         <section className="relative py-32">
@@ -106,15 +109,14 @@ const Visit = () => {
                     imgClassName="w-full h-full relative z-10 lg:scale-[1.6] xl:scale-[1.3]"
                 />
 
-                <div className="w-full mx-auto px-4 overflow-hidden">
+                <div className="w-full mx-auto px-4 overflow-hidden"
+                     onTouchStart={handleTouchStart}
+                     onTouchEnd={handleTouchEnd}
+                >
                     <div
                         className="flex md:grid md:grid-rows-2 md:grid-cols-2 md:gap-6 lg:gap-0 justify-items-center
                                    transition-transform md:transform-none duration-500 ease-out max-w-3xl mx-auto"
-                        style={
-                            screenWidth < 768
-                                ? { transform: `translateX(-${active * 100}%)` }
-                                : undefined
-                        }
+                        style={isMobile ? { transform: `translateX(-${active * 100}%)`} : undefined }
                     >
                         {visits.map((visit, index) => (
                             <div key={visit.id}
