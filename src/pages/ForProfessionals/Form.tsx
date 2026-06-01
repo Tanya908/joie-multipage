@@ -41,7 +41,7 @@ const Checkbox:CheckboxProps[] = [
 const Form = () => {
 
     return (
-        <section className="w-full px-4 md:px-8 mt-20">
+        <section className="w-full content-padding mt-20">
             <div className="mx-auto bg-[var(--color-light-blue)] rounded-[48px] px-3 md:px-10 py-16">
                 <div className="max-w-4xl mx-auto">
                     <div className="text-center mb-10">

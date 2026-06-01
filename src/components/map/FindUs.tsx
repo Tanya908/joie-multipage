@@ -21,7 +21,7 @@ const FindUs = ({
                 style={{objectFit: "fill"}}
             />
 
-            <div className="pt-28 pb-24 grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-10 px-4 md:px-8">
+            <div className="pt-28 pb-24 grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-10 content-padding">
                 <div className="bg-[var(--color-white)] px-3 py-8 md:p-10 rounded-4xl">
                     <h2 className="text-h2 w-full mb-3">
                         Let’s Make Your {" "}

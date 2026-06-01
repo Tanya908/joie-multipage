@@ -8,7 +8,7 @@ import ShapeImg from "../../components/ShapeImg.tsx";
 
 const Hero = () => {
     return (
-        <section className="mt-32 lg:mt-42 px-4 md:px-8 relative">
+        <section className="mt-32 lg:mt-42 content-padding relative">
             <div className="relative bg-[var(--color-light-yellow)] rounded-3xl px-3 md:px-12
                            max-h-[650px] xl:max-h-[720px] gap-6 overflow-hidden"
             >

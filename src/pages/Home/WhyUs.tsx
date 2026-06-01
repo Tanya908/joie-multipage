@@ -89,7 +89,7 @@ const WhyUs = () => {
             </div>
 
 
-            <div className="mt-20 grid grid-cols-1 gap-10 md:grid-cols-3 items-start px-4 md:px-8">
+            <div className="mt-20 grid grid-cols-1 gap-10 md:grid-cols-3 items-start content-padding">
                 {WhyCards.map((item,i) => (
                     <div
                         key={item.id}

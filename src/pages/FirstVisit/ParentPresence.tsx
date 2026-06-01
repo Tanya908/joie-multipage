@@ -6,7 +6,7 @@ import bgLineSm from "../../assets/first-visit/parent-presence/bgLineSm.svg";
 
 const ParentPresence = () => {
     return (
-        <section className="relative mt-24 pt-20  px-4 md:px-8">
+        <section className="relative mt-24 pt-20  content-padding">
             <div className="relative z-10 flex flex-col lg:flex-row items-stretch lg:max-h-[520px]">
                 <div className="lg:w-[45%] flex flex-col lg:flex-row items-stretch">
                     <div className="flex flex-col h-full w-full relative py-10 px-3 md:p-14 bg-[var(--color-light-yellow)]

@@ -18,7 +18,7 @@ const socials:SocialLink[] =  [
 
 const Footer = () => {
     return (
-        <footer className="mt-20 pb-16 px-4 md:px-8 rounded-t-[40px] bg-[var(--color-light-yellow)]">
+        <footer className="mt-20 pb-16 content-padding rounded-t-[40px] bg-[var(--color-light-yellow)]">
             <div className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-4">
                 <div className="md:col-span-2 lg:col-span-4 flex items-center justify-center mt-16">
                     <img

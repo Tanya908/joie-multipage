@@ -57,7 +57,7 @@ const Services = () => {
 
     return (
         <section className="mt-40 pb-16">
-            <div className="px-4 md:px-8">
+            <div className="content-padding">
                 <h2 className="text-h1 text-center mb-4">
                     Our Pediatric Dental Services
                 </h2>
@@ -123,7 +123,7 @@ const Services = () => {
                 />
             </div>
 
-            <div className="flex justify-center items-center mt-10 px-4 md:px-8">
+            <div className="flex justify-center items-center mt-10 content-padding">
                 <Button
                     primary
                     href="/services"

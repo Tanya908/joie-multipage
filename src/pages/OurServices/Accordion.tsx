@@ -22,7 +22,7 @@ const Accordion = ({ items }: AccordionProps) => {
                 return (
                     <div
                         key={index}
-                        className="border-b border-[var(--color-light-blue)] py-4 accordion-hover"
+                        className="border-b border-[var(--color-light-blue)] py-4 px-4 accordion-hover"
                     >
                         <button
                             onClick={() => setOpenIndex(isOpen ? null : index) }

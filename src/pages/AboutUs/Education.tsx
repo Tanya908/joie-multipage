@@ -8,7 +8,7 @@ import background from "../../assets/about-us/education/background.svg";
 
 const Education = () => {
     return (
-        <section className="relative mt-24 pt-20 pb-32 px-4 md:px-8">
+        <section className="relative mt-24 pt-20 pb-32 content-padding">
             <img
                 src={background}
                 alt=""

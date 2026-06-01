@@ -7,7 +7,7 @@ import maskImgMd from "../../assets/for-professinals/hero/maskImgMd.svg";
 
 const Hero = () => {
     return (
-        <section className="mt-32 md:mt-40 px-4 md:px-8 relative">
+        <section className="mt-32 md:mt-40 content-padding relative overflow-hidden">
             <div className="relative flex flex-col lg:flex-row justify-between items-center rounded-3xl
                             bg-[var(--color-light-yellow)] px-3 md:px-12 xl:px-20 py-12 lg:py-15"
             >

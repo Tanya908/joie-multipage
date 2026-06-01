@@ -18,7 +18,7 @@ export const refers: RefersProps = {
 
 const Refer = () => {
     return (
-        <section className="px-4 md:px-8 relative mt-20 pt-36 pb-20 lg:pt-24 lg:pb-10">
+        <section className="content-padding relative mt-20 pt-36 pb-20 lg:pt-24 lg:pb-10">
             <img
                 src={referBg}
                 alt=""
@@ -34,7 +34,7 @@ const Refer = () => {
                     Dentistry?
                     <img src={line}
                          alt="" aria-hidden="true"
-                         className="absolute left-10 -bottom-8 pointer-events-none scale-90 lg:scale-110"
+                         className="absolute left-6 -bottom-8 pointer-events-none scale-75 lg:scale-110"
                     />
                 </span>
                </h1>

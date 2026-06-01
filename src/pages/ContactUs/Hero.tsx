@@ -2,7 +2,7 @@ import textLine from "../../assets/contact-us/textLine.svg"
 import lineBg from "../../assets/contact-us/lineBg.svg";
 const Hero = () => {
     return (
-        <section className="mt-32 md:mt-40 px-4 md:px-8 relative">
+        <section className="mt-32 md:mt-40 content-padding relative">
             <div className="bg-[var(--color-light-yellow)] rounded-[40px] py-16 md:py-24 px-3
                             flex flex-col items-center justify-center relative overflow-hidden"
             >

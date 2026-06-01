@@ -11,7 +11,7 @@ type ConnectProps = {
 
 const LetsConnect = ({title,description}:ConnectProps) => {
     return (
-        <section className="relative py-20 px-4 md:px-8 text-center mt-24
+        <section className="relative py-20 content-padding text-center mt-24
                             flex flex-col justify-center items-center"
         >
 

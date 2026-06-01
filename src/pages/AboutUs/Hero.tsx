@@ -9,7 +9,7 @@ import BlobIcon from "../../components/BlobIcon.tsx";
 
 const Hero = () => {
     return (
-        <section className="mt-40 px-4 md:px-8 relative">
+        <section className="mt-40 content-padding relative">
             <div className="relative bg-[var(--color-light-yellow)] rounded-3xl px-3 py-12 md:px-12
                             flex flex-col items-center md:flex-row gap-6"
             >

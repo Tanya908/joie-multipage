@@ -2,7 +2,7 @@ import {Button} from "../../components/Button.tsx";
 
 const Contacts = () => {
     return (
-        <section className="mt-20 px-4 md:px-8">
+        <section className="mt-20 content-padding">
             <div className="py-12 md:py-20 px-3 md:px-10 lg:px-16 bg-[var(--color-light-blue)] rounded-[40px]">
                 <div className="flex flex-col items-center justify-center text-center max-w-4xl mx-auto">
                     <div className="grid md:grid-cols-2 md:items-start md:gap-24">

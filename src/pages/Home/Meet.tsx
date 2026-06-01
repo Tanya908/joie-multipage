@@ -22,7 +22,7 @@ const Meet = () => {
                 style={{objectFit: "fill"}}
             />
 
-            <div className="relative px-4 md:px-8 lg:px-10 z-10">
+            <div className="relative content-padding lg:px-10 z-10">
                 <div className="grid grid-cols-1 md:grid-cols-[50%_1fr] auto-rows-min justify-items-stretch items-start gap-0 lg:gap-10">
                     <div>
                         <div className="flex gap-3 items-center">

@@ -65,7 +65,7 @@ const Exam = () => {
                 className="absolute top-0 left-0 h-full -z-10 w-full"
                 style={{objectFit: "fill"}}
             />
-            <h1 className="text-h1 mb-12 px-4 md:px-8 w-full max-w-4xl md:text-center md:mx-auto">
+            <h1 className="text-h1 mb-12 content-padding w-full max-w-4xl md:text-center md:mx-auto">
                 The {" "}
                 <span className="relative inline-block">
                     exam: {" "}
@@ -136,7 +136,7 @@ const Exam = () => {
             </div>
 
             <div
-                className="px-4 md:px-8 flex gap-4 mt-12 w-full md:pl-[calc(48px+24px+35%+80px)]
+                className="content-padding flex gap-4 mt-12 w-full md:pl-[calc(48px+24px+35%+80px)]
                            lg:pl-[calc(48px+80px+35%+160px)] md:ml-0"
             >
                 <div className="relative inline-block w-12 h-12 mb-4 shrink-0">

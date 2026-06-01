@@ -34,7 +34,7 @@ const Care = () => {
     const {active,next,prev,maxSlides,} = useSlider({blockLength: careImages.length,visibleCards});
 
     return (
-        <section className="mt-24 px-4 md:px-8">
+        <section className="mt-24 content-padding">
             <div className="md:text-center md:mx-auto max-w-xl">
                 <h2 className="text-h1 mb-6">
                     Whole-child,  {" "}

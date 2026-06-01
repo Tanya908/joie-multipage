@@ -101,7 +101,7 @@ const Reviews = () => {
             />
 
             <div className="flex flex-col md:flex-row md:justify-between gap-8 items-center justify-center
-                            px-4 md:px-8 mb-8"
+                            content-padding mb-8"
             >
                 <h2 className="text-h1 w-full text-center md:text-left mx-auto">
                     Joyful Reviews from  {" "}
@@ -130,7 +130,7 @@ const Reviews = () => {
                 </div>
             </div>
 
-            <div className="overflow-hidden px-4 md:px-8 mb-16">
+            <div className="overflow-hidden content-padding mb-16">
                 <div
                     className="flex gap-4 lg:gap-14  transition-transform duration-500 ease-out"
                     style={{

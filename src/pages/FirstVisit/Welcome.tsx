@@ -5,7 +5,7 @@ import lineSecond from "../../assets/text-lines/lineSecond.svg"
 
 const Welcome = () => {
     return (
-        <section className="relative pt-24 pb-32 mt-20 px-4 md:px-8 overflow-hidden">
+        <section className="relative pt-24 pb-32 mt-20 content-padding overflow-hidden">
             <div className="absolute top-0 left-[20%] md:left-1/2 -translate-x-1/2 h-full
                             w-auto -z-10 overflow-hidden xl:overflow-visible"
             >

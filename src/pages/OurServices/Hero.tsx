@@ -6,7 +6,7 @@ import line from "../../assets/first-visit/hero/line.svg";
 
 const Hero = () => {
     return (
-        <section className="mt-36 md:mt-42 px-4 md:px-8 relative">
+        <section className="mt-36 md:mt-42 content-padding relative">
             <div className="relative flex flex-col md:flex-row-reverse md:gap-16 items-center
                             bg-[var(--color-light-yellow)] rounded-3xl px-3 md:px-12 pt-12"
             >
