@@ -26,8 +26,8 @@ const StartItems:StartProps[] = [
 
 const Start = () => {
     return (
-        <section className="mt-24 px-4 md:px-8 grid grid-cols-1 md:grid-cols-2 items-center md:items-start mx-auto
-                            justify-items-center md:justify-items-start gap-8 md:gap-10 max-w-[1600px]"
+        <section className="mt-24 px-4 md:px-8 md:grid md:grid-cols-2 items-center md:items-start mx-auto
+                            justify-items-center md:justify-items-start  md:gap-10 max-w-[1600px]"
         >
             <h1 className="text-h1 mb-12 md:mb-0 order-1 md:order-2 md:self-start">
                 A gentle {" "}
@@ -46,7 +46,7 @@ const Start = () => {
                 {StartItems.map((item, index) => (
                     <div
                         key={item.id}
-                        className={`flex flex-col max-w-xl xl:max-w-2xl  
+                        className={`flex flex-col max-w-xl mb-10 md:mb-0
                                     ${index === 0 ? "order-2 md:order-1 md:row-span-2" 
                                                   : "order-3 md:order-3"}`}
                     >

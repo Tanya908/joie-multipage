@@ -21,20 +21,20 @@ const Header = () => {
     return (
         <>
             <header className="fixed top-0 left-0 right-0 m-4 md:m-8 z-50 flex flex-col bg-[var(--color-light-red)] rounded-3xl">
-                <div className="flex items-center justify-between gap-6 p-4 lg:px-12 lg:py-5">
+                <div className="flex items-center justify-between gap-6 p-4 lg:px-12">
                    <div className="flex lg:gap-4 xl:gap-10">
                        <NavLink to="/">
                            <img src={mainLogo} alt="JOIE - Pediatric Dentisity" className="w-32 md:w-[170px]"/>
                        </NavLink>
 
-                       <nav className="hidden lg:grid grid-cols-4 gap-y-3 justify-items-start text-center
+                       <nav className="hidden lg:grid grid-cols-4 gap-y-3 justify-items-center
                                        xl:flex xl:justify-between xl:items-center xl:gap-8 max-w-[700px]">
                            {navLinks.map((link) => (
                                <NavLink
                                    key={link.name}
                                    to={link.path}
                                    className={({ isActive }) =>
-                                       `flex items-center justify-center gap-1 text-p2 text-center whitespace-nowrap
+                                       `flex items-center justify-center gap-1 text-p2 whitespace-nowrap
                                         group text-hover min-w-0
                                         ${isActive ? "text-[var(--color-red)]" : ""}`
                                    }
@@ -75,7 +75,7 @@ const Header = () => {
                             ${isOpen ? "opacity-100" : "opacity-0 pointer-events-none"}
                           `}
             >
-                <nav className="flex flex-col items-center gap-6 pt-28 md:pt-44">
+                <nav className="flex flex-col items-center gap-6 pt-36 md:pt-42">
                     {navLinks.map((link) => (
                         <NavLink
                             key={link.name}
@@ -91,7 +91,7 @@ const Header = () => {
                         variant="secondary"
                         href="https://joiepediatric.meetkasper.com/schedule-appointment"
                         external
-                        className="w-full whitespace-nowrap mt-4"
+                        className="flex justify-center items-center md:hidden w-full whitespace-nowrap mt-4"
                     >
                         Schedule now
                     </Button>

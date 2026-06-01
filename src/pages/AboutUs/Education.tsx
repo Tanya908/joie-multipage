@@ -8,14 +8,14 @@ import background from "../../assets/about-us/education/background.svg";
 
 const Education = () => {
     return (
-        <section className="relative mt-24 pt-20 pb-40 px-4 md:px-8">
+        <section className="relative mt-24 pt-20 pb-32 px-4 md:px-8">
             <img
                 src={background}
                 alt=""
                 aria-hidden="true"
-                className="absolute inset-0 w-full h-full object-cover -z-10 min-h-full"
+                className="absolute inset-0 w-full h-full object-cover -z-10 min-h-full overflow-x-hidden"
             />
-            <h2 className="text-h1 text-center mx-auto mb-12 w-sm lg:w-full">
+            <h2 className="text-h1 text-center mx-auto mb-12 w-xs lg:w-full">
                 Education and training
             </h2>
 

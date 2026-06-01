@@ -5,7 +5,7 @@ import {Button} from "../../components/Button.tsx";
 
 const Insurance = () => {
     return (
-        <section className="mt-20 mb-36 mx-4 md:mx-8 lg:mx-0  flex flex-col lg:flex-row gap-10">
+        <section className="mt-20 mb-16 mx-4 md:mx-8 lg:mx-0  flex flex-col lg:flex-row gap-10">
             <div className="relative z-10 bg-[var(--color-light-yellow)] py-10 px-3 md:px-8
                             rounded-4xl lg:rounded-tr-none lg:rounded-br-none lg:order-2 lg:w-1/2"
             >

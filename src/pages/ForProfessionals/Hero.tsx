@@ -9,7 +9,7 @@ const Hero = () => {
     return (
         <section className="mt-32 md:mt-40 px-4 md:px-8 relative">
             <div className="relative flex flex-col lg:flex-row justify-between items-center rounded-3xl
-                            bg-[var(--color-light-yellow)] px-3 md:px-12 lg:px-20 py-12 lg:py-15"
+                            bg-[var(--color-light-yellow)] px-3 md:px-12 xl:px-20 py-12 lg:py-15"
             >
                 <div className="w-full pb-0 md:pb-10">
                     <div className="absolute inset-0 overflow-hidden flex items-center justify-center z-0">
@@ -38,15 +38,15 @@ const Hero = () => {
                     </p>
                 </div>
 
-                <div className="mt-16 md:mt-0 z-10 flex md:hidden lg:flex w-full
-                                lg:w-[40%] max-w-none flex-shrink-0"
+                <div className="mt-20 md:mt-0 z-10 flex gap-10 md:hidden lg:flex w-full
+                                lg:w-[35%] max-w-none flex-shrink-0"
                 >
                     <ShapeImg
                         src={doctors}
                         alt="Doctors"
                         mask={maskImg}
                         wrapperClassName="w-full"
-                        imgClassName="w-full h-full object-cover scale-110"
+                        imgClassName="w-full h-full object-cover scale-[1.21] lg:scale-[1]"
                     />
                 </div>
 

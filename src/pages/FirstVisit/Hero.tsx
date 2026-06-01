@@ -8,7 +8,7 @@ import ShapeImg from "../../components/ShapeImg.tsx";
 
 const Hero = () => {
     return (
-        <section className="mt-40 px-4 md:px-8 relative">
+        <section className="mt-32 lg:mt-42 px-4 md:px-8 relative">
             <div className="relative bg-[var(--color-light-yellow)] rounded-3xl px-3 md:px-12
                            max-h-[650px] xl:max-h-[720px] gap-6 overflow-hidden"
             >
@@ -56,7 +56,7 @@ const Hero = () => {
                         alt=""
                         mask={maskImg}
                         wrapperClassName="w-full"
-                        imgClassName="w-full h-full object-cover scale-110 md:scale-100 origin-bottom"
+                        imgClassName="w-full h-full object-cover scale-[1.2] md:scale-100 origin-bottom"
                     />
                 </div>
             </div>

@@ -94,8 +94,7 @@ const WhyUs = () => {
                     <div
                         key={item.id}
                         className={`grid grid-rows-subgrid row-span-5 gap-y-0
-                                    ${i === 1 ? "lg:border-x lg:border-[var(--color-light-black)] lg:px-4" 
-                                              : "" }`}
+                                    ${i === 1 ? "lg:border-x lg:border-[var(--color-light-gray)] lg:px-4" : "" }`}
                     >
                         <ShapeImg
                             src={item.src}

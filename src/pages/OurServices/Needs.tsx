@@ -19,7 +19,7 @@ export const needs: NeedsProps = {
 
 const Needs = () => {
     return (
-        <section className="py-20 mt-20 px-4 md:px-8 bg-[var(--color-light-blue)]">
+        <section className=" py-12 mt-20 px-4 md:px-8 bg-[var(--color-light-blue)]">
             <div className="w-full md:text-center flex flex-col items-start md:items-center justify-center ">
                 <h1 className="text-h1 w-full max-w-3xl">
                     Sensory-friendly, special needs pediatric care

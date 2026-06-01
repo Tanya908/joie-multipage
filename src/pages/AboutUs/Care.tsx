@@ -75,7 +75,7 @@ const Care = () => {
                     </div>
                 </div>
 
-                <div className="flex gap-4 items-center justify-center mt-8 md:hidden">
+                <div className="flex gap-4 items-center justify-center mt-2 md:hidden">
                     <ButtonArrow
                         variant="secondary"
                         direction="left"
@@ -93,7 +93,7 @@ const Care = () => {
             </div>
 
             <div className="grid lg:grid-cols-2 gap-10 lg:gap-12 items-stretch">
-                <div className="bg-[var(--color-light-yellow)] rounded-4xl px-3 py-10 md:px-8 md:py-12 mb-8
+                <div className="bg-[var(--color-light-yellow)] rounded-4xl px-3 py-10 md:px-8 md:py-12
                                 md:text-center flex flex-col justify-center items-center h-full"
                 >
                     <div className="max-w-xl">

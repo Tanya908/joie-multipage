@@ -59,7 +59,7 @@ const Form = () => {
                                     <p className="text-p1-decorative mb-2">{item.heading}</p>
 
                                     <a
-                                        href={item.href} className="text-p2"
+                                        href={item.href} className="text-p2 text-hover"
                                         target={item.href.startsWith("http") ? "_blank" : undefined}
                                         rel={item.href.startsWith("http") ? "noopener noreferrer" : undefined}
                                     >
@@ -110,12 +110,12 @@ const Form = () => {
                                 </label>
                             ))}
                         </div>
-                        <div className="flex flex-col items-center gap-4 mb-4 w-full lg:flex-row lg:gap-8 lg:max-w-3xl">
+                        <div className="flex flex-col items-center gap-4 mb-4 w-full lg:flex-row lg:gap-8">
                             <Button
                                 primary
                                 href=""
                                 external
-                                className="whitespace-nowrap w-full"
+                                className="whitespace-nowrap w-full xl:w-auto mx-auto"
                             >
                                 Submit
                             </Button>

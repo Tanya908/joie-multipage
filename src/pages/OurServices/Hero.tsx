@@ -6,7 +6,7 @@ import line from "../../assets/first-visit/hero/line.svg";
 
 const Hero = () => {
     return (
-        <section className="mt-40 px-4 md:px-8 relative">
+        <section className="mt-36 md:mt-42 px-4 md:px-8 relative">
             <div className="relative flex flex-col md:flex-row-reverse md:gap-16 items-center
                             bg-[var(--color-light-yellow)] rounded-3xl px-3 md:px-12 pt-12"
             >
@@ -20,7 +20,7 @@ const Hero = () => {
                                        max-w-none scale-150 md:scale-110 lg:w-full"
                         />
                     </div>
-                    <div className="relative mb-6">
+                    <div className="relative mb-8">
                         <h1 className="text-h1 z-10 w-[300px] md:w-full">
                             Our Services
                         </h1>
@@ -37,13 +37,13 @@ const Hero = () => {
                     </p>
                 </div>
 
-                <div className="mt-16 md:mt-0 z-10 w-full md:w-[55%] lg:w-[50%]">
+                <div className="mt-32 md:mt-0 z-10 w-full md:w-[55%] lg:w-[50%]">
                     <ShapeImg
                         src={dentist}
                         alt=""
                         mask={maskImg}
                         wrapperClassName="w-full"
-                        imgClassName="w-full h-full object-cover scale-110 origin-bottom max-w-xl"
+                        imgClassName="w-full h-full object-cover scale-105 origin-bottom max-w-xl"
                     />
                 </div>
             </div>

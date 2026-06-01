@@ -56,7 +56,7 @@ const Meet = () => {
                                 primary
                                 href="#"
                                 external
-                                className="w-full md:w-fit mt-8 mb-16"
+                                className="w-full md:w-fit my-8"
                             >
                                 Meet Our Doctor
                             </Button>
@@ -68,7 +68,7 @@ const Meet = () => {
                         alt="Happy child at the dentist"
                         mask={maskImg}
                         wrapperClassName="w-full z-10 w-[400px] h-[400px] md:top-0 md:-translate-y-40
-                                          lg:w-[480px] lg:h-[560px] xl:-translate-y-32 xl:w-[600px] xl:h-[640px]"
+                                          lg:w-[420px] lg:h-[540px] xl:w-[580px] xl:h-[600px] xl:-translate-y-32 "
                         imgClassName="w-full h-full object-cover"
                     />
                     <div className="flex flex-col items-center justify-center text-center col-span-1 md:col-span-2 mt-12 lg:-mt-32">

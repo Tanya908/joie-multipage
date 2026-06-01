@@ -35,8 +35,8 @@ const Hero = () => {
                     src={lineBg}
                     alt=""
                     aria-hidden="true"
-                    className="absolute left-1/2 -translate-x-[85%] bottom-3 scale-[1.2] z-0 pointer-events-none
-                               -scale-x-100 rotate-30 md:left-[35%] md:-translate-x-1/2 md:scale-[1.4]
+                    className="hidden pointer-events-none
+                               md:left-[35%] md:-translate-x-1/2 md:scale-[1.4]
                                lg:left-[10%] lg:-translate-x-1/2 lg:bottom-10 lg:rotate-10 lg:scale-[1]"
                 />
             </div>

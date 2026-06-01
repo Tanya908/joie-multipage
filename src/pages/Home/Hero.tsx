@@ -2,7 +2,7 @@ import lineWaves from "../../assets/text-lines/lineWaves.svg"
 import rocket from "../../assets/home-page/hero/rocket.svg";
 import butterfly from "../../assets/home-page/hero/butterfly.svg";
 import flower from "../../assets/home-page/hero/flower.svg";
-import home from "../../assets/home-page/hero/homePage.webp";
+import children from "../../assets/home-page/hero/children.webp";
 import {Button} from "../../components/Button.tsx";
 import ShapeImg from "../../components/ShapeImg.tsx";
 import maskImg from "../../assets/home-page/hero/flowerBackground.svg";
@@ -38,10 +38,10 @@ const Home = () => {
     return (
         <section className="mt-36 mb-20 lg:mb-28 md:mt-40 px-4 md:px-8">
             <div className="bg-[var(--color-light-yellow)] rounded-3xl px-3 py-12 md:px-12">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
+                <div className="grid grid-cols-1 lg:grid-cols-[56%_1fr] gap-10 lg:gap-0">
                     <div className="flex flex-col h-full lg:pt-20">
                         <div className="relative inline-block">
-                            <h1 className="text-title z-10 pb-3 lg:max-w-lg xl:max-w-3xl">
+                            <h1 className="text-title z-10 pb-3 lg:w-full ">
                                 Your Pediatric Dentist {" "}
                                 <span className="relative inline-block">
                                     in Ramsey
@@ -68,7 +68,7 @@ const Home = () => {
                             Sign up for the VIP list!
                         </Button>
 
-                        <div className="relative grid grid-cols-1 md:grid-cols-3 lg:grid-cols-2 xl:grid-cols-[repeat(3,minmax(280px,max-content))]
+                        <div className="relative grid grid-cols-1 md:grid-cols-3 lg:grid-cols-[repeat(3,minmax(280px,max-content))]
                                         gap-3 md:gap-10 xl:gap-0 lg:mt-20"
                         >
                             {features.map((item) => (
@@ -85,7 +85,7 @@ const Home = () => {
                             ))}
                         </div>
                     </div>
-                    <div className="hidden lg:block lg:max-w-[560px] xl:max-w-[680px] aspect-[600/560] self-center
+                    <div className="hidden lg:block lg:max-w-[640px] aspect-[600/560] self-center
                                     justify-self-end relative w-full"
                     >
                         <img
@@ -95,7 +95,7 @@ const Home = () => {
                             className="absolute inset-0 left-0 -top-4 w-full h-full object-contain scale-100 z-0"
                         />
                         <ShapeImg
-                            src={home}
+                            src={children}
                             alt="Two smiling children"
                             mask={maskImg}
                             wrapperClassName="absolute inset-0 z-10"
