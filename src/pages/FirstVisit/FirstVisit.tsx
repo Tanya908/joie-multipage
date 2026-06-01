@@ -1,6 +1,5 @@
 import Hero from "./Hero.tsx";
 import FindUs from "../../components/map/FindUs.tsx";
-import mapBackgroundBlue from "../../assets/map/mapBackgroundBlue.svg";
 import Start from "./Start.tsx";
 import Welcome from "./Welcome.tsx";
 import ParentPresence from "./ParentPresence.tsx";
@@ -19,7 +18,7 @@ const FirstVisit = () => {
                 title="Ready to schedule?"
                 description="We can’t wait to meet you and your child — whether it's their first visit or a new dental home, we’ll make it easy, transparent, and joyful."
             />
-            <FindUs background={mapBackgroundBlue} />
+            <FindUs theme="blue"/>
         </>
     )
 }

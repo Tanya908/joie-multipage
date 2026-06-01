@@ -1,27 +1,34 @@
 import lineWaves from "../../assets/text-lines/lineWaves.svg"
 import {Button} from "../Button.tsx";
-import mapBackgroundPink from "../../assets/map/mapBackgroundPink.svg";
 
 import MapBox from "./MapBox.tsx";
+import type {SectionTheme} from "../../shared/sectionThemes.ts";
+import {useSectionTheme} from "../../shared/hooks/useSectionTheme.ts";
 
 type FindUsProps = {
-    background?: string;
+    theme?: SectionTheme;
 };
 
-const FindUs = ({
-                    background= mapBackgroundPink,
-                }: FindUsProps) => {
+const FindUs = ({ theme = "pink" }: FindUsProps) => {
+    const { style, isMobile, currentTheme } = useSectionTheme(theme);
     return (
-        <section className="relative mt-20 mb-32">
-            <img
-                src={background}
-                alt=""
-                aria-hidden="true"
-                className="absolute top-0 left-0 h-full -z-10 w-full"
-                style={{objectFit: "fill"}}
-            />
+        <section className="relative mt-20 mb-32"
+                 style={style}
+        >
+            {!isMobile && (
+                <img
+                    src={currentTheme.desktopBg}
+                    alt=""
+                    aria-hidden="true"
+                    className="absolute inset-0 w-full h-full"
+                    style={{ objectFit: "fill", zIndex: 0 }}
+                />
+            )}
 
-            <div className="pt-28 pb-24 grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-10 content-padding">
+            <div className="relative py-14 md:pt-28 md:pb-24 grid grid-cols-1
+                            lg:grid-cols-[1fr_2fr] gap-10 content-padding"
+                 style={{ zIndex: 1 }}
+            >
                 <div className="bg-[var(--color-white)] px-3 py-8 md:p-10 rounded-4xl">
                     <h2 className="text-h2 w-full mb-3">
                         Let’s Make Your {" "}
