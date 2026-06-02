@@ -1,4 +1,4 @@
-import {Link, NavLink} from "react-router-dom";
+import {NavLink} from "react-router-dom";
 import mainLogoDark from "../../assets/mainLogoDark.svg"
 import lineOval from "../../assets/text-lines/lineOval.svg"
 import lineWaves from "../../assets/text-lines/lineWaves.svg"
@@ -127,9 +127,14 @@ const Footer = () => {
                     </div>
 
                     <div className="flex flex-col items-center justify-center gap-4 lg:flex-row lg:gap-14 md:my-auto md:mb-0">
-                        <Link to="/privacy-policy" className="text-p2 text-[var(--color-light-black)] text-hover">
+                        <a
+                            href="/privacy-policy.pdf"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-p2 text-[var(--color-light-black)] text-hover"
+                        >
                             Privacy Policy
-                        </Link>
+                        </a>
                         <p className="text-p2 text-[var(--color-light-black)]">© 2025 Joie Pediatric Dentistry. All rights reserved</p>
                     </div>
                 </div>
