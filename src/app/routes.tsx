@@ -1,24 +1,31 @@
 import { Routes, Route } from "react-router-dom";
+import { lazy } from "react";
+import ScrollToTop from "../components/ScrollToTop.tsx";
+
 import Layout from "../components/layout/Layout.tsx";
-import Home from "../pages/Home/Home.tsx";
-import AboutUs from "../pages/AboutUs/AboutUS.tsx";
-import FirstVisit from "../pages/FirstVisit/FirstVisit.tsx";
-import OurServices from "../pages/OurServices/OurServices.tsx";
-import ForProfessionals from "../pages/ForProfessionals/ForProfessionals.tsx";
-import ContactUs from "../pages/ContactUs/ContactUs.tsx";
+
+const Home = lazy(() => import("../pages/Home/Home.tsx"));
+const AboutUs = lazy(() => import("../pages/AboutUs/AboutUS.tsx"));
+const FirstVisit = lazy(() => import("../pages/FirstVisit/FirstVisit.tsx"));
+const OurServices = lazy(() => import("../pages/OurServices/OurServices.tsx"));
+const ForProfessionals = lazy(() => import("../pages/ForProfessionals/ForProfessionals.tsx"));
+const ContactUs = lazy(() => import("../pages/ContactUs/ContactUs.tsx"));
 
 
 export const AppRoutes = () => {
     return (
-        <Routes>
-            <Route element={<Layout />}>
-                <Route path="/" element={<Home />} />
-                <Route path="/about" element={<AboutUs />} />
-                <Route path="/first-visit" element={<FirstVisit />} />
-                <Route path="/services" element={<OurServices />} />
-                <Route path="/professionals" element={<ForProfessionals />} />
-                <Route path="/contact" element={<ContactUs />} />
-            </Route>
-        </Routes>
+        <>
+            <ScrollToTop/>
+            <Routes>
+                <Route element={<Layout />}>
+                    <Route path="/" element={<Home />} />
+                    <Route path="/about" element={<AboutUs />} />
+                    <Route path="/first-visit" element={<FirstVisit />} />
+                    <Route path="/services" element={<OurServices />} />
+                    <Route path="/professionals" element={<ForProfessionals />} />
+                    <Route path="/contact" element={<ContactUs />} />
+                </Route>
+            </Routes>
+        </>
     );
 };
