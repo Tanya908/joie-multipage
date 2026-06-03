@@ -7,6 +7,8 @@ export const referringProviderFields: Field[] = [
         type: "text",
         placeholder: "e.g., Dr. Jane Smith",
         required: true,
+        pattern: /^[A-Za-zÀ-ÿ.' -]+$/,
+        patternMessage: "Only letters allowed",
     },
     {
         name: "practice",
@@ -21,6 +23,8 @@ export const referringProviderFields: Field[] = [
         type: "email",
         placeholder: "Where we should send updates",
         required: true,
+        pattern: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+        patternMessage: "Please enter a valid email",
     },
     {
         name: "phone",
@@ -28,6 +32,8 @@ export const referringProviderFields: Field[] = [
         type: "tel",
         placeholder: "Direct line for quick questions",
         required: true,
+        pattern:  /^\d{10}$/,
+        patternMessage: "Use a valid phone number (10 digits)",
     },
 ];
 
@@ -38,6 +44,8 @@ export const patientFamilyFields: Field[] = [
         type: "text",
         placeholder: "Patient’s legal first & last name",
         required: true,
+        pattern: /^[A-Za-zÀ-ÿ' -]+$/,
+        patternMessage: "Only letters allowed",
     },
     {
         name: "parentName",
@@ -45,6 +53,8 @@ export const patientFamilyFields: Field[] = [
         type: "text",
         placeholder: "e.g., Jane Doe",
         required: true,
+        pattern: /^[A-Za-zÀ-ÿ' -]+$/,
+        patternMessage: "Only letters allowed",
     },
     {
         name: "parentContact",
@@ -73,5 +83,7 @@ export const referralDetailsFields: Field[] = [
         placeholder: "Routine or urgent",
         fullWidth: true,
         required: true,
+        pattern: /^[A-Za-zÀ-ÿ' -]+$/,
+        patternMessage: "Only letters allowed",
     },
 ];

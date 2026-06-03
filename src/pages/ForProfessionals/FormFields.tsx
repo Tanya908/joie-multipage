@@ -9,6 +9,8 @@ export type Field = {
     placeholder: string;
     fullWidth?: boolean;
     required?: boolean;
+    pattern?: RegExp;
+    patternMessage?: string;
 };
 
 type FormFieldsProps = {
@@ -43,6 +45,11 @@ const FormFields = ({ title, fields, register,errors }: FormFieldsProps) => {
                         <input
                             {...register(field.name, {
                                 required: field.required? `${field.label} is required`: false,
+                                pattern: field.pattern ?
+                                    {
+                                        value: field.pattern,
+                                        message: field.patternMessage!,
+                                    }: undefined,
                             })}
                             type={field.type}
                             placeholder={field.placeholder}
