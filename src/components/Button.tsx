@@ -17,6 +17,7 @@ type ButtonProps = {
     disabled?: boolean;
 
     variant?: Variant;
+    type?: "button" | "submit" | "reset";
 };
 
 type Variant = "primary" | "secondary" | "tertiary" | "secondaryMobile";
@@ -29,6 +30,7 @@ export const Button = ({
                            onClick,
                            disabled,
                            variant,
+                           type = "button",
                        }: ButtonProps) => {
     const variantMap: Record<Variant, string> = {
         primary: "btn-primary",
@@ -63,7 +65,7 @@ export const Button = ({
     }
 
     return (
-        <button onClick={onClick} disabled={disabled} className={classes}>
+        <button type={type} onClick={onClick} disabled={disabled} className={classes}>
             {children}
         </button>
     );

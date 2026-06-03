@@ -2,58 +2,76 @@ import type {Field} from "./FormFields.tsx";
 
 export const referringProviderFields: Field[] = [
     {
-        label: "Provider Name*",
+        name: "providerName",
+        label: "Provider Name",
         type: "text",
         placeholder: "e.g., Dr. Jane Smith",
+        required: true,
     },
     {
-        label: "Practice*",
+        name: "practice",
+        label: "Practice",
         type: "text",
         placeholder: "Your clinic/hospital name",
+        required: true,
     },
     {
-        label: "Email*",
+        name: "email",
+        label: "Email",
         type: "email",
         placeholder: "Where we should send updates",
+        required: true,
     },
     {
-        label: "Phone*",
+        name: "phone",
+        label: "Phone",
         type: "tel",
         placeholder: "Direct line for quick questions",
+        required: true,
     },
 ];
 
 export const patientFamilyFields: Field[] = [
     {
-        label: "Child’s Full Name*",
+        name: "childName",
+        label: "Child’s Full Name",
         type: "text",
         placeholder: "Patient’s legal first & last name",
+        required: true,
     },
     {
+        name: "parentName",
         label: "Parents Name",
         type: "text",
         placeholder: "e.g., Jane Doe",
+        required: true,
     },
     {
-        label: "Parent/Guardian Contact*",
+        name: "parentContact",
+        label: "Parent/Guardian Contact",
         type: "text",
         placeholder: "Best phone or email for scheduling",
+        required: true,
         fullWidth: true,
     },
 ];
 
 export const referralDetailsFields: Field[] = [
     {
-        label: "Reason*",
+        name: "reason",
+        label: "Reason",
         type: "text",
         placeholder:
             "Choose primary concern (caries, trauma, behavior, airway, ortho, other)",
         fullWidth: true,
+        required: true,
     },
     {
-        label: "Priority*",
+        name: "priority",
+        label: "Priority",
         type: "text",
         placeholder: "Routine or urgent",
         fullWidth: true,
+        required: true,
     },
 ];

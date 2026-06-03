@@ -4,6 +4,8 @@ import checkboxIcon from "../../assets/for-professinals/form/checkboxIcon.svg"
 import {Button} from "../../components/Button.tsx";
 import FormFields from "./FormFields.tsx";
 import {patientFamilyFields, referralDetailsFields, referringProviderFields} from "./fields.ts";
+import { useForm } from "react-hook-form";
+import type {FormData} from "../../shared/formTypes.ts";
 
 type ContactProps = {
     heading:string;
@@ -12,7 +14,9 @@ type ContactProps = {
 }
 
 type CheckboxProps = {
+    name: keyof FormData;
     text:string;
+    required?: boolean;
 }
 
 const Contact: ContactProps[] = [
@@ -34,11 +38,14 @@ const Contact: ContactProps[] = [
 ];
 
 const Checkbox:CheckboxProps[] = [
-    {text:"I have consent to share this information.*"},
-    {text:"OK to contact the family directly to schedule.*"}
+    {name: "consent",text:"I have consent to share this information.", required:true},
+    {name: "contactFamily",text:"OK to contact the family directly to schedule.", required:false}
 ]
 
 const Form = () => {
+    const {register,handleSubmit,formState: {errors,isValid,}, } = useForm<FormData>({mode: "onTouched",});
+
+    const onSubmit = (data: FormData) => {console.log(data);};
 
     return (
         <section className="w-full content-padding mt-20">
@@ -70,12 +77,27 @@ const Form = () => {
                         </div>
                     </div>
 
-                    <form>
-                        <FormFields title="Referring provider" fields={referringProviderFields} />
+                    <form onSubmit={handleSubmit(onSubmit)}>
+                        <FormFields title="Referring provider"
+                                    fields={referringProviderFields}
+                                    register={register}
+                                    errors={errors}
 
-                        <FormFields title="Patient & family" fields={patientFamilyFields} />
+                        />
 
-                        <FormFields title="Referral details" fields={referralDetailsFields} />
+                        <FormFields title="Patient & family"
+                                    fields={patientFamilyFields}
+                                    register={register}
+                                    errors={errors}
+
+                        />
+
+                        <FormFields title="Referral details"
+                                    fields={referralDetailsFields}
+                                    register={register}
+                                    errors={errors}
+
+                        />
 
                         <div className="md:flex md:flex-col md:items-center md:justify-center">
                             <label className="flex items-center gap-3 cursor-pointer w-fit">
@@ -92,9 +114,13 @@ const Form = () => {
                             </label>
                         </div>
                         <div className="mt-6 mb-12 grid justify-start md:justify-center gap-3">
-                            {Checkbox.map((item, index) => (
-                                <label key={index} className="flex items-start gap-3 cursor-pointer">
-                                    <input type="checkbox" className="peer absolute opacity-0 w-0 h-0"/>
+                            {Checkbox.map((item) => (
+                                <label key={item.name} className="flex items-start gap-3 cursor-pointer">
+                                    <input
+                                        type="checkbox"
+                                        {...register(item.name, {required: item.required || false,})}
+                                        className="peer absolute opacity-0 w-0 h-0"
+                                    />
                                     <span className="mt-1 flex h-5 w-5 shrink-0 items-center justify-center rounded-md border border-[var(--color-black)]
                                                      bg-transparent transition-all peer-checked:bg-[var(--color-pink)] peer-checked:border-[var(--color-pink)]
                                                      peer-checked:[&>img]:opacity-100 peer-checked:[&>img]:scale-100"
@@ -106,15 +132,16 @@ const Form = () => {
                                     </span>
                                     <span className="text-p2 text-[var(--color-gray)] leading-relaxed">
                                         {item.text}
+                                        {item.required && "*"}
                                     </span>
                                 </label>
                             ))}
                         </div>
                         <div className="flex flex-col items-center gap-4 mb-4 w-full lg:flex-row lg:gap-8">
                             <Button
+                                type="submit"
                                 primary
-                                href=""
-                                external
+                                disabled={!isValid}
                                 className="whitespace-nowrap w-full xl:w-auto mx-auto"
                             >
                                 Submit
