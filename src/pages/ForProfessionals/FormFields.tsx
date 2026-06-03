@@ -1,5 +1,5 @@
 import line from "../../assets/text-lines/line.svg";
-import type {FieldErrors, UseFormRegister} from "react-hook-form";
+import type {FieldErrors,FieldNamesMarkedBoolean, UseFormRegister} from "react-hook-form";
 import type {FormData} from "../../shared/formTypes.ts";
 
 export type Field = {
@@ -18,9 +18,10 @@ type FormFieldsProps = {
     fields: Field[];
     register: UseFormRegister<FormData>;
     errors: FieldErrors<FormData>;
+    dirtyFields: FieldNamesMarkedBoolean<FormData>;
 };
 
-const FormFields = ({ title, fields, register,errors }: FormFieldsProps) => {
+const FormFields = ({ title, fields, register,errors,dirtyFields, }: FormFieldsProps) => {
     return (
         <div className="mb-10">
             <div className="flex flex-col items-center mb-6">
@@ -58,9 +59,11 @@ const FormFields = ({ title, fields, register,errors }: FormFieldsProps) => {
                         />
 
                         {
+                            dirtyFields[field.name] &&
                             errors[field.name] && (
-                                <p className="text-p2 text-[var(--color-white)] bg-[var(--color-red)]
-                                              pl-4 pr-2 pb-0.5 rounded-xl"
+                                <p
+                                    className="text-p2 text-[var(--color-white)] bg-[var(--color-red)]
+                                               pl-4 pr-2 pb-0.5 rounded-xl"
                                 >
                                     {errors[field.name]?.message as string}
                                 </p>

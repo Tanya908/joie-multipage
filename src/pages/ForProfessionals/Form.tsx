@@ -6,6 +6,7 @@ import FormFields from "./FormFields.tsx";
 import {patientFamilyFields, referralDetailsFields, referringProviderFields} from "./fields.ts";
 import { useForm } from "react-hook-form";
 import type {FormData} from "../../shared/formTypes.ts";
+import {useState} from "react";
 
 type ContactProps = {
     heading:string;
@@ -43,9 +44,27 @@ const Checkbox:CheckboxProps[] = [
 ]
 
 const Form = () => {
-    const {register,handleSubmit,formState: {errors,isValid,}, } = useForm<FormData>({mode: "onTouched",});
+    const {register,handleSubmit,reset,formState: {errors,isValid,dirtyFields,}, } = useForm<FormData>({mode: "onTouched",});
 
-    const onSubmit = (data: FormData) => {console.log(data);};
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [isSuccess, setIsSuccess] = useState(false);
+    const [submitError, setSubmitError] = useState("");
+
+    const onSubmit = async (data: FormData) => {
+        try {
+            setIsSubmitting(true);
+            setIsSuccess(false);
+            setSubmitError("");
+
+            console.log(data);
+            reset();
+            setIsSuccess(true);
+        } catch {
+            setSubmitError("Something went wrong. Please try again.");
+        } finally {
+            setIsSubmitting(false);
+        }
+    };
 
     return (
         <section className="w-full content-padding mt-20">
@@ -82,6 +101,7 @@ const Form = () => {
                                     fields={referringProviderFields}
                                     register={register}
                                     errors={errors}
+                                    dirtyFields={dirtyFields}
 
                         />
 
@@ -89,6 +109,7 @@ const Form = () => {
                                     fields={patientFamilyFields}
                                     register={register}
                                     errors={errors}
+                                    dirtyFields={dirtyFields}
 
                         />
 
@@ -96,6 +117,7 @@ const Form = () => {
                                     fields={referralDetailsFields}
                                     register={register}
                                     errors={errors}
+                                    dirtyFields={dirtyFields}
 
                         />
 
@@ -138,14 +160,27 @@ const Form = () => {
                             ))}
                         </div>
                         <div className="flex flex-col items-center gap-4 mb-4 w-full lg:flex-row lg:gap-8">
-                            <Button
-                                type="submit"
-                                primary
-                                disabled={!isValid}
-                                className="whitespace-nowrap w-full xl:w-auto mx-auto"
-                            >
-                                Submit
-                            </Button>
+                            <div className="flex flex-col justify-center items-center mx-auto">
+                                <Button
+                                    type="submit"
+                                    primary
+                                    disabled={!isValid || isSubmitting}
+                                    className="whitespace-nowrap w-full xl:w-auto mx-auto"
+                                >
+                                    {isSubmitting ? "Submitting..." : "Submit"}
+                                </Button>
+                                {isSuccess && (
+                                    <p className="text-[var(--color-black)] text-center text-p2 mt-3">
+                                        Thank you! Your referral has been submitted.
+                                    </p>
+                                )}
+
+                                {submitError && (
+                                    <p className="text-[var(--color-red)] mt-3 text-center text-btn">
+                                        {submitError}
+                                    </p>
+                                )}
+                            </div>
                         </div>
                     </form>
                 </div>
