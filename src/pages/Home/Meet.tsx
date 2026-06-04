@@ -22,7 +22,7 @@ const Meet = () => {
                 style={{objectFit: "fill"}}
             />
 
-            <div className="relative content-padding lg:px-10 z-10">
+            <div className="relative content-padding lg:px-10 z-10 layout-container">
                 <div className="grid grid-cols-1 md:grid-cols-[50%_1fr] auto-rows-min justify-items-stretch items-start gap-0 lg:gap-10">
                     <div>
                         <div className="flex gap-3 items-center">
@@ -84,12 +84,11 @@ const Meet = () => {
             </div>
 
             <div className="absolute inset-0 overflow-hidden">
-                <img src={lineLeft} alt="" className="absolute -left-6 -translate-x-[5%] -bottom-24  scale-[1.2]
-                                                      md:-bottom-40 md:scale-[0.7] md:left-0 md:-translate-x-[26%]"
+                <img src={lineLeft} alt=""
+                     className="absolute left-0 -bottom-12 lg:-bottom-20  -translate-x-1/3"
                 />
-                <img src={lineRight} alt="" className="absolute left-1/2 -translate-x-[35%] -bottom-16 scale-[1.2]
-                                                       md:scale-[0.7] md:-translate-x-[15%] md:-bottom-32
-                                                       lg:-bottom-44 lg:translate-x-[6%] xl:translate-x-[18%] "
+                <img src={lineRight} alt=""
+                     className="absolute right-0 -bottom-12 lg:-bottom-24 translate-x-1/3"
                 />
             </div>
         </section>

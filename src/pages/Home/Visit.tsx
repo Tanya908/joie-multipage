@@ -77,11 +77,12 @@ const Visit = () => {
                 className="absolute inset-0 w-full h-full -z-10 object-cover hidden lg:block"
             />
 
-           <div className="mb-6">
-               <div className="relative text-center mx-auto w-fit">
-                   <h2 className="text-h1 w-80 md:w-full">
-                       Gentle Care.{" "}
-                       <span className="relative inline-block">
+           <div className="layout-container">
+               <div className="mb-6">
+                   <div className="relative text-center mx-auto w-fit">
+                       <h2 className="text-h1 w-80 md:w-full">
+                           Gentle Care.{" "}
+                           <span className="relative inline-block">
                             Joyful
                             <img src={lineOval}
                                  alt=""
@@ -89,87 +90,88 @@ const Visit = () => {
                                  className="absolute left-0 -top-4 md:-top-7 pointer-events-none scale-110"
                             />
                         </span>
-                       {" "} Visits.{" "}
-                   </h2>
+                           {" "} Visits.{" "}
+                       </h2>
+                   </div>
+
+                   <p className="text-p1 mt-5 md:mt-8 text-center w-full md:w-lg mx-auto">
+                       In the heart of Ramsey, NJ—compassionate dentistry that looks deeper than routine checkups.
+                   </p>
                </div>
 
-               <p className="text-p1 mt-5 md:mt-8 text-center w-full md:w-lg mx-auto">
-                   In the heart of Ramsey, NJ—compassionate dentistry that looks deeper than routine checkups.
-               </p>
-           </div>
-
-            <div className="grid grid-cols-1 lg:grid-cols-[30%_1fr] xl:grid-cols-[40%_1fr]
+               <div className="grid grid-cols-1 lg:grid-cols-[30%_1fr] xl:grid-cols-[40%_1fr]
                             gap-4 place-items-center px-0 lg:px-8"
-            >
-                <ShapeImg
-                    src={visit}
-                    alt="Happy child at the dentist"
-                    mask={blob}
-                    wrapperClassName="z-10  "
-                    imgClassName="w-full h-full relative z-10 lg:scale-[1.6] xl:scale-[1.3]"
-                />
+               >
+                   <ShapeImg
+                       src={visit}
+                       alt="Happy child at the dentist"
+                       mask={blob}
+                       wrapperClassName="z-10  "
+                       imgClassName="w-full h-full relative z-10 lg:scale-[1.6] xl:scale-[1.3]"
+                   />
 
-                <div className="w-full mx-auto px-4 overflow-hidden"
-                     onTouchStart={handleTouchStart}
-                     onTouchEnd={handleTouchEnd}
-                >
-                    <div
-                        className="flex md:grid md:grid-rows-2 md:grid-cols-2 md:gap-6 lg:gap-0 justify-items-center
+                   <div className="w-full mx-auto px-4 overflow-hidden"
+                        onTouchStart={handleTouchStart}
+                        onTouchEnd={handleTouchEnd}
+                   >
+                       <div
+                           className="flex md:grid md:grid-rows-2 md:grid-cols-2 md:gap-6 lg:gap-0 justify-items-center
                                    transition-transform md:transform-none duration-500 ease-out max-w-3xl mx-auto"
-                        style={isMobile ? { transform: `translateX(-${active * 100}%)`} : undefined }
-                    >
-                        {visits.map((visit, index) => (
-                            <div key={visit.id}
-                                 className={`
+                           style={isMobile ? { transform: `translateX(-${active * 100}%)`} : undefined }
+                       >
+                           {visits.map((visit, index) => (
+                               <div key={visit.id}
+                                    className={`
                                     flex-shrink-0 w-full flex justify-center            
                                     ${index === 0 ? "lg:-translate-y-6" : ""}
                                     ${index === 1 ? "lg:translate-y-8" : ""}
                                     ${index === 2 ? "lg:-translate-y-14" : ""}
                                     ${index === 3 ? "lg:translate-y-2" : ""}
                                 `}
-                            >
-                                <div className="relative max-w-md mx-auto">
-                                    <img
-                                        src={visit.background}
-                                        alt=""
-                                        aria-hidden="true"
-                                        className="absolute inset-0 w-[320px] h-full object-contain z-0"
-                                    />
+                               >
+                                   <div className="relative max-w-md mx-auto">
+                                       <img
+                                           src={visit.background}
+                                           alt=""
+                                           aria-hidden="true"
+                                           className="absolute inset-0 w-[320px] h-full object-contain z-0"
+                                       />
 
-                                    <div className="relative z-10 flex flex-col items-center text-center px-12 py-12">
-                                        <img
-                                            src={visit.icon}
-                                            alt=""
-                                            aria-hidden="true"
-                                            className="w-12 h-20 mb-3"
-                                        />
-                                        <h4 className="text-h4-dec mb-2 w-[240px]">
-                                            {visit.heading}
-                                        </h4>
-                                        <p className="text-p2 w-[200px]">
-                                            {visit.description}
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-            </div>
+                                       <div className="relative z-10 flex flex-col items-center text-center px-12 py-12">
+                                           <img
+                                               src={visit.icon}
+                                               alt=""
+                                               aria-hidden="true"
+                                               className="w-12 h-20 mb-3"
+                                           />
+                                           <h4 className="text-h4-dec mb-2 w-[240px]">
+                                               {visit.heading}
+                                           </h4>
+                                           <p className="text-p2 w-[200px]">
+                                               {visit.description}
+                                           </p>
+                                       </div>
+                                   </div>
+                               </div>
+                           ))}
+                       </div>
+                   </div>
+               </div>
 
-            <div className="flex md:hidden gap-4 justify-center items-center mt-8">
-                <ButtonArrow
-                    direction="left"
-                    onClick={prev}
-                    disabled={active === 0}
-                />
+               <div className="flex md:hidden gap-4 justify-center items-center mt-8">
+                   <ButtonArrow
+                       direction="left"
+                       onClick={prev}
+                       disabled={active === 0}
+                   />
 
-                <ButtonArrow
-                    direction="right"
-                    onClick={next}
-                    disabled={active >= maxSlides}
-                />
-            </div>
+                   <ButtonArrow
+                       direction="right"
+                       onClick={next}
+                       disabled={active >= maxSlides}
+                   />
+               </div>
+           </div>
         </section>
     )
 }

@@ -36,7 +36,7 @@ const Care = () => {
     const {handleTouchStart,handleTouchEnd} = useSwipeSlider({next,prev});
 
     return (
-        <section className="mt-24 content-padding">
+        <section className="mt-24 content-padding layout-container">
             <div className="md:text-center md:mx-auto max-w-xl">
                 <h2 className="text-h1 mb-6">
                     Whole-child,  {" "}
@@ -138,7 +138,7 @@ const Care = () => {
                         external
                         className="whitespace-nowrap w-full max-w-lg mt-12"
                     >
-                        Schedule an appointment
+                        Schedule
                     </Button>
                 </div>
             </div>

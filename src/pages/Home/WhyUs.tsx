@@ -73,10 +73,11 @@ const WhyUs = () => {
                 className="absolute inset-0 w-full h-full -z-10 object-cover md:hidden"
             />
 
-            <div className="text-center mx-auto w-fit">
-                <h2 className="text-h1 w-80 md:w-full">
-                    Why Families Choose {" "}
-                    <span className="relative inline-block">
+            <div className="layout-container">
+                <div className="text-center mx-auto w-fit">
+                    <h2 className="text-h1 w-80 md:w-full">
+                        Why Families Choose {" "}
+                        <span className="relative inline-block">
                             Joie
                             <img src={line}
                                  alt=""
@@ -85,24 +86,24 @@ const WhyUs = () => {
                                             pointer-events-none scale-110 md:scale-125"
                             />
                         </span>
-                </h2>
-            </div>
+                    </h2>
+                </div>
 
 
-            <div className="mt-20 grid grid-cols-1 gap-10 md:grid-cols-3 items-start content-padding">
-                {WhyCards.map((item,i) => (
-                    <div
-                        key={item.id}
-                        className={`grid grid-rows-subgrid row-span-5 gap-y-0
+                <div className="mt-20 grid grid-cols-1 gap-10 md:grid-cols-3 items-start content-padding">
+                    {WhyCards.map((item,i) => (
+                        <div
+                            key={item.id}
+                            className={`grid grid-rows-subgrid row-span-5 gap-y-0
                                     ${i === 1 ? "lg:border-x lg:border-[var(--color-light-gray)] lg:px-4" : "" }`}
-                    >
-                        <ShapeImg
-                            src={item.src}
-                            alt="Happy child at the dentist"
-                            mask={item.mask}
-                            wrapperClassName="z-10"
-                            imgClassName="w-full h-full"
-                        />
+                        >
+                            <ShapeImg
+                                src={item.src}
+                                alt="Happy child at the dentist"
+                                mask={item.mask}
+                                wrapperClassName="z-10"
+                                imgClassName="w-full h-full"
+                            />
                             <div className="relative inline-block w-12 h-12 shrink-0 mt-10">
                                 <Blob className="text-[var(--color-light-black)] object-contain w-12 h-12 ]"/>
                                 <span className="z-10 text-h3 text-[var(--color-light-blue)] absolute inset-0
@@ -128,8 +129,9 @@ const WhyUs = () => {
                                     </div>
                                 ))}
                             </div>
-                    </div>
-                ))}
+                        </div>
+                    ))}
+                </div>
             </div>
         </section>
     )

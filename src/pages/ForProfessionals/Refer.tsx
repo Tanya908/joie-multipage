@@ -27,7 +27,7 @@ const Refer = () => {
                 style={{objectFit: "fill"}}
             />
 
-           <div className="grid lg:grid-cols-[40%_1fr] gap-14 lg:gap-24">
+           <div className="grid lg:grid-cols-[40%_1fr] gap-14 lg:gap-24 layout-container">
                <h1 className="text-h1">
                    Why refer to Joie Pediatric  {" "}
                    <span className="relative inline-block">

@@ -24,24 +24,26 @@ const ServiceSection = ({
                         }: ServiceSectionProps) => {
     return (
         <section className={`py-20 mt-16 ${bgColor} content-padding`}>
-                <div className="w-full md:text-center flex flex-col items-start md:items-center justify-center">
-                    <h1 className="text-h1 w-[14ch] md:w-full">{title}</h1>
-                    <h4 className="text-h4 mt-4 text-[var(--color-light-black)]">{subtitle}</h4>
-                </div>
-
-                <div className="grid md:grid-cols-2 gap-10 lg:gap-20 items-center justify-center mt-12">
-
-                    <div className="md:self-start">
-                        <ShapeImg
-                            src={image}
-                            alt={title}
-                            mask={imgMask}
-                            wrapperClassName="w-full"
-                            imgClassName="w-full h-full object-cover origin-bottom max-w-2xl"
-                        />
+                <div className="layout-container">
+                    <div className="w-full md:text-center flex flex-col items-start md:items-center justify-center">
+                        <h1 className="text-h1 w-full">{title}</h1>
+                        <h4 className="text-h4 mt-4 text-[var(--color-light-black)]">{subtitle}</h4>
                     </div>
 
-                    <Accordion items={accordionItems} />
+                    <div className="grid md:grid-cols-2 gap-10 lg:gap-20 items-center justify-center mt-12">
+
+                        <div className="md:self-start">
+                            <ShapeImg
+                                src={image}
+                                alt={title}
+                                mask={imgMask}
+                                wrapperClassName="w-full"
+                                imgClassName="w-full h-full object-cover origin-bottom max-w-2xl"
+                            />
+                        </div>
+
+                        <Accordion items={accordionItems} />
+                    </div>
                 </div>
         </section>
     );

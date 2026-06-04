@@ -82,12 +82,13 @@ const Reviews = () => {
                 style={{objectFit: "fill"}}
             />
 
-            <div className="flex flex-col md:flex-row md:justify-between gap-8 items-center justify-center
+            <div className="layout-container">
+                <div className="flex flex-col md:flex-row md:justify-between gap-8 items-center justify-center
                             content-padding mb-8"
-            >
-                <h2 className="text-h1 w-full text-center md:text-left mx-auto">
-                    Joyful Reviews from  {" "}
-                    <span className="relative inline-block">
+                >
+                    <h2 className="text-h1 w-full text-center md:text-left mx-auto">
+                        Joyful Reviews from  {" "}
+                        <span className="relative inline-block">
                     Our Parents
                         <img src={line}
                              alt=""
@@ -95,78 +96,79 @@ const Reviews = () => {
                              className="absolute top-7 md:top-12 pointer-events-none scale-50 md:scale-100"
                         />
                     </span>
-                </h2>
+                    </h2>
 
-                <div className="flex gap-4">
-                    <ButtonArrow
-                        direction="left"
-                        onClick={prev}
-                        disabled={active === 0}
-                    />
+                    <div className="flex gap-4">
+                        <ButtonArrow
+                            direction="left"
+                            onClick={prev}
+                            disabled={active === 0}
+                        />
 
-                    <ButtonArrow
-                        direction="right"
-                        onClick={next}
-                        disabled={active >= maxSlides}
-                    />
+                        <ButtonArrow
+                            direction="right"
+                            onClick={next}
+                            disabled={active >= maxSlides}
+                        />
+                    </div>
                 </div>
-            </div>
 
-            <div className="overflow-hidden content-padding mb-16"
-                 onTouchStart={handleTouchStart}
-                 onTouchEnd={handleTouchEnd}
-            >
-                <div
-                    className="flex gap-4 lg:gap-14 transition-transform duration-300 ease-out"
-                    style={{
-                        transform: `translateX(-${active * (cardWidth + gap)}px)`
-                    }}
+                <div className="overflow-hidden content-padding mb-16"
+                     onTouchStart={handleTouchStart}
+                     onTouchEnd={handleTouchEnd}
                 >
-                    {reviews.map((review) => (
-                        <div
-                            ref={review.id === 1 ? cardRef : null}
-                            key={review.id}
-                            className="flex flex-col shrink-0 relative rounded-4xl border border-[var(--color-light-black)] mt-4 py-8 px-6 md:py-10 md:px-10
-                                        w-[clamp(320px,45vw,560px)] h-[420px] md:h-[580px] lg:h-[460px] xl:h-[460px]"
-                        >
-                            <img
-                                src={quotationMark}
-                                alt=""
-                                aria-hidden="true"
-                                className="absolute -top-3 left-4 w-8 h-8 md:w-10 md:h-10"
-                            />
-                            <h4 className="text-h4 text-[var(--color-black)]">
-                                {review.text}
-                            </h4>
-
-                            <div className="flex gap-4 items-center mt-auto">
-                                <ShapeImg
-                                    src={review.src}
-                                    alt={review.name}
-                                    mask={maskImg}
-                                    wrapperClassName="z-10"
-                                    imgClassName="w-16 h-16"
+                    <div
+                        className="flex gap-4 lg:gap-14 transition-transform duration-300 ease-out"
+                        style={{
+                            transform: `translateX(-${active * (cardWidth + gap)}px)`
+                        }}
+                    >
+                        {reviews.map((review) => (
+                            <div
+                                ref={review.id === 1 ? cardRef : null}
+                                key={review.id}
+                                className="flex flex-col shrink-0 relative rounded-4xl border border-[var(--color-light-black)] mt-4 py-8 px-6 md:py-10 md:px-10
+                                        w-[clamp(300px,45vw,560px)] h-[480px] md:h-[580px] lg:h-[460px] xl:h-[460px]"
+                            >
+                                <img
+                                    src={quotationMark}
+                                    alt=""
+                                    aria-hidden="true"
+                                    className="absolute -top-3 left-4 w-8 h-8 md:w-10 md:h-10"
                                 />
+                                <h4 className="text-h4 text-[var(--color-black)]">
+                                    {review.text}
+                                </h4>
 
-                                <div>
-                                    <p className="text-p1-decorative text-[var(--color-black)]">{review.name}</p>
-                                    <p className="text-p2">{review.lastName}</p>
+                                <div className="flex gap-4 items-center mt-auto">
+                                    <ShapeImg
+                                        src={review.src}
+                                        alt={review.name}
+                                        mask={maskImg}
+                                        wrapperClassName="z-10"
+                                        imgClassName="w-16 h-16"
+                                    />
+
+                                    <div>
+                                        <p className="text-p1-decorative text-[var(--color-black)]">{review.name}</p>
+                                        <p className="text-p2">{review.lastName}</p>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    ))}
+                        ))}
+                    </div>
                 </div>
-            </div>
 
-            <div className="flex justify-center">
-                <Button
-                    variant="secondary"
-                    external
-                    href="https://www.google.com/maps/place/Joie+Pediatric+Dentistry/@41.057773,-74.138536,1761m/data=!3m1!1e3!4m8!3m7!1s0x89c2e16388c1f40b:0x56d8529ea8fbf19c!8m2!3d41.0577733!4d-74.1385363!9m1!1b1!16s%2Fg%2F11yr2slcs7?hl=en&entry=ttu&g_ep=EgoyMDI2MDQwNi4wIKXMDSoASAFQAw%3D%3D"
-                    className="whitespace-nowrap w-fit"
-                >
-                    Open Google Reviews
-                </Button>
+                <div className="flex justify-center">
+                    <Button
+                        variant="secondary"
+                        external
+                        href="https://www.google.com/maps/place/Joie+Pediatric+Dentistry/@41.057773,-74.138536,1761m/data=!3m1!1e3!4m8!3m7!1s0x89c2e16388c1f40b:0x56d8529ea8fbf19c!8m2!3d41.0577733!4d-74.1385363!9m1!1b1!16s%2Fg%2F11yr2slcs7?hl=en&entry=ttu&g_ep=EgoyMDI2MDQwNi4wIKXMDSoASAFQAw%3D%3D"
+                        className="whitespace-nowrap w-fit"
+                    >
+                        Open Google Reviews
+                    </Button>
+                </div>
             </div>
         </section>
     )

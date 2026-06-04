@@ -9,35 +9,37 @@ const Insurance = () => {
             <div className="relative z-10 bg-[var(--color-light-yellow)] py-10 px-3 md:px-8
                             rounded-4xl lg:rounded-tr-none lg:rounded-br-none lg:order-2 lg:w-1/2"
             >
-                <h2 className="text-h2 mb-4 md:mb-6 w-48 md:w-full">
-                    Insurance & Finance
-                </h2>
-                <p className="text-p1 mb-2">
-                    Navigating insurance shouldn’t be stressful. At Joie Pediatric Dentistry, we accept most major plans and are proudly in-network with several popular providers.
-                </p>
-                <p className="text-p1">
-                    Not sure what’s covered? No problem. Our experienced team is happy to walk you through it. Just fill out our quick insurance verification form, and we’ll handle the rest, making sure you get the most out of your benefits.
-                </p>
+               <div className="max-w-5xl">
+                   <h2 className="text-h2 mb-4 md:mb-6 w-48 md:w-full">
+                       Insurance & Finance
+                   </h2>
+                   <p className="text-p1 mb-2">
+                       Navigating insurance shouldn’t be stressful. At Joie Pediatric Dentistry, we accept most major plans and are proudly in-network with several popular providers.
+                   </p>
+                   <p className="text-p1">
+                       Not sure what’s covered? No problem. Our experienced team is happy to walk you through it. Just fill out our quick insurance verification form, and we’ll handle the rest, making sure you get the most out of your benefits.
+                   </p>
 
-                <div className="flex flex-col md:flex-row lg:flex-col xl:flex-row
+                   <div className="flex flex-col md:flex-row lg:flex-col xl:flex-row
                                 items-center gap-4 w-full py-10"
-                >
-                    <Button
-                        primary
-                        href="/services"
-                        external
-                        className="whitespace-nowrap w-full"
-                    >
-                        View All Services
-                    </Button>
+                   >
+                       <Button
+                           primary
+                           href="/services"
+                           external
+                           className="whitespace-nowrap w-full"
+                       >
+                           View All Services
+                       </Button>
 
-                    <Button
-                        variant="secondary"
-                        href="mailto:joiepediatricdentistry.com"
-                        className="whitespace-nowrap w-full"
-                    >
-                        Verify My Insurance
-                    </Button>
+                       <Button
+                           variant="secondary"
+                           href="mailto:joiepediatricdentistry.com"
+                           className="whitespace-nowrap w-full"
+                       >
+                           Verify My Insurance
+                       </Button>
+               </div>
                 </div>
 
                 <h4 className="text-h4-dec text-[var(--color-light-black)] w-full md:w-[460px] xl:w-lg">

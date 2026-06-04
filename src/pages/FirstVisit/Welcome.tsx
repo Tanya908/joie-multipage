@@ -43,7 +43,7 @@ const Welcome = () => {
                         <img src={lineSecond}
                              alt=""
                              aria-hidden="true"
-                             className="absolute left-0 -bottom-9 pointer-events-none scale-90"
+                             className="absolute left-0 -bottom-10 pointer-events-none scale-90"
                         />
                     </span>
                 </h1>

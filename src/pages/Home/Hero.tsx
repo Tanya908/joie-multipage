@@ -36,9 +36,9 @@ const features:Feature[] = [
 
 const Home = () => {
     return (
-        <section className="mt-36 mb-20 lg:mb-28 md:mt-40 content-padding">
+        <section className="mt-32 mb-20 lg:mb-28 md:mt-40 content-padding">
             <div className="bg-[var(--color-light-yellow)] rounded-3xl px-3 py-12 md:px-12">
-                <div className="grid grid-cols-1 lg:grid-cols-[56%_1fr] gap-10 lg:gap-0">
+                <div className="grid grid-cols-1 lg:grid-cols-[56%_1fr] gap-10 lg:gap-0 layout-container">
                     <div className="flex flex-col h-full lg:pt-20">
                         <div className="relative inline-block">
                             <h1 className="text-title z-10 pb-3 lg:w-full ">
@@ -48,7 +48,7 @@ const Home = () => {
                                     <img src={lineWaves}
                                          alt=""
                                          aria-hidden="true"
-                                         className="absolute left-2 -bottom-3 xl:-bottom-4 pointer-events-none scale-90 xl:scale-110"
+                                         className="absolute left-3 -bottom-2 xl:-bottom-4 pointer-events-none scale-[0.65] xl:scale-110"
                                     />
                                 </span>
                                 {" "} , NJ

@@ -216,6 +216,10 @@
     @apply px-4 md:px-8;
 }
 
+@utility layout-container {
+    @apply max-w-[1900px] mx-auto;
+}
+
 @layer components {
     .footer-box {
         @apply border border-[var(--color-light-gray)] rounded-4xl p-8;

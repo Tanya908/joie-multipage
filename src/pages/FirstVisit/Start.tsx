@@ -27,7 +27,7 @@ const StartItems:StartProps[] = [
 const Start = () => {
     return (
         <section className="mt-24 content-padding md:grid md:grid-cols-2 items-center md:items-start mx-auto
-                            justify-items-center md:justify-items-start  md:gap-10 max-w-[1600px]"
+                            justify-items-center md:justify-items-start md:gap-10 layout-container"
         >
             <h1 className="text-h1 mb-12 md:mb-0 order-1 md:order-2 md:self-start">
                 A gentle {" "}

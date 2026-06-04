@@ -59,7 +59,7 @@ const Exam = () => {
     const {handleTouchStart,handleTouchEnd} = useSwipeSlider({next,prev});
 
     return (
-        <section className="relative py-32 mt-24">
+        <section className="relative py-28 mt-24">
             <img
                 src={background}
                 alt=""
@@ -67,97 +67,99 @@ const Exam = () => {
                 className="absolute top-0 left-0 h-full -z-10 w-full"
                 style={{objectFit: "fill"}}
             />
-            <h1 className="text-h1 mb-12 content-padding w-full max-w-4xl md:text-center md:mx-auto">
-                The {" "}
-                <span className="relative inline-block">
+            <div className="layout-container">
+                <h1 className="text-h1 mb-12 content-padding w-full max-w-4xl md:text-center md:mx-auto">
+                    The {" "}
+                    <span className="relative inline-block">
                     exam: {" "}
-                    <img src={line}
-                         alt=""
-                         aria-hidden="true"
-                         className="absolute left-0 -bottom-6 md:-bottom-8 pointer-events-none
+                        <img src={line}
+                             alt=""
+                             aria-hidden="true"
+                             className="absolute left-0 -bottom-6 md:-bottom-8 pointer-events-none
                                     scale-125 -scale-y-75 md:-scale-y-90"
-                    />
+                        />
                 </span>
-                {" "} gentle, thorough, and personalized
-            </h1>
+                    {" "} gentle, thorough, and personalized
+                </h1>
 
-            <div className="flex justify-center items-center gap-4 mx-auto md:hidden">
-                <ButtonArrow
-                    direction="left"
-                    onClick={prev}
-                    disabled={active === 0}
+                <div className="flex justify-center items-center gap-4 mx-auto md:hidden">
+                    <ButtonArrow
+                        direction="left"
+                        onClick={prev}
+                        disabled={active === 0}
 
-                />
-                <ButtonArrow
-                    direction="right"
-                    onClick={next}
-                    disabled={active >= maxSlides}
-                />
-            </div>
+                    />
+                    <ButtonArrow
+                        direction="right"
+                        onClick={next}
+                        disabled={active >= maxSlides}
+                    />
+                </div>
 
-            <div className="overflow-hidden w-full px-0 md:px-8"
-                 onTouchStart={handleTouchStart}
-                 onTouchEnd={handleTouchEnd}
-            >
-                <div
-                    className="flex md:flex-col transition-transform duration-300"
-                    style={{transform: isMobile  ? `translateX(-${active * 90}%)` : "none",}}
+                <div className="overflow-hidden w-full px-0 md:px-8"
+                     onTouchStart={handleTouchStart}
+                     onTouchEnd={handleTouchEnd}
                 >
-                    {ExamCards.map((item, index) => (
-                        <div
-                            key={index}
-                            className="shrink-0 px-4 md:px-0 w-[90%] md:w-full"
-                        >
-                            <div className="mt-8 md:flex md:items-center w-full">
+                    <div
+                        className="flex md:flex-col md:gap-10 transition-transform duration-300"
+                        style={{transform: isMobile  ? `translateX(-${active * 90}%)` : "none",}}
+                    >
+                        {ExamCards.map((item, index) => (
+                            <div
+                                key={index}
+                                className="shrink-0 px-4 md:px-0 w-[90%] md:w-full"
+                            >
+                                <div className="mt-8 md:flex md:items-center w-full">
 
-                                <div className="relative inline-block w-10 h-10 md:w-14 md:h-14 mb-4 shrink-0 md:mr-6 lg:mr-20">
-                                    <Blob className="text-[var(--color-light-red)] object-contain w-10 h-10 md:w-14 md:h-14" />
-                                    <span
-                                        className="z-10 text-h3 text-[var(--color-light-black)] absolute inset-0
+                                    <div className="relative inline-block w-10 h-10 md:w-14 md:h-14 mb-4 shrink-0 md:mr-6 lg:mr-20">
+                                        <Blob className="text-[var(--color-light-red)] object-contain w-10 h-10 md:w-14 md:h-14" />
+                                        <span
+                                            className="z-10 text-h3 text-[var(--color-light-black)] absolute inset-0
                                                    flex items-center justify-center pointer-events-none"
-                                    >
+                                        >
                                         {item.id}
                                     </span>
-                                </div>
+                                    </div>
 
-                                <div className="w-full md:flex-1 lg:flex-none lg:w-[35%] md:mr-20 lg:mr-40">
-                                    <ShapeImg
-                                        src={item.src}
-                                        alt={item.title}
-                                        mask={item.maskImg}
-                                        wrapperClassName="z-10 w-full"
-                                        imgClassName="w-full h-full object-cover"
-                                    />
-                                </div>
+                                    <div className="w-full md:flex-1 lg:flex-none lg:w-[35%] md:mr-20 lg:mr-40">
+                                        <ShapeImg
+                                            src={item.src}
+                                            alt={item.title}
+                                            mask={item.maskImg}
+                                            wrapperClassName="z-10 w-full"
+                                            imgClassName="w-full h-full object-cover"
+                                        />
+                                    </div>
 
-                                <div className="w-full md:flex-1 max-w-[680px]">
-                                    <h3 className="text-h3 mb-3 mt-6 md:mt-0">{item.title}</h3>
-                                    <h4 className="text-h4 text-[var(--color-light-black)]">{item.text}</h4>
+                                    <div className="w-full md:flex-1 max-w-[680px]">
+                                        <h3 className="text-h3 mb-3 mt-6 md:mt-0">{item.title}</h3>
+                                        <h4 className="text-h4 text-[var(--color-light-black)]">{item.text}</h4>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    ))}
+                        ))}
+                    </div>
                 </div>
-            </div>
 
-            <div
-                className="content-padding flex gap-4 mt-12 w-full md:pl-[calc(48px+24px+35%+80px)]
+                <div
+                    className="content-padding flex gap-4 mt-12 w-full md:pl-[calc(48px+24px+35%+80px)]
                            lg:pl-[calc(48px+80px+35%+160px)] md:ml-0"
-            >
-                <div className="relative inline-block w-12 h-12 mb-4 shrink-0">
-                    <Blob className="text-[var(--color-black)] object-contain w-12 h-12" />
-                    <span
-                        className="z-10 text-h2 text-[var(--color-white)] absolute inset-0
+                >
+                    <div className="relative inline-block w-12 h-12 mb-4 shrink-0">
+                        <Blob className="text-[var(--color-black)] object-contain w-12 h-12" />
+                        <span
+                            className="z-10 text-h2 text-[var(--color-white)] absolute inset-0
                                    flex items-center justify-center pointer-events-none"
-                    >
+                        >
                         !
                     </span>
+                    </div>
+                    <h4 className="text-h4-dec text-[var(--color-light-black)]">
+                        If this is your baby’s first visit (we recommend coming by age 1!),
+                        we’ll focus on parent education and creating a stress-free first
+                        impression.
+                    </h4>
                 </div>
-                <h4 className="text-h4-dec text-[var(--color-light-black)]">
-                    If this is your baby’s first visit (we recommend coming by age 1!),
-                    we’ll focus on parent education and creating a stress-free first
-                    impression.
-                </h4>
             </div>
         </section>
     )

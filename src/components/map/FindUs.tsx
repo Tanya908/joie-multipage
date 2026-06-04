@@ -26,7 +26,7 @@ const FindUs = ({ theme = "pink" }: FindUsProps) => {
             )}
 
             <div className="relative py-14 md:pt-28 md:pb-24 grid grid-cols-1
-                            lg:grid-cols-[1fr_2fr] gap-10 content-padding"
+                            lg:grid-cols-[1fr_2fr] gap-10 content-padding layout-container"
                  style={{ zIndex: 1 }}
             >
                 <div className="bg-[var(--color-white)] px-3 py-8 md:p-10 rounded-4xl">
