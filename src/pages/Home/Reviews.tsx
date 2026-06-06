@@ -93,7 +93,7 @@ const Reviews = () => {
                         <img src={line}
                              alt=""
                              aria-hidden="true"
-                             className="absolute top-7 md:top-12 pointer-events-none scale-50 md:scale-100"
+                             className="absolute top-8 md:top-13 pointer-events-none scale-125 md:scale-150"
                         />
                     </span>
                     </h2>

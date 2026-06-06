@@ -1,4 +1,4 @@
-import MapBox from "../../components/map/MapBox.tsx";
+import LazyMap from "../../components/map/LazyMap.tsx";
 
 type ScheduleProps = {
     day: string,
@@ -38,7 +38,7 @@ const Direction = () => {
            </div>
 
            <div className="w-full h-[516px]">
-               <MapBox className="rounded-b-[40px]"/>
+               <LazyMap className="rounded-b-[40px]" />
            </div>
        </section>
     )

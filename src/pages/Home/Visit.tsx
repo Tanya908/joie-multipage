@@ -11,10 +11,10 @@ import blobFirst from "../../assets/home-page/visit/visit-cards/blobFirst.svg";
 import blobSecond from "../../assets/home-page/visit/visit-cards/blobSecond.svg";
 import blobThird from "../../assets/home-page/visit/visit-cards/blobThird.svg";
 import blobFourth from "../../assets/home-page/visit/visit-cards/blobFourth.svg";
-import ballon from "../../assets/home-page/visit/visit-cards/ballon.svg";
-import child from "../../assets/home-page/visit/visit-cards/child.svg";
-import airBallon from "../../assets/home-page/visit/visit-cards/airBallon.svg";
-import sun from "../../assets/home-page/visit/visit-cards/Sun.svg";
+import ballon from "../../assets/home-page/visit/visit-cards/ballon.webp";
+import child from "../../assets/home-page/visit/visit-cards/child.webp";
+import airBallon from "../../assets/home-page/visit/visit-cards/airBallon.webp";
+import sun from "../../assets/home-page/visit/visit-cards/sun.webp";
 
 import {useSlider} from "../../shared/hooks/useSlider.ts";
 import {useBreakpoint} from "../../shared/hooks/useScreenWidth.ts";
@@ -142,7 +142,7 @@ const Visit = () => {
                                                src={visit.icon}
                                                alt=""
                                                aria-hidden="true"
-                                               className="w-12 h-20 mb-3"
+                                               className="w-20 h-20 mb-3"
                                            />
                                            <h4 className="text-h4-dec mb-2 w-[240px]">
                                                {visit.heading}

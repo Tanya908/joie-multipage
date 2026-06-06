@@ -1,7 +1,7 @@
 import lineWaves from "../../assets/text-lines/lineWaves.svg"
 import {Button} from "../Button.tsx";
 
-import MapBox from "./MapBox.tsx";
+import LazyMap from "./LazyMap.tsx";
 import type {SectionTheme} from "../../shared/sectionThemes.ts";
 import {useSectionTheme} from "../../shared/hooks/useSectionTheme.ts";
 
@@ -79,7 +79,7 @@ const FindUs = ({ theme = "pink" }: FindUsProps) => {
                     </div>
                 </div>
                 <div className="w-full min-h-[520px] rounded-4xl">
-                    <MapBox/>
+                    <LazyMap />
                 </div>
             </div>
         </section>
