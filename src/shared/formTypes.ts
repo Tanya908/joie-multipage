@@ -13,4 +13,6 @@ export type FormData = {
 
     consent: boolean;
     contactFamily: boolean;
+
+    attachments?: FileList;
 };

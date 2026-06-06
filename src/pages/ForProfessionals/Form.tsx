@@ -49,6 +49,7 @@ const Form = () => {
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [isSuccess, setIsSuccess] = useState(false);
     const [submitError, setSubmitError] = useState("");
+    const [files, setFiles] = useState<FileList | null>(null);
 
     const onSubmit = async (data: FormData) => {
         try {
@@ -132,8 +133,22 @@ const Form = () => {
                                 <span className="text-p1 text-[var(--color-black)] border-b border-[var(--color-black)] pb-2">
                                     X-rays, Photos, Notes
                                 </span>
-                                <input type="file" className="hidden" multiple />
+                                <input type="file" className="hidden" multiple {...register("attachments")}
+                                       onChange={(e) => setFiles(e.target.files)}
+                                />
                             </label>
+                            {files && files.length > 0 && (
+                                <div className="mt-3">
+                                    <p className="text-p2 ">
+                                        Successfully attached {files.length} file{files.length > 1 ? "s" : ""}
+                                    </p>
+                                    <div className="space-y-1">
+                                        {Array.from(files).map((file) => (
+                                            <p key={file.name} className="text-p2">{file.name}</p>
+                                        ))}
+                                    </div>
+                                </div>
+                            )}
                         </div>
                         <div className="mt-6 mb-12 grid justify-start md:justify-center gap-3">
                             {Checkbox.map((item) => (
