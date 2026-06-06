@@ -1,73 +1,136 @@
-# React + TypeScript + Vite
+# Joie Pediatric Dentistry
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![Homepage Hero](./screenshots/homepage-hero.webp)
 
-Currently, two official plugins are available:
+A modern, responsive multi-page website built for a pediatric dental practice in Ramsey, New Jersey.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+The project focuses on performance, accessibility, SEO, responsive design, and an intuitive user experience for both parents and healthcare professionals.
 
-## React Compiler
+## Live Demo
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+👉 https://joie-multipage.pages.dev
 
-## Expanding the ESLint configuration
+## Project Overview
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+This project is a multi-page website developed for a pediatric dental practice and includes:
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+* Home Page
+* Meet the Doctor
+* For Parents
+* For Professionals
+* Referral Form
+* Contact & Directions
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+The website includes custom UI components, responsive layouts, interactive forms, Mapbox integration, and optimized media assets.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## Screenshots
+
+### Services Section
+
+![Services Section](screenshots/services-section.webp)
+
+### Services Page
+
+![Services Page](screenshots/service-page.webp)
+
+### Referral Form
+
+![Referral Form](./screenshots/referral-form.webp)
+
+###  Find Us Section
+
+![Find Us Section](screenshots/findus-section.webp)
+
+## Technologies Used
+
+### Frontend
+
+* React 19
+* TypeScript
+* Vite
+* Tailwind CSS 4
+
+### Routing
+
+* React Router DOM
+
+### Forms
+
+* React Hook Form
+
+### Maps
+
+* Mapbox GL
+* React Map GL
+
+### Performance & UX
+
+* React Intersection Observer
+* Lazy Loading
+* Image Optimization
+* Code Splitting
+
+### Development Tools
+
+* ESLint
+* TypeScript ESLint
+* Vite React Plugin
+
+## Features
+
+* Fully responsive design
+* Mobile-first approach
+* Custom reusable UI components
+* Interactive referral form
+* File upload functionality
+* Form validation
+* Mapbox integration
+* Custom map markers
+* Open Graph metadata
+* Twitter Card metadata
+* Performance optimization
+* Cloudflare Pages deployment
+* Responsive navigation
+* Multi-page architecture
+
+## Environment Variables
+
+Create a `.env` file in the project root:
+
+```env
+VITE_MAPBOX_TOKEN=your_mapbox_token_here
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Installation
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Install dependencies:
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm install
 ```
+
+Run development server:
+
+```bash
+npm run dev
+```
+
+Build project:
+
+```bash
+npm run build
+```
+
+Preview production build:
+
+```bash
+npm run preview
+```
+
+## Deployment
+
+The project is deployed using Cloudflare Pages.
+
+## Author
+
+Designed and developed by Tetiana Hrytsenko.
